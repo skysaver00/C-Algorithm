@@ -2,6 +2,7 @@
 #include <string.h>
 #include <iostream>
 #include <algorithm>
+//아직 문제를 풀지 못했음
 
 int main() {
     char Avalue[10001];
