@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1076 Resistance/cmake-build-debug/CMakeFiles/1076_Resistance.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1076 Resistance/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1076 Resistance/cmake-build-debug/CMakeFiles/rebuild_cache.dir
