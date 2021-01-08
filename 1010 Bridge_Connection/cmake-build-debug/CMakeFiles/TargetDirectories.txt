@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1010 Bridge_Connection/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1010 Bridge_Connection/cmake-build-debug/CMakeFiles/1010_Bridge_Connection.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1010 Bridge_Connection/cmake-build-debug/CMakeFiles/rebuild_cache.dir
