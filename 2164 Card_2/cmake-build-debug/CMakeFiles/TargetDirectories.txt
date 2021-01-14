@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2164 Card_2/cmake-build-debug/CMakeFiles/2164_Card_2.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2164 Card_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2164 Card_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
