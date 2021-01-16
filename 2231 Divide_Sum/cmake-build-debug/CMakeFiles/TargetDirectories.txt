@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2231 Divide_Sum/cmake-build-debug/CMakeFiles/2231_Divide_Sum.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2231 Divide_Sum/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2231 Divide_Sum/cmake-build-debug/CMakeFiles/rebuild_cache.dir
