@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2772 Women_Association/cmake-build-debug/CMakeFiles/2772_Women_Association.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2772 Women_Association/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2772 Women_Association/cmake-build-debug/CMakeFiles/rebuild_cache.dir
