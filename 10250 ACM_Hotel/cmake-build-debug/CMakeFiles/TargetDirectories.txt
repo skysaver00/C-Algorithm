@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/10250 ACM_Hotel/cmake-build-debug/CMakeFiles/10250_ACM_Hotel.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10250 ACM_Hotel/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10250 ACM_Hotel/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\10250_ACM_Hotel.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\10250_ACM_Hotel.dir/objects.a @CMakeFiles\10250_ACM_Hotel.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\10250_ACM_Hotel.dir/objects.a -Wl,--no-whole-archive  -o 10250_ACM_Hotel.exe -Wl,--out-implib,lib10250_ACM_Hotel.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\10250_ACM_Hotel.dir\linklibs.rsp
