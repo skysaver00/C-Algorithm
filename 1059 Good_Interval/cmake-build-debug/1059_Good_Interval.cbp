@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="1059_Good_Interval"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="1059_Good_Interval">
+				<Option output="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/1059_Good_Interval.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 1059_Good_Interval"/>
+					<CompileFile command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="1059_Good_Interval/fast">
+				<Option output="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/1059_Good_Interval.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="x:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 1059_Good_Interval/fast"/>
+					<CompileFile command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="X:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/main.cpp">
+			<Option target="1059_Good_Interval"/>
+		</Unit>
+		<Unit filename="C:/Users/skysaver00/IdeaProjects/C, C++/1059 Good_Interval/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
