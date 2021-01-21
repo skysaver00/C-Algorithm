@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/3004 Chessboard_Pieces/cmake-build-debug/CMakeFiles/3004_Chessboard_Pieces.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/3004 Chessboard_Pieces/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/3004 Chessboard_Pieces/cmake-build-debug/CMakeFiles/rebuild_cache.dir
