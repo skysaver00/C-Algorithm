@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2480 Three_Dices/cmake-build-debug/CMakeFiles/2480_Three_Dices.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2480 Three_Dices/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2480 Three_Dices/cmake-build-debug/CMakeFiles/rebuild_cache.dir

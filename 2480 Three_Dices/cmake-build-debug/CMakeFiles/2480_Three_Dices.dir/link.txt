@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\2480_Three_Dices.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\2480_Three_Dices.dir/objects.a @CMakeFiles\2480_Three_Dices.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\2480_Three_Dices.dir/objects.a -Wl,--no-whole-archive  -o 2480_Three_Dices.exe -Wl,--out-implib,lib2480_Three_Dices.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2480_Three_Dices.dir\linklibs.rsp
