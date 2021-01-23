@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/5532 Vacation_Homework/cmake-build-debug/CMakeFiles/5532_Vacation_Homework.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/5532 Vacation_Homework/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/5532 Vacation_Homework/cmake-build-debug/CMakeFiles/rebuild_cache.dir
