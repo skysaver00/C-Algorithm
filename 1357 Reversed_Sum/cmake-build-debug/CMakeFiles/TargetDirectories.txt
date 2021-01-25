@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1357 Reversed_Sum/cmake-build-debug/CMakeFiles/1357_Reversed_Sum.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1357 Reversed_Sum/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1357 Reversed_Sum/cmake-build-debug/CMakeFiles/rebuild_cache.dir
