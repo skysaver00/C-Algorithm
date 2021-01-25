@@ -21,7 +21,7 @@ char rot13(char c) {
 
 int main() {
     char rot[101];
-    scanf("%s", rot);
+    scanf("%s[^\n]", rot);
 
     int len = strlen(rot);
 
