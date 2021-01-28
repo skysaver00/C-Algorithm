@@ -6,11 +6,27 @@ int main() {
 
     int count = 0;
 
-    int i = 1;
+    int i = 0;
+    int up = 1, down = 1;
     while(count < X) {
-        count += i;
         i++;
+        count += i;
     }
 
-    printf("%d\n", i);
+    if(i % 2 != 0) up = i;
+    else down = i;
+
+    count -= i;
+
+    for(int j = count + 1; j < X; j++) {
+        if(i % 2 != 0) {
+            down++;
+            up--;
+        } else {
+            down--;
+            up++;
+        }
+    }
+
+    printf("%d/%d\n", up, down);
 }
