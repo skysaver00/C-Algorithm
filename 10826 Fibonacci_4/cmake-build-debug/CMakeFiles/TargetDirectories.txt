@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/10826 Fibonacci_4/cmake-build-debug/CMakeFiles/10826_Fibonacci_4.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10826 Fibonacci_4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10826 Fibonacci_4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
