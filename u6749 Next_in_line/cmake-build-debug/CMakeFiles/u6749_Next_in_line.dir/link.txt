@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\u6749_Next_in_line.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\u6749_Next_in_line.dir/objects.a @CMakeFiles\u6749_Next_in_line.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\u6749_Next_in_line.dir/objects.a -Wl,--no-whole-archive  -o u6749_Next_in_line.exe -Wl,--out-implib,libu6749_Next_in_line.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\u6749_Next_in_line.dir\linklibs.rsp
