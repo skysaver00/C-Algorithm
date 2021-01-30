@@ -1,10 +1,5 @@
 #include <stdio.h>
 
 int main() {
-    int all;
-    int dif;
-
-    scanf("%d %d", &all, &dif);
-
-    printf("%d\n%d\n", all)
+    /* 이문제는 자바로 풀었다. */
 }
