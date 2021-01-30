@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/3003 King_Queen_Look_Chesspiece/cmake-build-debug/CMakeFiles/3003_King_Queen_Look_Chesspiece.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/3003 King_Queen_Look_Chesspiece/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/3003 King_Queen_Look_Chesspiece/cmake-build-debug/CMakeFiles/rebuild_cache.dir
