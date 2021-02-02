@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2847 DongJun_Gamemaker/cmake-build-debug/CMakeFiles/2847_DongJun_Gamemaker.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2847 DongJun_Gamemaker/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2847 DongJun_Gamemaker/cmake-build-debug/CMakeFiles/rebuild_cache.dir
