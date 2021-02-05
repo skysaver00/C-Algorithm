@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/5596 Test_Score/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/5596 Test_Score/cmake-build-debug/CMakeFiles/5596_Test_Score.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/5596 Test_Score/cmake-build-debug/CMakeFiles/rebuild_cache.dir
