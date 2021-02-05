@@ -1,20 +1,6 @@
 #include <stdio.h>
 
 int arr[6];
-void workedhours();
-
-int main() {
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 6; j++) {
-            scanf("%d", &arr[j]);
-        }
-
-        workedhours();
-    }
-
-    return 0;
-}
-
 void workedhours() {
 
     int s = arr[5] - arr[2];
@@ -32,4 +18,16 @@ void workedhours() {
     printf("%d %d %d\n", h, m, s);
 
     return;
+}
+
+int main() {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 6; j++) {
+            scanf("%d", &arr[j]);
+        }
+
+        workedhours();
+    }
+
+    return 0;
 }
