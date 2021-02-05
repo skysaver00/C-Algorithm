@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/skysaver00/IdeaProjects/C, C++/13136 Do_Not_Touch_Anything/main.cpp
+stdio.h
+-
+math.h
+-
+
