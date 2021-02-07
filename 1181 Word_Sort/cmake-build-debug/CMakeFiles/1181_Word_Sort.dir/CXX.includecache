@@ -9,9 +9,9 @@
 C:/Users/skysaver00/IdeaProjects/C, C++/1181 Word_Sort/main.cpp
 stdio.h
 -
-string
+iostream
 -
-string.h
+vector
 -
 algorithm
 -
