@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/10707 Water_Charge/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10707 Water_Charge/cmake-build-debug/CMakeFiles/10707_Water_Charge.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10707 Water_Charge/cmake-build-debug/CMakeFiles/edit_cache.dir

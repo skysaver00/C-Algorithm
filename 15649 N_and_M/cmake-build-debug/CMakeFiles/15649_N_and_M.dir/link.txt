@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\15649_N_and_M.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\15649_N_and_M.dir/objects.a @CMakeFiles\15649_N_and_M.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\15649_N_and_M.dir/objects.a -Wl,--no-whole-archive  -o 15649_N_and_M.exe -Wl,--out-implib,lib15649_N_and_M.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\15649_N_and_M.dir\linklibs.rsp
