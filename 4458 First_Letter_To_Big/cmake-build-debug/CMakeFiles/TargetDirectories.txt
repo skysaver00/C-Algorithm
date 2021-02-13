@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/4458 First_Letter_To_Big/cmake-build-debug/CMakeFiles/4458_First_Letter_To_Big.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/4458 First_Letter_To_Big/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/4458 First_Letter_To_Big/cmake-build-debug/CMakeFiles/rebuild_cache.dir
