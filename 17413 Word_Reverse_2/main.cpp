@@ -1,35 +1,40 @@
 #include <stdio.h>
 #include <string.h>
-char word[100005];
-char reverse[100005];
+#include <stack>
 
+using namespace std;
 
+char word[100004];
 int main() {
     scanf("%[^\n]", word);
+    stack<char> stack1;
 
-    int start = 0;
-    int end = 0;
+    word[strlen(word)] = '\n';
+
     int flag = 0;
-    int cnt = 0;
-
     for(int i = 0; i < strlen(word); i++) {
         if(word[i] == '<') {
+            while(stack1.empty() != true) {
+                printf("%c", stack1.top());
+                stack1.pop();
+            }
+            printf("<");
             flag = 1;
-            end = i - 1;
         }
-        if(word[i] == '>') {
+        else if(word[i] == '>') {
+            printf(">");
             flag = 0;
-            start = i + 1;
         }
-
-        if(flag == 1) {
-            reverse[cnt] = word[i];
+        else if(flag == 1) printf("%c", word[i]);
+        else if(word[i] == ' ' || word[i] == '\n') {
+            while(stack1.empty() != true) {
+                printf("%c", stack1.top());
+                stack1.pop();
+            }
+            printf(" ");
         }
-
-        if(flag == 0) {
-
+        else {
+            stack1.push(word[i]);
         }
-
-        cnt++;
     }
 }
