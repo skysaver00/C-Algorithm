@@ -42,6 +42,29 @@ void Insertion(int N) {
     }
 }
 
+void Cocktail(int N) {
+    for(int i = N - 1; i > 0; i--) {
+        if(i % 2 == 0) {
+            for(int j = i; j > N - i; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        else {
+            for(int j = N - i; j >= i; j--) {
+                if(arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
 int main() {
     int N;
     scanf("%d", &N);
@@ -50,7 +73,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    Insertion(N);
+    Cocktail(N);
 
     for(int i = 0; i < N; i++) {
         printf("%d\n", arr[i]);
