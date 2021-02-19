@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/10101_Triangle_Memorize/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10101_Triangle_Memorize/cmake-build-debug/CMakeFiles/10101_Triangle_Memorize.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10101_Triangle_Memorize/cmake-build-debug/CMakeFiles/rebuild_cache.dir
