@@ -2,7 +2,7 @@
 int friends[11][11];
 
 int arefriends(int a, int b) {
-    
+
 }
 
 int main() {
