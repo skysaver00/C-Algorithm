@@ -10,10 +10,11 @@ int main() {
             if (a == 1) cnt++;
         }
 
-        if (cnt == 0 || cnt == 4) printf("E\n");
-        else if (cnt == 1) printf("C\n");
-        else if (cnt == 2) printf("B\n");
-        else printf("A\n");
+        if(cnt == 0) printf("D\n");
+        else if(cnt == 1) printf("C\n");
+        else if(cnt == 2) printf("B\n");
+        else if(cnt == 3) printf("A\n");
+        else printf("E\n");
     }
 
     return 0;
