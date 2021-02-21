@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/18108_1998_2541/cmake-build-debug/CMakeFiles/18108_1998_2541.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/18108_1998_2541/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/18108_1998_2541/cmake-build-debug/CMakeFiles/rebuild_cache.dir
