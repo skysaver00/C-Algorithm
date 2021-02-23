@@ -37,9 +37,6 @@ int pick() {
     int flag = 0;
     char temp;
 
-    candy = count();
-    if(max < candy) max = candy;
-
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < N; j++) {
             if(arr[i + dy[0]][j + dx[0]] == NULL) {flag = 1;}
