@@ -2,12 +2,12 @@
 #include <stack>
 #include <string.h>
 using namespace std;
-char arr[101];
+char arr[103];
 
 int main() {
     while(1) {
-        gets(arr);
-        if(strcmp(arr, ".") == false && strlen(arr) == 1) break;
+        fgets(arr, 103, stdin);
+        if(strcmp(arr, ".\n") == false && strlen(arr) == 2) break;
 
         int flag = 0;
 
