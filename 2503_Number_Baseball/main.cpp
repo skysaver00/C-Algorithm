@@ -8,7 +8,7 @@ int main() {
     int num, s, b;
     while(n--) {
         scanf("%d %d %d", &num, &s, &b);
-        
+
     }
     return 0;
 }
