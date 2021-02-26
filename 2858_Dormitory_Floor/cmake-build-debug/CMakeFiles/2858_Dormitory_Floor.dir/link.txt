@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\2858_Dormitory_Floor.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\2858_Dormitory_Floor.dir/objects.a @CMakeFiles\2858_Dormitory_Floor.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\2858_Dormitory_Floor.dir/objects.a -Wl,--no-whole-archive  -o 2858_Dormitory_Floor.exe -Wl,--out-implib,lib2858_Dormitory_Floor.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2858_Dormitory_Floor.dir\linklibs.rsp
