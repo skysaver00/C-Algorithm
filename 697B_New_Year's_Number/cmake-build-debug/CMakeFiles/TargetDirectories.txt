@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/697B_New_Year's_Number/cmake-build-debug/CMakeFiles/697B_New_Year_s_Number.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/697B_New_Year's_Number/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/697B_New_Year's_Number/cmake-build-debug/CMakeFiles/rebuild_cache.dir
