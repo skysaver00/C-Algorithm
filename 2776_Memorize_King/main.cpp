@@ -7,14 +7,13 @@ int brr[1000005];
 
 bool binary(int num, int a, int b) {
     if(a > b) return false;
-    if(arr[(a + b) / 2] == num) return true;
-
-    printf("%d %d", a, b);
 
     if(num > arr[(a + b) / 2]) {
         binary(num, ((a + b) / 2) + 1, b);
+    } else if(num < arr[(a + b) / 2]) {
+        binary(num, a, ((a + b) / 2) - 1);
     } else {
-        binary(num, a, ((a + b) / 2));
+        return true;
     }
 }
 
