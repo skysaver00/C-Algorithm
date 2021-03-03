@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\C__C__1764_Never_Heard_Or_Listened.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\C__C__1764_Never_Heard_Or_Listened.dir/objects.a @CMakeFiles\C__C__1764_Never_Heard_Or_Listened.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\C__C__1764_Never_Heard_Or_Listened.dir/objects.a -Wl,--no-whole-archive  -o C__C__1764_Never_Heard_Or_Listened.exe -Wl,--out-implib,libC__C__1764_Never_Heard_Or_Listened.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\C__C__1764_Never_Heard_Or_Listened.dir\linklibs.rsp
