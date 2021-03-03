@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\11946_ACM_ICPC.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\11946_ACM_ICPC.dir/objects.a @CMakeFiles\11946_ACM_ICPC.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\11946_ACM_ICPC.dir/objects.a -Wl,--no-whole-archive  -o 11946_ACM_ICPC.exe -Wl,--out-implib,lib11946_ACM_ICPC.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\11946_ACM_ICPC.dir\linklibs.rsp
