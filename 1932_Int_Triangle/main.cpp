@@ -1,15 +1,17 @@
 #include <stdio.h>
 
-short arr[501];
-int brr[2][501];
+int arr[505];
+int brr[2][505];
 
-int choice(int i, int j) {
+void choice(int i, int j) {
     if(brr[(i - 1) % 2][j - 1] >= brr[(i - 1) % 2][j]) {
         brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[j];
     }
     else {
         brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[j];
     }
+
+    return;
 }
 
 int main() {
