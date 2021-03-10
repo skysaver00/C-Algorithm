@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int arr[501][501];
+short arr[501];
 int brr[2][501];
 
 int choice(int i, int j) {
     if(brr[(i - 1) % 2][j - 1] >= brr[(i - 1) % 2][j]) {
-        brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[i][j];
+        brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[j];
     }
     else {
-        brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[i][j];
+        brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[j];
     }
 }
 
@@ -18,15 +18,13 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j <= i; j++) {
-            scanf("%d", &arr[i][j]);
+            scanf("%d", &arr[j]);
         }
-    }
 
-    for(int i = 0; i < n; i++) {
         for(int j = 0; j <= i; j++) {
             if(j == 0 || j == i) {
-                if(j == 0) brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[i][j];
-                else brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[i][j];
+                if(j == 0) brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[j];
+                else brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[j];
             }
             else {
                 choice(i, j);
