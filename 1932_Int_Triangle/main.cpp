@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int arr[500][500];
-int brr[500][500];
+int arr[501][501];
+int brr[2][501];
 
 int choice(int i, int j) {
-    if(brr[i - 1][j - 1] >= brr[i - 1][j]) {
-        brr[i][j] = brr[i - 1][j - 1] + arr[i][j];
+    if(brr[(i - 1) % 2][j - 1] >= brr[(i - 1) % 2][j]) {
+        brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[i][j];
     }
     else {
-        brr[i][j] = brr[i - 1][j] + arr[i][j];
+        brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[i][j];
     }
 }
 
@@ -25,8 +25,8 @@ int main() {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j <= i; j++) {
             if(j == 0 || j == i) {
-                if(j == 0) brr[i][j] = brr[i - 1][j] + arr[i][j];
-                else brr[i][j] = brr[i - 1][j - 1] + arr[i][j];
+                if(j == 0) brr[i % 2][j] = brr[(i - 1) % 2][j] + arr[i][j];
+                else brr[i % 2][j] = brr[(i - 1) % 2][j - 1] + arr[i][j];
             }
             else {
                 choice(i, j);
@@ -35,8 +35,12 @@ int main() {
     }
 
     int max = -99999999;
-    for(int i = 0; i < n; i++) {
-        if(max >= arr[n - 1][i]) max = arr[n - 1][i];
+    int ud = 0;
+    if(n % 2 == 1) ud = 0;
+    else ud = 1;
+
+    for(int i = 0 ; i < n; i++) {
+        if(max <= brr[ud][i]) max = brr[ud][i];
     }
 
     printf("%d\n", max);
