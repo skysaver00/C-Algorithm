@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/9020_Goldbach/cmake-build-debug/CMakeFiles/9020_Goldbach.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/9020_Goldbach/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/9020_Goldbach/cmake-build-debug/CMakeFiles/rebuild_cache.dir
