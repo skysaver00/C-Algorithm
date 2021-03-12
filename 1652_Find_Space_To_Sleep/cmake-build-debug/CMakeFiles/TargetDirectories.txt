@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1652_Find_Space_To_Sleep/cmake-build-debug/CMakeFiles/1652_Find_Space_To_Sleep.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1652_Find_Space_To_Sleep/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1652_Find_Space_To_Sleep/cmake-build-debug/CMakeFiles/rebuild_cache.dir
