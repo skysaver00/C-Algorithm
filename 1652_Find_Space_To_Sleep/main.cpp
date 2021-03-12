@@ -23,35 +23,32 @@ int main() {
     int cmp1, cmp2, ans = 0;
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            cmp1 = j;
-            cmp2 = i;
-            for (int l = i; l <= N; l++) {
+            cmp1 = j, cmp2 = i;
+            for (int l = j; l <= N; l++) {
                 if (arr[cmp2][cmp1] == 0) {
                     if (xmin < ans) xmin = ans;
                     break;
                 }
+
                 ans++;
-                cmp1 += x_[0], cmp2 += y_[0];
+                cmp1 += 1, cmp2 += 0;
             }
-            printf("%d %d %d\n", i, j, ans);
             ans = 0;
-            cmp1 = j;
-            cmp2 = i;
-            for (int l = j; l <= N; l++) {
-                if (arr[cmp2][cmp1] == 0) {
+            cmp1 = j, cmp2 = i;
+            for (int l = i; l <= N; l++) {
+                if (arr[cmp2][cmp1] == 0) {;
                     if (ymin < ans) ymin = ans;
                     break;
                 }
+
                 ans++;
-                cmp1 += x_[1], cmp2 += y_[1];
+                cmp1 += 0, cmp2 += 1;
             }
-            printf("%d %d %d\n", i, j, ans);
             ans = 0;
         }
     }
-}
 
-printf("%d %d\n", xmin, ymin);
+    printf("%d %d\n", xmin, ymin);
 
-return 0;
+    return 0;
 }
