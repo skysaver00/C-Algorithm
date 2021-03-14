@@ -23,9 +23,7 @@ int main() {
         dp[i] = max;
     }
 
-    for(int i = 0; i < t; i++) {
-        printf("%d\n", dp[i]);
-    }
+    printf("%d\n", dp[t - 1]);
 
     return 0;
 }
