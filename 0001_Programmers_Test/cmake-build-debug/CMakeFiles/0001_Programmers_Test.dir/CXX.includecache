@@ -7,8 +7,18 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/0001_Programmers_Test/main.cpp
+string.h
+-
+stdbool.h
+-
+stdlib.h
+-
+math.h
+-
 stdio.h
 -
-string.h
+stdbool.h
+-
+stdlib.h
 -
 
