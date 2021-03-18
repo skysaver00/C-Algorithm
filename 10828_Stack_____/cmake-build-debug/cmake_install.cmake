@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/skysaver00/IdeaProjects/C, C++/10845_Queue_____
+# Install script for directory: C:/Users/skysaver00/IdeaProjects/C, C++/10828_Stack_____
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/10845_Stack_____")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/10828_Stack_____")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/skysaver00/IdeaProjects/C, C++/10845_Queue_____/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/skysaver00/IdeaProjects/C, C++/10828_Stack_____/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
