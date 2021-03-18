@@ -32,4 +32,6 @@ int main() {
             else printf("%d\n", stack.top());
         }
     }
+    
+    return 0;
 }
