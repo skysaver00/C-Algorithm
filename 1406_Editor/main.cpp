@@ -12,7 +12,7 @@ int main() {
     scanf("%s", arr);
 
     int length = strlen(arr);
-    for(int i = 0; i < length; i++) {
+    for(int i = 0; i < strlen(arr); i++) {
         left.push(arr[i]);
     }
 
