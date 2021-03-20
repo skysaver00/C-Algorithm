@@ -16,6 +16,7 @@ int main() {
     int count = 0;
     while(1) {
         for(int ant = 0; ant < 10; ant++) {
+            printf("%d\n", ant);
             if(count == N) {
                 printf("%d\n", ant);
                 return 0;
@@ -24,6 +25,7 @@ int main() {
 
         for(int bnt = 1; bnt < 10; bnt++) {
             for(int ant = 0; ant < bnt; ant++) {
+                printf("%d%d\n", bnt, ant);
                 if(count == N) {
                     printf("%d%d\n", bnt, ant);
                     return 0;
@@ -34,6 +36,7 @@ int main() {
         for(int cnt = 2; cnt < 10; cnt++) {
             for(int bnt = 1; bnt < cnt; bnt++) {
                 for(int ant = 0; ant < bnt; ant++) {
+                    printf("%d%d%d\n", cnt, bnt, ant);
                     if(count == N) {
                         printf("%d%d%d\n", cnt, bnt, ant);
                         return 0;
@@ -46,6 +49,7 @@ int main() {
             for(int cnt = 2; cnt < dnt; cnt++) {
                 for(int bnt = 1; bnt < cnt; bnt++) {
                     for(int ant = 0; ant < bnt; ant++) {
+                        printf("%d%d%d%d\n", dnt, cnt, bnt, ant);
                         if(count == N) {
                             printf("%d%d%d%d\n", dnt, cnt, bnt, ant);
                             return 0;
@@ -60,6 +64,7 @@ int main() {
                 for(int cnt = 2; cnt < dnt; cnt++) {
                     for(int bnt = 1; bnt < cnt; bnt++) {
                         for(int ant = 0; ant < bnt; ant++) {
+                            printf("%d%d%d%d%d\n", ent, dnt, cnt, bnt, ant);
                             if(count == N) {
                                 printf("%d%d%d%d%d\n", ent, dnt, cnt, bnt, ant);
                                 return 0;
@@ -71,11 +76,12 @@ int main() {
         }
 
         for(int fnt = 5; fnt < 10; fnt++) {
-            for(int ent = 4; ent < 10; ent++) {
+            for(int ent = 4; ent < fnt; ent++) {
                 for(int dnt = 3; dnt < ent; dnt++) {
                     for(int cnt = 2; cnt < dnt; cnt++) {
                         for(int bnt = 1; bnt < cnt; bnt++) {
                             for(int ant = 0; ant < bnt; ant++) {
+                                printf("%d%d%d%d%d%d\n", fnt, ent, dnt, cnt, bnt, ant);
                                 if(count == N) {
                                     printf("%d%d%d%d%d%d\n", fnt, ent, dnt, cnt, bnt, ant);
                                     return 0;
@@ -88,12 +94,13 @@ int main() {
         }
 
         for(int gnt = 6; gnt < 10; gnt++) {
-            for(int fnt = 5; fnt < 10; fnt++) {
-                for(int ent = 4; ent < 10; ent++) {
+            for(int fnt = 5; fnt < gnt; fnt++) {
+                for(int ent = 4; ent < fnt; ent++) {
                     for(int dnt = 3; dnt < ent; dnt++) {
                         for(int cnt = 2; cnt < dnt; cnt++) {
                             for(int bnt = 1; bnt < cnt; bnt++) {
                                 for(int ant = 0; ant < bnt; ant++) {
+                                    printf("%d%d%d%d%d%d%d\n", gnt, fnt, ent, dnt, cnt, bnt, ant);
                                     if(count == N) {
                                         printf("%d%d%d%d%d%d%d\n", gnt, fnt, ent, dnt, cnt, bnt, ant);
                                         return 0;
@@ -107,13 +114,14 @@ int main() {
         }
 
         for(int hnt = 7; hnt < 10; hnt++) {
-            for(int gnt = 6; gnt < 10; gnt++) {
-                for(int fnt = 5; fnt < 10; fnt++) {
-                    for(int ent = 4; ent < 10; ent++) {
+            for(int gnt = 6; gnt < hnt; gnt++) {
+                for(int fnt = 5; fnt < gnt; fnt++) {
+                    for(int ent = 4; ent < fnt; ent++) {
                         for(int dnt = 3; dnt < ent; dnt++) {
                             for(int cnt = 2; cnt < dnt; cnt++) {
                                 for(int bnt = 1; bnt < cnt; bnt++) {
                                     for(int ant = 0; ant < bnt; ant++) {
+                                        printf("%d%d%d%d%d%d%d%d\n", hnt, gnt, fnt, ent, dnt, cnt, bnt, ant);
                                         if(count == N) {
                                             printf("%d%d%d%d%d%d%d%d\n", hnt, gnt, fnt, ent, dnt, cnt, bnt, ant);
                                             return 0;
