@@ -20,13 +20,17 @@ int main() {
             if(where == 0) {
                 mirStr.clear();
                 mirStr.append(str1, where + 2);
+                str1.clear();
+                str1.append(mirStr);
 
                 int flag = 0;
-                cout << mirStr;
+                cout << mirStr << "\n";
                 while(mirStr.find("0") == 0) {
                     flag = 1;
                     mirStr.clear();
                     mirStr.append(str1, where + 1);
+                    str1.clear();
+                    str1.append(mirStr);
                     cout << mirStr << "\n";
                 }
                 if(flag == 0) {
@@ -40,6 +44,8 @@ int main() {
                     flag = 1;
                     mirStr.clear();
                     mirStr.append(str1, where + 1);
+                    str1.clear();
+                    str1.append(mirStr);
                 }
                 if(flag == 0) {
                     printf("NO\n");
@@ -47,11 +53,27 @@ int main() {
                     str1.clear();
                     break;
                 }
-                cout << mirStr;
-            } else {
-                where = mirStr.find("01");
+                cout << mirStr << "\n";
             }
-            break;
+
+            where = mirStr.find("01");
+
+            if(where == 0) {
+                mirStr.clear();
+                mirStr.append(str1, where + 2);
+                str1.clear();
+                str1.append(mirStr);
+
+                cout << mirStr << "\n";
+            }
+
+            if(mirStr.empty() == true) {
+                printf("YES\n");
+                break;
+            } else if(mirStr.find("01") == -1 && mirStr.find("10") == -1) {
+                printf("NO\n");
+                break;
+            }
         }
     }
 
