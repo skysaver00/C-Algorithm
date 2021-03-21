@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1138_Standing_In_One_Line/cmake-build-debug/CMakeFiles/1138_Standing_In_One_Line.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1138_Standing_In_One_Line/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1138_Standing_In_One_Line/cmake-build-debug/CMakeFiles/rebuild_cache.dir
