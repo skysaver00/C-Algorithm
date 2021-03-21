@@ -12,7 +12,7 @@ int main() {
     if(str1.length() < 2) {
         sum[0] = str1.at(0) - 0x30;
 
-        if(sum[0] % 3 == 0) cout << "\nYES\n";
+        if(sum[0] % 3 == 0) cout << 0 << "\nYES\n";
         else cout << 0 << "\nNO\n";
 
         return 0;
@@ -24,7 +24,7 @@ int main() {
 
     int cnt = 0;
     if(sum[0] < 10) {
-        if(sum[0] % 3 == 0) cout << "\nYES\n";
+        if(sum[0] % 3 == 0) cout << 1 << "\nYES\n";
         else cout << 1 << "\nNO\n";
 
         return 0;
