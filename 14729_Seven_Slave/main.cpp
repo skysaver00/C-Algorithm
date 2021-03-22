@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <stdio.h>
 #include <queue>
 #include <algorithm>
@@ -36,4 +36,37 @@ int main() {
     }
 
     return 0;
-} //
+}*/ //priority queue 6452ms
+
+#include <stdio.h>
+
+short arr[100005];
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    double score;
+    while(t--) {
+        scanf("%lf", &score);
+
+        int intScore = (int)(score * 1000);
+
+        arr[intScore]++;
+    }
+
+    int cnt = 0;
+    for(int i = 0; i <= 100000; i++) {
+        if(arr[i] != 0) {
+            for(int j = 0; j < arr[i]; j++) {
+                if(cnt == 7) return 0;
+
+                double dbScore = i / (double)1000;
+                printf("%.3lf\n", dbScore);
+                cnt++;
+            }
+        }
+        else continue;
+    }
+
+    return 0;
+} //Radix Sort 2608ms

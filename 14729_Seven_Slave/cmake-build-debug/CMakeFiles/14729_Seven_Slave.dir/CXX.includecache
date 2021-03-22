@@ -7,12 +7,12 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/14729_Seven_Slave/main.cpp
-iostream
--
 stdio.h
 -
 queue
 -
 algorithm
+-
+stdio.h
 -
 
