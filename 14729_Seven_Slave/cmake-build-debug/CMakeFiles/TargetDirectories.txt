@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/14729_Seven_Slave/cmake-build-debug/CMakeFiles/14729_Seven_Slave.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/14729_Seven_Slave/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/14729_Seven_Slave/cmake-build-debug/CMakeFiles/rebuild_cache.dir
