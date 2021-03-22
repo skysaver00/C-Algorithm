@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include <queue>
 #include <algorithm>
 
@@ -8,16 +9,31 @@ int main() {
     int N;
     cin >> N;
 
-    double arr[10000000];
-    for(int i = 0; i < N; i++) {
-        cin >> arr[i];
+    priority_queue<double> queue;
+
+    double score;
+    while(N--) {
+        cin >> score;
+
+        if(queue.empty() || queue.top() >= score || queue.size() <= 7) {
+            queue.push(score);
+
+        }
+
+        if(queue.size() > 7) {
+            queue.pop();
+        }
     }
 
-    sort(arr, arr + N);
+    double arr[7];
+    for(int i = 6; i >= 0; i--) {
+        arr[i] = queue.top();
+        queue.pop();
+    }
 
-    for(int i = 0; i < 7; i ++) {
-        cout << arr[i] << "\n";
+    for(int i = 0; i < 7; i++) {
+        printf("%.3lf\n", arr[i]);
     }
 
     return 0;
-}
+} //
