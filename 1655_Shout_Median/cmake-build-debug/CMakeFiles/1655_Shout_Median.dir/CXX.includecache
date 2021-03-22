@@ -7,7 +7,7 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/1655_Shout_Median/main.cpp
-iostream
+stdio.h
 -
 queue
 -
