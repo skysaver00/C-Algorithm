@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/skysaver00/IdeaProjects/C, C++/2751_Sort_Numbers_2
+# Install script for directory: C:/Users/skysaver00/IdeaProjects/C, C++/2751_Number_Sort_2_____
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/skysaver00/IdeaProjects/C, C++/2751_Sort_Numbers_2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/skysaver00/IdeaProjects/C, C++/2751_Number_Sort_2_____/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

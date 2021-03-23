@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 
 int cnt = 0;
 int room[51][51];
@@ -126,5 +126,74 @@ int main() {
 
     printf("%d\n", cnt);
 
+    return 0;
+}*/ //이런 방법으로는 절대 못푼다.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <vector>
+#include <queue>
+
+using namespace std;
+int N, M;
+int room[51][51];
+int cleaned;
+
+int x[4] = {0, -1, 0, 1};
+int y[4] = {1, 0, -1, 0};
+
+void dfs(int r, int c, int d) {
+    if(room[r][c] == 0) {
+        cleaned++;
+        room[r][c] = 2;
+    }
+
+    for(int i = 0; i < N; i++) {
+        for(int j = 0; j < M; j++) {
+            printf("%d ", room[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    for(int i = d + 1; i <= d + 4; i++) {
+        int nX = r + x[i % 4];
+        int nY = c + y[i % 4];
+
+        if(nX >= 0 && nX <= M && nY >= 0 && nY <= N) {
+            if(room[nY][nX] == 0) dfs(nY, nX, i % 4);
+        }
+    }
+    int nX = r + x[(d + 2) % 4];
+    int nY = c + y[(d + 2) % 4];
+
+    if(room[nX][nY] == 2) {
+        dfs(nX, nY, d);
+    } else if(room[nX][nY] == 1) {
+        printf("%d\n", cleaned);
+
+        for(int i = 0; i < N; i++) {
+            for(int j = 0; j < M; j++) {
+                printf("%d ", room[i][j]);
+            }
+            printf("\n");
+        }
+        exit(0);
+    }
+}
+
+int main() {
+    scanf("%d %d", &N, &M);
+
+    int r, c, d;
+    scanf("%d %d %d", &r, &c, &d);
+
+    for(int i = 0; i < N; i++) {
+        for(int j = 0; j < M; j++) {
+            scanf("%d", &room[i][j]);
+        }
+    }
+
+    dfs(r, c, d);
     return 0;
 }
