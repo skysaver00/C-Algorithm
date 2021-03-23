@@ -70,6 +70,10 @@ int main() {
 
     startDFS(a);
 
+    for(int i = 1; i <= n; i++) {
+        if(depth[i] == 0 && i != a) depth[i] = -1;
+    }
+
     printf("%d\n", depth[b]);
 
     return 0;
