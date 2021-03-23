@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\2644_Calculating_Kinship.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\2644_Calculating_Kinship.dir/objects.a @CMakeFiles\2644_Calculating_Kinship.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\2644_Calculating_Kinship.dir/objects.a -Wl,--no-whole-archive  -o 2644_Calculating_Kinship.exe -Wl,--out-implib,lib2644_Calculating_Kinship.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2644_Calculating_Kinship.dir\linklibs.rsp
