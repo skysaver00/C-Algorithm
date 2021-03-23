@@ -139,8 +139,8 @@ int N, M;
 int room[51][51];
 int cleaned;
 
-int x[4] = {0, -1, 0, 1};
-int y[4] = {1, 0, -1, 0};
+int x[4] = {-1, 0, 1, 0};
+int y[4] = {0, 1, 0, -1};
 
 void dfs(int r, int c, int d) {
     if(room[r][c] == 0) {
@@ -148,38 +148,27 @@ void dfs(int r, int c, int d) {
         room[r][c] = 2;
     }
 
-    for(int i = 0; i < N; i++) {
-        for(int j = 0; j < M; j++) {
-            printf("%d ", room[i][j]);
+    for(int i = 0; i <= 3; i++) {
+        int nd = (d + 3 - i) % 4;
+        int nX = r + x[nd];
+        int nY = c + y[nd];
+
+        if (nX < 0 || nY < 0 || nX >= N || nY >= M) {
+            continue;
         }
-        printf("\n");
-    }
-    printf("\n");
 
-    for(int i = d + 1; i <= d + 4; i++) {
-        int nX = r + x[i % 4];
-        int nY = c + y[i % 4];
-
-        if(nX >= 0 && nX <= M && nY >= 0 && nY <= N) {
-            if(room[nY][nX] == 0) dfs(nY, nX, i % 4);
+        if (room[nX][nY] == 0) {
+            dfs(nX, nY, nd);
         }
     }
     int nX = r + x[(d + 2) % 4];
     int nY = c + y[(d + 2) % 4];
 
-    if(room[nX][nY] == 2) {
-        dfs(nX, nY, d);
-    } else if(room[nX][nY] == 1) {
+    if(room[nX][nY] == 1) {
         printf("%d\n", cleaned);
-
-        for(int i = 0; i < N; i++) {
-            for(int j = 0; j < M; j++) {
-                printf("%d ", room[i][j]);
-            }
-            printf("\n");
-        }
         exit(0);
     }
+    dfs(nX, nY, d);
 }
 
 int main() {
