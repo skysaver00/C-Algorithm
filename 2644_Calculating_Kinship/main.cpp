@@ -9,57 +9,32 @@ int degree = 0;
 vector<int> dfs[101];
 queue<int> bfs;
 int check[101];
+int depth[101];
 
-void startDFS(int start, int end) {
-    if(start == end) {
-        cout << degree << "\n";
-        exit(0);
-    }
-
-    printf("%d %d %d\n", start, end, degree);
-
+void startDFS(int start) {
     if(check[start] == 1) {
-        printf("cnecked: %d %d %d\n", start, end, degree);
-        degree--;
         return;
-    } check[start] = 1;
-    printf("checked the value %d\n", start);
-
-    if(degree != 0 && dfs[start].size() == 1) {
-        printf("size 0: %d %d %d\n", start, end, degree);
-        degree--;
     }
+    check[start] = 1;
 
     for(int i = 0; i < dfs[start].size(); i++) {
         int y = dfs[start][i];
-        degree++;
-        if(check[y] != 1) startDFS(y, end);
-        else degree--;
+
+        if(check[y] != 1) {
+            depth[y] = depth[start] + 1;
+            //printf("%d %d %d %d\n", start, y, depth[start], depth[y]);
+            startDFS(y);
+        }
     }
 }
 
-void startBFS(int start, int end) {
-    if(start == end) {
-        cout << degree << "\n";
-        exit(0);
-    }
+void startBFS(int start) {
     bfs.push(start);
     check[start] = 1;
 
     while(!bfs.empty()) {
         int x = bfs.front();
         bfs.pop();
-        printf("mother is %d ", x);
-
-        if(x == end) {
-            cout << degree << "\n";
-            exit(0);
-        }
-
-
-        if(dfs[x].size() == 1) {
-            degree--;
-        }
 
         degree++;
         for(int i = 0; i < dfs[x].size(); i++) {
@@ -67,9 +42,10 @@ void startBFS(int start, int end) {
 
             if(check[y] == 0) {
                 bfs.push(y);
+                depth[y] = depth[x] + 1;
+                //printf("%d %d %d %d\n", x, y, depth[x], depth[y]);
                 check[y] = 1;
             }
-            printf("%d %d\n", y, degree);
         }
     }
 }
@@ -92,7 +68,9 @@ int main() {
         dfs[y].push_back(x);
     }
 
-    startDFS(a, b);
+    startDFS(a);
+
+    printf("%d\n", depth[b]);
 
     return 0;
 }
