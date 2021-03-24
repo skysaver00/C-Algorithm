@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\20170_Commemorative_Dice.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\20170_Commemorative_Dice.dir/objects.a @CMakeFiles\20170_Commemorative_Dice.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\20170_Commemorative_Dice.dir/objects.a -Wl,--no-whole-archive  -o 20170_Commemorative_Dice.exe -Wl,--out-implib,lib20170_Commemorative_Dice.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\20170_Commemorative_Dice.dir\linklibs.rsp
