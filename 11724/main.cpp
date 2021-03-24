@@ -8,7 +8,14 @@ vector<int> graph[1001];
 queue<int> bfs;
 
 void startDFS(int i) {
+    if(check[i] == 1) return;
+    check[i] = 1;
 
+    for(int j = 0; j < graph[i].size(); j++) {
+        int y = graph[i][j];
+
+        startDFS(y);
+    }
 }
 
 void startBFS(int i) {
@@ -43,13 +50,13 @@ int main() {
     }
 
     int cnt = 1;
-    startBFS(1);
+    startDFS(1);
 
     for(int i = 1; i <= N; i++) {
 
         if(check[i] == 0) {
             cnt++;
-            startBFS(i);
+            startDFS(i);
         }
     }
 
