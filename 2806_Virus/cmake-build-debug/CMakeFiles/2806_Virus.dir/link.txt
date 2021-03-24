@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\2806_Virus.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\2806_Virus.dir/objects.a @CMakeFiles\2806_Virus.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\2806_Virus.dir/objects.a -Wl,--no-whole-archive  -o 2806_Virus.exe -Wl,--out-implib,lib2806_Virus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2806_Virus.dir\linklibs.rsp
