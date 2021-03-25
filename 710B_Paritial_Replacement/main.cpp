@@ -39,7 +39,7 @@ int main() {
         for(int i = start; i <= end; i++) {
             if(deathCount == k){
                 if(str[deathCount + start] != '*') {
-                    int back = deathCount + start - 1;
+                    int back = deathCount + start;
                     while(back--) {
                         if(str[back] == '*') {
                             str[back] = 'x';
