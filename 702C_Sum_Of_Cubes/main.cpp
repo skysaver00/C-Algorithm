@@ -3,32 +3,50 @@
 using namespace std;
 
 long long arr[10001];
+long long x;
+long long sub;
+
+bool binary_check(int left, int right) {
+    if(left > right) {
+        return false;
+    }
+
+    int mid = (left + right) / 2;
+    if(sub > arr[mid]) {
+        left = mid + 1;
+        binary_check(left, right);
+    } else if(sub < arr[mid]) {
+        right = mid - 1;
+        binary_check(left, right);
+    } else if(sub == arr[mid] && arr[mid] != 0){
+        return true;
+    }
+}
 
 int main() {
     int t;
     cin >> t;
 
-    for(int i = 1; i <= 10000; i++) {
+    for(long long i = 1; i <= 10000; i++) {
         arr[i] = i * i * i;
     }
 
     while(t--) {
-        long long x;
         cin >> x;
+        bool flag = false;
 
         for(int i = 1; i <= 10000; i++) {
-            for(int j = 1; j <= 10000; j++) {
-                if(x == arr[j]) {
-                    cout << "NO\n";
-                    continue;
-                }
-                if(x == arr[i] + arr[j]) {
-                    cout << "YES\n";
-                    continue;
-                }
+            sub = x - arr[i];
+            if(sub <= 0) break;
+
+            bool check = binary_check(0, 10000);
+            if(check) {
+                printf("YES\n");
+                flag = true;
+                break;
             }
         }
-        cout << "NO\n";
+        if(!flag) printf("NO\n");
     }
 
     return 0;
