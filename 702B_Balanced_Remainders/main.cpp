@@ -1,75 +1,69 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-short arr[30001];
+int arr[3];
 
-int max(int a, int b, int c) {
-    int m;
-    if(a > b) m = a;
-    else m = b;
-    if(c > m) m = c;
-
-    return m;
+int check_3(int num) {
+    if(num % 3 == 0) return 0;
+    else if(num % 3 == 1) return 1;
+    else return 2;
 }
 
 int main() {
     int t;
-    int n;
-    scanf("%d", &t);
+    cin >> t;
 
-    int c0, c1, c2;
-    c0 = c1 = c2 = 0;
     while(t--) {
-        scanf("%d", &n);
+        int n;
+        cin >> n;
+        int cnt = 0;
+
         for(int i = 0; i < n; i++) {
-            scanf("%d", &arr[i]);
+            int a;
+            cin >> a;
 
-            if(arr[i] % 3 == 0) c0++;
-            else if(arr[i] % 3 == 1) c1++;
-            else c2++;
+            arr[check_3(a)]++;
         }
 
-        int bal_n = n / 3;
-        int ma = max(c0, c1, c2);
-        int ans = 0;
-        if(ma == c0) {
-            while(c0 > bal_n) {
-                c0--;
-                c1++;
-                ans++;
-            }
-            while(c1 > bal_n) {
-                c1--;
-                c2++;
-                ans++;
-            }
+        if(arr[0] > (n/3)) {
+            int min = arr[0] - (n/3);
+            cnt += min;
+            arr[0] -= min;
+            arr[1] += min;
         }
-        else if(ma == c1) {
-            while(c1 > bal_n) {
-                c1--;
-                c2++;
-                ans++;
-            }
-            while(c2 > bal_n) {
-                c2--;
-                c0++;
-                ans++;
-            }
+
+        if(arr[1] > (n/3)) {
+            int min = arr[1] - (n/3);
+            cnt += min;
+            arr[1] -= min;
+            arr[2] += min;
         }
-        else {
-            while(c2 > bal_n) {
-                c2--;
-                c0++;
-                ans++;
-            }
-            while(c0 > bal_n) {
-                c0--;
-                c1++;
-                ans++;
-            }
+
+        if(arr[2] > (n/3)) {
+            int min = arr[2] - (n/3);
+            cnt += min;
+            arr[2] -= min;
+            arr[0] += min;
         }
-        printf("%d\n", ans);
-        c0 = c1 = c2 = 0;
+
+        if(arr[0] > (n/3)) {
+            int min = arr[0] - (n/3);
+            cnt += min;
+            arr[0] -= min;
+            arr[1] += min;
+        }
+
+        if(arr[1] > (n/3)) {
+            int min = arr[1] - (n/3);
+            cnt += min;
+            arr[1] -= min;
+            arr[2] += min;
+        }
+
+        printf("%d\n", cnt);
+
+        for(int i = 0; i < 3; i++) {
+            arr[i] = 0;
+        }
     }
-
-    return 0;
 }
