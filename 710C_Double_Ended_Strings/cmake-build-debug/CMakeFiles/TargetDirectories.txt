@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/710C_Double_Ended_Strings/cmake-build-debug/CMakeFiles/710C_Double_Ended_Strings.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/710C_Double_Ended_Strings/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/710C_Double_Ended_Strings/cmake-build-debug/CMakeFiles/rebuild_cache.dir

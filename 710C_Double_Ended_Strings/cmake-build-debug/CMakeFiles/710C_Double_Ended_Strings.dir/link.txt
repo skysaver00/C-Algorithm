@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\710C_Double_Ended_Strings.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\710C_Double_Ended_Strings.dir/objects.a @CMakeFiles\710C_Double_Ended_Strings.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\710C_Double_Ended_Strings.dir/objects.a -Wl,--no-whole-archive  -o 710C_Double_Ended_Strings.exe -Wl,--out-implib,lib710C_Double_Ended_Strings.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\710C_Double_Ended_Strings.dir\linklibs.rsp
