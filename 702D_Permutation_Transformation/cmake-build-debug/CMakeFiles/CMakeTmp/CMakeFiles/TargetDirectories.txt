@@ -1,3 +1,0 @@
-C:/Users/skysaver00/IdeaProjects/C, C++/702D_Permutation_Transformation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_1d15c.dir
-C:/Users/skysaver00/IdeaProjects/C, C++/702D_Permutation_Transformation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/edit_cache.dir
-C:/Users/skysaver00/IdeaProjects/C, C++/702D_Permutation_Transformation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/rebuild_cache.dir
