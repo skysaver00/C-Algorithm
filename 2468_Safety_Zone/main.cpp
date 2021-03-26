@@ -1,31 +1,35 @@
 #include <stdio.h>
-#include <algorithm>
+#include <memory.h>
 
 using namespace std;
-
-int arr[101][101];
-bool visit[101][101];;
+int land[101][101];
+int cnt = 1;
+bool flag = false;
+int check[101][101];
+bool sink[101][101];
 int n;
+int max2 = 1;
 
-int dy[4] = {-1, 0, 1, 0};
-int dx[4] = {0, 1, 0, -1};
+int _x[4] = {1, 0, -1, 0};
+int _y[4] = {0, 1, 0, -1};
 
-void dfs(int y, int x) {
-    if (visit[y][x]) return;
-    visit[y][x] = true;
+void startDFS(int y, int x) {
+    if(check[y][x] != 0) return;
+    if(sink[y][x] == 0) return;
+    flag = true;
+    check[y][x] = cnt;
 
-    for (int k = 0; k < 4; k++) {
-        int newy = y + dy[k];
-        int newx = x + dx[k];
+    for(int i = 0; i < 4; i++) {
+        int newY = y + _y[i];
+        int newX = x + _x[i];
 
-        if (newy >= 0 && newy < n && newx >= 0 && newx < n && !visit[newy][newx] && map[newy][newx] > rain) {
-            dfs(newy, newx);
+        if(check[newY][newX] == 0 && sink[newY][newX] != 0 && newY < n && newY >= 0 && newX < n && newX >= 0) {
+            startDFS(newY, newX);
         }
     }
 }
 
 int main() {
-    int n;
     int max = -9999;
     int min = 9999;
 
@@ -33,29 +37,44 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            scanf("%d", &arr[i][j]);
-            if(max < arr[i][j]) max = arr[i][j];
-            if(max > arr[i][j]) min = arr[i][j];
+            scanf("%d", &land[i][j]);
+            if(max < land[i][j]) max = land[i][j];
+            if(min > land[i][j]) min = land[i][j];
         }
     }
 
-    bool sink[101][101];
-    for(int i = min; i <= max; i++) {
+    for(int i = min - 1; i < max; i++) {
         for(int j = 0; j < n; j++) {
             for(int k = 0; k < n; k++) {
-                if(arr[j][k] <= i) sink[j][k] = false;
+                if(land[j][k] <= i) sink[j][k] = false;
                 else sink[j][k] = true;
             }
         }
 
         for(int j = 0; j < n; j++) {
             for(int k = 0; k < n; k++) {
-                printf("%d\t", sink[j][k]);
+                startDFS(j, k);
+
+                if(flag) {
+                    cnt++;
+                    flag = false;
+                }
             }
-            printf("\n");
         }
-        printf("\n");
 
 
+        for(int j = 0; j < n; j++) {
+            for(int k = 0; k < n; k++) {
+                if(check[j][k] > max2) max2 = check[j][k];
+            }
+        }
+
+        for(int j = 0; j < 100; j++) {
+            memset(check[j], 0, sizeof(int) * 100);
+            memset(sink[j], false, sizeof(bool) * 100);
+        }
+        cnt = 1;
     }
+
+    printf("%d\n", max2);
 }
