@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/skysaver00/IdeaProjects/C, C++/2021_2_Moons_and_Umbrellas/main.cpp
+iostream
+-
+string
+-
+

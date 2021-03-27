@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2021_2_Moons_and_Umbrellas/cmake-build-debug/CMakeFiles/2021_2_Moons_and_Umbrellas.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2021_2_Moons_and_Umbrellas/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2021_2_Moons_and_Umbrellas/cmake-build-debug/CMakeFiles/rebuild_cache.dir

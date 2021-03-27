@@ -2,6 +2,7 @@
 #include <algorithm>
 
 using namespace std;
+int cnt = 1;
 
 int main() {
     int t;
@@ -26,18 +27,16 @@ int main() {
                     min_arr = j;
                 }
             }
-            if(min_arr != -1) {
-                arr[min_arr] = arr[i];
-                arr[i] = min;
-            }
+
             if(min_arr != -1) {
                 sum += min_arr - i + 1;
-                sort(arr + i, arr + min_arr);
+                reverse(arr + i, arr + min_arr + 1);
             }
             else sum++;
         }
 
-        printf("Case #%d: %d\n", i + 1, sum);
+        printf("Case #%d: %d\n", cnt, sum);
+        cnt++;
     }
     return 0;
 }
