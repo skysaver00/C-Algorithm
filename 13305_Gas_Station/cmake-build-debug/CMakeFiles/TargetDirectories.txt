@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/13305_Gas_Station/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/13305_Gas_Station/cmake-build-debug/CMakeFiles/13305_Gas_Station.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/13305_Gas_Station/cmake-build-debug/CMakeFiles/rebuild_cache.dir
