@@ -26,6 +26,7 @@ int main() {
     cards.pop();
 
     sum = preCard;
+    cout << sum << "\n";
 
     int len = cards.size();
     for(int i = 0; i < len; i++) {
@@ -33,6 +34,7 @@ int main() {
         cards.pop();
         sum += nextCard;
         preCard = nextCard;
+        cout << sum << "\n";
     }
     cout << sum << "\n";
 

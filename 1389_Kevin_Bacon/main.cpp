@@ -4,18 +4,14 @@
 
 using namespace std;
 
-int min(int a, int b) {
-    if(a < b) return a;
-    else return b;
-}
-
 vector<int> graph[101];
 queue<int> bfs;
-
+int check[101];
 int depth[101];
 
 void startBFS(int a) {
     bfs.push(a);
+    check[a] = true;
 
     while(!bfs.empty()) {
         int next = bfs.front();
@@ -24,8 +20,11 @@ void startBFS(int a) {
         for(int i = 0; i < graph[next].size(); i++) {
             int y = graph[next][i];
 
-            depth[y] = min(depth[y] ,depth[next] + 1);
-            bfs.push(y);
+            if(check[y] == 0) {
+                depth[y] = depth[next] + 1;
+                check[y] = 1;
+                bfs.push(y);
+            }
         }
     }
 }
@@ -48,14 +47,16 @@ int main() {
         startBFS(i);
 
         int sum = 0;
-        for(int j = 1; j <= m; j++) {
+        for(int j = 0; j <= n; j++) {
             sum += depth[j];
+            //printf("%d ", depth[j]);
             depth[j] = 0;
             check[j] = 0;
         }if(sum <= min) {
             min = sum;
             minPerson = i;
         }
+        //printf("\n");
     }
     printf("%d\n", minPerson);
 
