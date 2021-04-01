@@ -17,7 +17,6 @@ void normalBFS(int i, int j) {
     bfs[0].push(i);
     bfs[1].push(j);
     char color = arr[i][j];
-    printf("%c %d %d\n", color, i, j);
     flag = true;
     normal[i][j] = cnt;
 
@@ -31,7 +30,6 @@ void normalBFS(int i, int j) {
         for(int a = 0; a < 4; a++) {
             int next_i = front_i + x[a];
             int next_j = front_j + y[a];
-            printf("%d %d\n", next_i, next_j);
 
             if(arr[next_i][next_j] == color && normal[next_i][next_j] == 0) {
                 normal[next_i][next_j] = cnt;
@@ -42,14 +40,13 @@ void normalBFS(int i, int j) {
     }
 }
 
-void blindDFS(int i, int j) {
-    if(normal[i][j] != 0) return;
+void blindBFS(int i, int j) {
+    if(blind[i][j] != 0) return;
     bfs[0].push(i);
     bfs[1].push(j);
     char color = arr[i][j];
-    printf("%c %d %d\n", color, i, j);
     flag = true;
-    normal[i][j] = cnt;
+    blind[i][j] = cnt;
 
     while(!bfs[0].empty() && !bfs[1].empty()) {
         int front_i = bfs[0].front();
@@ -61,10 +58,9 @@ void blindDFS(int i, int j) {
         for(int a = 0; a < 4; a++) {
             int next_i = front_i + x[a];
             int next_j = front_j + y[a];
-            printf("%d %d\n", next_i, next_j);
 
-            if(arr[next_i][next_j] == color && normal[next_i][next_j] == 0) {
-                normal[next_i][next_j] = cnt;
+            if(arr[next_i][next_j] == color && blind[next_i][next_j] == 0) {
+                blind[next_i][next_j] = cnt;
                 bfs[0].push(next_i);
                 bfs[1].push(next_j);
             }
@@ -89,9 +85,31 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            printf("%d ", normal[i][j]);
-        }printf("\n");
+            if(arr[i][j] == 'G') arr[i][j] = 'R';
+        }
     }
+
+    cnt = 1;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            blindBFS(i, j);
+
+            if(flag) cnt++;
+            flag = false;
+        }
+    }
+
+    int maxNormal = -99999999;
+    int maxBlind = -99999999;
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(maxNormal < normal[i][j]) maxNormal = normal[i][j];
+            if(maxBlind < blind[i][j]) maxBlind = blind[i][j];
+        }
+    }
+
+    cout << maxNormal << " " << maxBlind << "\n";
 
     return 0;
 }
