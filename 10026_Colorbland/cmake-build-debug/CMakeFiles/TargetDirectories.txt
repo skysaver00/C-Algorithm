@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/10026_Colorbland/cmake-build-debug/CMakeFiles/10026_Colorbland.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10026_Colorbland/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10026_Colorbland/cmake-build-debug/CMakeFiles/rebuild_cache.dir
