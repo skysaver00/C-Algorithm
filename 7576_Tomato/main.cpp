@@ -2,8 +2,9 @@
 
 using namespace std;
 
-short arr[1001][1001];
-short check[1001][1001];
+int arr[1001][1001];
+int check[1001][1001];
+bool visited[1001][1001];
 
 queue<int> bfs[2];
 
@@ -14,6 +15,7 @@ int m, n;
 void startBFS(int i, int j) {
     if (check[i][j] <= 1) return;
     check[i][j] = 1;
+    visited[i][j] = true;
     bfs[0].push(i);
     bfs[1].push(j);
 
@@ -28,12 +30,12 @@ void startBFS(int i, int j) {
             int nextY = jy + y[i];
             if (nextX < 0 && nextX >= n && nextY < 0 && nextY >= m) continue;
 
-            if (check[ix][jy] + 1 <= check[nextX][nextY] && check[nextX][nextY] != -1) {
+            if (check[ix][jy] + 1 <= check[nextX][nextY] && check[nextX][nextY] != -1 && !visited[nextX][nextY]) {
                 check[nextX][nextY] = check[ix][jy] + 1;
+                visited[nextX][nextY] = true;
                 bfs[0].push(nextX);
                 bfs[1].push(nextY);
-                cout << nextX << nextY << bfs[0].size() << bfs[1].size() << endl;
-
+                //cout << nextX << nextY << bfs[0].size() << bfs[1].size() << endl;
             }
         }
     }
@@ -63,6 +65,7 @@ int main() {
                     for (int b = 0; b < m; b++) printf("%d ", check[a][b]);
                     printf("\n");
                 }*/
+                for(int k = 0; k < n; k++) memset(visited[k], false, sizeof(bool) * m);
             }
         }
     }
@@ -77,6 +80,8 @@ int main() {
             if (max < check[i][j] && check[i][j] != -1) max = check[i][j];
         }
     }
+
+    if(max == -999999999) max = 1;
 
     cout << max - 1 << endl;
     return 0;
