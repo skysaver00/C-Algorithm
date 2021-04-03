@@ -10,7 +10,7 @@ int y[8] = {1, -1, 2, -2, 2, -2, 1, -1};
 int endX, endY;
 
 void startBFS(int i, int j) {
-    if(check[i][j] != 0) return;
+    if(check[i][j] != 99999999) return;
     check[i][j] = 1;
 
     bfs[0].push(i);
@@ -32,7 +32,6 @@ void startBFS(int i, int j) {
 
             if(check[ix][jy] + 1 < check[nextX][nextY]) {
                 check[nextX][nextY] = check[ix][jy] + 1;
-                cout << nextX << nextY << endl;
                 bfs[0].push(nextX);
                 bfs[1].push(nextY);
             }
@@ -57,6 +56,11 @@ int main() {
 
 
         cin >> endX >> endY;
+
+        if(startX == endX && startY == endY) {
+            cout << 0 << endl;
+            continue;
+        }
 
         startBFS(startX, startY);
 
