@@ -35,7 +35,7 @@ void startBFS(int i, int j) {
                 visited[nextX][nextY] = true;
                 bfs[0].push(nextX);
                 bfs[1].push(nextY);
-                //cout << nextX << nextY << bfs[0].size() << bfs[1].size() << endl;
+                cout << nextX << nextY << bfs[0].size() << bfs[1].size() << endl;
             }
         }
     }
