@@ -28,9 +28,9 @@ void startBFS(int i, int j) {
         for (int i = 0; i < 4; i++) {
             int nextX = ix + x[i];
             int nextY = jy + y[i];
-            if (nextX < 0 && nextX >= n && nextY < 0 && nextY >= m) continue;
+            if (nextX < 0 || nextX >= n || nextY < 0 || nextY >= m) continue;
 
-            if (check[ix][jy] + 1 <= check[nextX][nextY] && check[nextX][nextY] != -1 && !visited[nextX][nextY]) {
+            if (check[ix][jy] + 1 < check[nextX][nextY] && check[nextX][nextY] != 1 && !visited[nextX][nextY]) {
                 check[nextX][nextY] = check[ix][jy] + 1;
                 visited[nextX][nextY] = true;
                 bfs[0].push(nextX);
@@ -46,7 +46,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            check[i][j] = 999999;
+            check[i][j] = 99999999;
         }
     }
 
@@ -59,12 +59,12 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            if (arr[i][j] == 1) {
+            if(arr[i][j] == 1) {
                 startBFS(i, j);
                 /*for (int a = 0; a < n; a++) {
                     for (int b = 0; b < m; b++) printf("%d ", check[a][b]);
                     printf("\n");
-                }*/
+                }printf("\n");*/
                 for(int k = 0; k < n; k++) memset(visited[k], false, sizeof(bool) * m);
             }
         }
