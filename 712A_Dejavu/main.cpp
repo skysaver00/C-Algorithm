@@ -33,7 +33,8 @@ int main() {
             for(int j = 0; j < dvd; j++) {
                 if(str2.at(j) != str2.at(len2 - 1 - j)) {
                     printf("YES\n");
-                    cout << str2 << "\n";
+                    strcpy(str, str2.c_str());
+                    printf("%s\n", str);
                     flag = true;
                     break;
                 }
