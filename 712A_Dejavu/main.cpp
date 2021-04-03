@@ -1,16 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string str;
+char str[300005];
 
 int main() {
     int t;
-    cin >> t;
+    scanf("%d", &t);
     while(t--) {
-        cin >> str;
+        scanf("%s", str);
 
-        int len = str.length();
-        for(int i = 0; i <= len; i++) {
+        int len = strlen(str);
+        bool flag = false;
+        for(int i = 0; i < len; i++) {
+            if(str[i] != 'a') {
+                flag = true;
+                break;
+            }
+        }
+
+        if(!flag) {
+            printf("NO\n");
+            continue;
+        } else flag = false;
+
+        for(int i = 0; i < len; i++) {
             string str2 = str;
             str2.insert(i, "a");
 
@@ -18,8 +31,16 @@ int main() {
             int dvd = len2 / 2;
 
             for(int j = 0; j < dvd; j++) {
-
+                if(str2.at(j) != str2.at(len2 - 1 - j)) {
+                    printf("YES\n");
+                    cout << str2 << "\n";
+                    flag = true;
+                    break;
+                }
             }
+
+            if(flag) break;
         }
     }
+    return 0;
 }
