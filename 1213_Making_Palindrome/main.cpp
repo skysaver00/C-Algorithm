@@ -19,10 +19,6 @@ int main() {
         alphabet[str.at(i) - 0x41]++;
     }
 
-    for(int i = 0; i < 26; i++) {
-        cout << alphabet[i] << " ";
-    }
-
     int check = 0;
     for(int i = 0 ; i < 26; i++) {
         if(alphabet[i] % 2 != 0) check++;
@@ -37,10 +33,9 @@ int main() {
     for(int i = 0; i < 26; i++) {
         if(alphabet[i] >= 2) {
             make.insert(ins, letter[i]);
-            i--;
             alphabet[i] -= 2;
             ins++;
-            cout << make << endl;
+            i--;
         }
     }
 
