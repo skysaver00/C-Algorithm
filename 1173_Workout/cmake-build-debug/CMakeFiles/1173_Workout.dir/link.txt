@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\1173_Workout.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\1173_Workout.dir/objects.a @CMakeFiles\1173_Workout.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\1173_Workout.dir/objects.a -Wl,--no-whole-archive  -o 1173_Workout.exe -Wl,--out-implib,lib1173_Workout.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\1173_Workout.dir\linklibs.rsp
