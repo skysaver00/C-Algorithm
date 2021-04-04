@@ -40,9 +40,6 @@ default_target: all
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -70,17 +67,17 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp"
+CMAKE_SOURCE_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp"
+CMAKE_BINARY_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@echo No interactive CMake dialog available...
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
 	"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
@@ -91,7 +88,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@echo Running CMake to regenerate build system...
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
 	"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -101,10 +98,10 @@ rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
 # The main all target
-all:
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles" "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles\progress.marks"
+all: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles" "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -127,61 +124,74 @@ preinstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 preinstall
 .PHONY : preinstall/fast
 
+# clear depends
+depend:
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+.PHONY : depend
+
 #=============================================================================
-# Target rules for targets named cmTC_0b076
+# Target rules for targets named 7569_Tomato
 
 # Build rule for target.
-cmTC_0b076:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cmTC_0b076
-.PHONY : cmTC_0b076
+7569_Tomato: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 7569_Tomato
+.PHONY : 7569_Tomato
 
 # fast build rule for target.
-cmTC_0b076/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/build
-.PHONY : cmTC_0b076/fast
+7569_Tomato/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/build
+.PHONY : 7569_Tomato/fast
 
-testCCompiler.obj: testCCompiler.c.obj
+main.obj: main.cpp.obj
 
-.PHONY : testCCompiler.obj
+.PHONY : main.obj
 
 # target to build an object file
-testCCompiler.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/testCCompiler.c.obj
-.PHONY : testCCompiler.c.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-testCCompiler.i: testCCompiler.c.i
+main.i: main.cpp.i
 
-.PHONY : testCCompiler.i
+.PHONY : main.i
 
 # target to preprocess a source file
-testCCompiler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/testCCompiler.c.i
-.PHONY : testCCompiler.c.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-testCCompiler.s: testCCompiler.c.s
+main.s: main.cpp.s
 
-.PHONY : testCCompiler.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-testCCompiler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/testCCompiler.c.s
-.PHONY : testCCompiler.c.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
+	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... cmTC_0b076
-	@echo ... testCCompiler.obj
-	@echo ... testCCompiler.i
-	@echo ... testCCompiler.s
+	@echo ... 7569_Tomato
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 
 
 #=============================================================================
 # Special targets to cleanup operation of make.
+
+# Special rule to run CMake to check the build system integrity.
+# No rule that depends on this can have commands that come from listfiles
+# because they might be regenerated.
+cmake_check_build_system:
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+.PHONY : cmake_check_build_system
 

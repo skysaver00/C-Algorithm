@@ -36,9 +36,6 @@ default_target: all
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -66,16 +63,16 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp"
+CMAKE_SOURCE_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp"
+CMAKE_BINARY_DIR = "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/cmTC_0b076.dir/all
+all: CMakeFiles/7569_Tomato.dir/all
 
 .PHONY : all
 
@@ -85,37 +82,44 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/cmTC_0b076.dir/clean
+clean: CMakeFiles/7569_Tomato.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cmTC_0b076.dir
+# Target rules for target CMakeFiles/7569_Tomato.dir
 
 # All Build rule for target.
-CMakeFiles/cmTC_0b076.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles" --progress-num=1,2 "Built target cmTC_0b076"
-.PHONY : CMakeFiles/cmTC_0b076.dir/all
+CMakeFiles/7569_Tomato.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target 7569_Tomato"
+.PHONY : CMakeFiles/7569_Tomato.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cmTC_0b076.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/cmTC_0b076.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles\CMakeTmp\CMakeFiles" 0
-.PHONY : CMakeFiles/cmTC_0b076.dir/rule
+CMakeFiles/7569_Tomato.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/7569_Tomato.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\skysaver00\IdeaProjects\C, C++\7569_Tomato\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/7569_Tomato.dir/rule
 
 # Convenience name for target.
-cmTC_0b076: CMakeFiles/cmTC_0b076.dir/rule
+7569_Tomato: CMakeFiles/7569_Tomato.dir/rule
 
-.PHONY : cmTC_0b076
+.PHONY : 7569_Tomato
 
 # clean rule for target.
-CMakeFiles/cmTC_0b076.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\cmTC_0b076.dir\build.make CMakeFiles/cmTC_0b076.dir/clean
-.PHONY : CMakeFiles/cmTC_0b076.dir/clean
+CMakeFiles/7569_Tomato.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\7569_Tomato.dir\build.make CMakeFiles/7569_Tomato.dir/clean
+.PHONY : CMakeFiles/7569_Tomato.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
+
+# Special rule to run CMake to check the build system integrity.
+# No rule that depends on this can have commands that come from listfiles
+# because they might be regenerated.
+cmake_check_build_system:
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+.PHONY : cmake_check_build_system
 
