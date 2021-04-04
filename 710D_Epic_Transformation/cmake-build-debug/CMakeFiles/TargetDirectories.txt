@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/710D_Epic_Transformation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/710D_Epic_Transformation/cmake-build-debug/CMakeFiles/710D_Epic_Transformation.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/710D_Epic_Transformation/cmake-build-debug/CMakeFiles/edit_cache.dir
