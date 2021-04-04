@@ -17,19 +17,24 @@ int main() {
         sort(inSort, inSort + n);
 
         int rightNow = 0;
+        int j = 0;
         arr[rightNow]++;
         for(int i = 1; i < n; i++) {
-            if(arr[rightNow] != arr[i]) {
-                rightNow = i;
+            if(inSort[j] != inSort[i]) {
+                rightNow++; j = i;
                 arr[rightNow]++;
             } else {
                 arr[rightNow]++;
             }
         }
 
-        for(int i = 0; i < rightNow; i++) {
-            printf("%d ", arr[i]);
-        }printf("\n");
+        sort(arr, arr + rightNow + 1);
+
+
+
+        for(int i = 0; i <= rightNow; i++) {
+            arr[i] = 0;
+        }
     }
 
     return 0;

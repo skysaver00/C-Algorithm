@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/710D_Epic_Transformation/main.cpp
-cstdio
--
-algorithm
+bits/stdc++.h
 -
 
