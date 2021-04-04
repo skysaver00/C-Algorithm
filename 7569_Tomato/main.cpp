@@ -81,14 +81,6 @@ int main() {
 
     int max = -999999999;
 
-    /*for(int k = 0; k < l; k++) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                printf("%d ", check[i][j][k]);
-            }printf("\n");
-        }printf("\n");
-    }*/
-
     for(int k = 0; k < l; k++) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
