@@ -12,7 +12,6 @@ int gcd(long long big, long long small) {
     for(int i = 2; i <= small; i++) {
         if(big % i == 0 && small % i == 0) {
             greatest *= small;
-            ddddds
             return greatest;
         }
     }
