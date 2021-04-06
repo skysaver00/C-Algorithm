@@ -48,6 +48,5 @@ int main() {
     }
 
     if(!ansFlag) cout << -1 << endl;
-
     return 0;
 }
