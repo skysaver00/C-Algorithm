@@ -4,9 +4,9 @@
 #include <cstring>
 using namespace std;
 
-vector<int> vec[2000];
+vector<long long> vec[100006];
 queue<int> bfs;
-int check[100001];
+int check[100006];
 bool realFlag = false;
 
 void startBFS(int to, int depth) {
@@ -15,11 +15,13 @@ void startBFS(int to, int depth) {
     for(int i = 0; i < len; i++) {
         bfs.push(vec[depth][i]);
     }
+    //cout << len << " " << depth << "\n";
 
     while(!bfs.empty()) {
         int num = bfs.front();
+        //cout << num << " " << depth << endl;
         if(num == to) {
-            cout << "ans " << depth << endl;
+            cout << depth << endl;
             realFlag = true;
             break;
         }
@@ -28,9 +30,9 @@ void startBFS(int to, int depth) {
         bool minFlag, addFlag, mulFlag;
         minFlag = addFlag = mulFlag = true;
 
-        if(check[num - 1] < depth || num - 1 < 0) minFlag = false;
-        if(check[num + 1] < depth || num + 1 > 100000) addFlag = false;
-        if(check[num * 2] < depth || num * 2 > 100000) mulFlag = false;
+        if(check[num - 1] <= depth || num - 1 < 0) minFlag = false;
+        if(num + 1 > 100000 || check[num + 1] <= depth || num > to) addFlag = false;
+        if(num * 2 > 100000 || check[num * 2] <= depth || num > to) mulFlag = false;
 
         if(minFlag) {
             check[num - 1] = depth + 1;
@@ -48,13 +50,16 @@ void startBFS(int to, int depth) {
 }
 
 int main() {
-    memset(check, 999999, sizeof(int) * 100000);
+    for(int i = 0; i <= 100000; i++) {
+        check[i] = 999999;
+    }
+
     int n, k;
     cin >> n >> k;
     vec[0].push_back(n);
     check[n] = 0;
 
-    for(int i = 0; i < 50000; i++) {
+    for(int i = 0; i <= 100000; i++) {
         startBFS(k, i);
         if(realFlag) break;
     }
