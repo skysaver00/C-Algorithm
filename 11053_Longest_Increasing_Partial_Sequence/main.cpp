@@ -24,6 +24,11 @@ int main() {
         if(check[i] == 0) check[i] = 1;
     }
 
-    cout << check[n - 1] << endl;
+    int max = 0;
+    for(int i = 0; i < n; i++) {
+        if(max < check[i]) max = check[i];
+    }
+    cout << max << endl;
+
     return 0;
 }
