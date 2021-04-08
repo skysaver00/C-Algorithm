@@ -1,28 +1,33 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int x1Arr[100001][2];
+bool x2Arr[100001];
 
 int main() {
     int m, seed, x1, x2;
-    scanf("%d %d %d %d", &m, &seed, &x1, &x2);
-    bool flag = false;
+    cin >> m >> seed >> x1 >> x2;
 
-    int a, c;
-    int res1, res2;
-    for(int i = 1; i <= m; i++) {
-        for(int j = 1; j <= m; j++) {
-            a = (i * seed + j) % m;
-            if(a == x1) {
-                c = (i * a + j) % m;
-                if(c == x2) {
-                    res1 = i;
-                    res2 = j;
-                    flag = true;
-                    break;
-                }
+    for(int i = 0; i <= (100000 / seed); i++) {
+        int t = 0;
+        for(int j = 0; j < 100000; j++) {
+            if(m * j + x1 > seed * i) {
+                t = m * j + x1;
+                break;
             }
         }
+        x1Arr[i][0] = i;
+        x1Arr[i][1] = t - seed * i;
 
-        if(flag == true) break;
+        if(x1Arr[i][1] == m) x1Arr[i][1] = 0;
+
+        //cout << x1Arr[i][0] << " " << x1Arr[i][1] << endl;
+        if((x1Arr[i][0] * x1 + x1Arr[i][1]) % m == x2) {
+            cout << x1Arr[i][0] << " " << x1Arr[i][1] << endl;
+            break;
+        }
+        //x1Arr[i * seed +]
     }
 
-    printf("%d %d\n", res1, res2);
+    return 0;
 }
