@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1699_Sum_Of_Power/cmake-build-debug/CMakeFiles/1699_Sum_Of_Power.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1699_Sum_Of_Power/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1699_Sum_Of_Power/cmake-build-debug/CMakeFiles/rebuild_cache.dir
