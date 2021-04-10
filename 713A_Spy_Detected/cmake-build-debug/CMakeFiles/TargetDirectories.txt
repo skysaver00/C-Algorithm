@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/713A_Spy_Detected/cmake-build-debug/CMakeFiles/713A_Spy_Detected.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/713A_Spy_Detected/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/713A_Spy_Detected/cmake-build-debug/CMakeFiles/rebuild_cache.dir
