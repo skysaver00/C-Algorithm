@@ -38,18 +38,12 @@ int main() {
             }
         }
 
-        bool minusFlag = false;
-
         for(int i = 0; i < len; i++) {
             if(str.at(i) == '0') a--;
             else if(str.at(i) == '1') b--;
         }
 
-        if(a % 2 != 0 && b % 2 != 0) {
-            cout << -1 << endl;
-            minusFlag = true;
-            continue;
-        }
+        bool minusFlag = false;
 
         for(int i = 0; i < len2; i++) {
             if(str.at(i) != str.at(len - i - 1)) {
@@ -61,22 +55,40 @@ int main() {
 
         if(minusFlag) continue;
 
-        for(int i = 0 ; i < len; i++) {
-            cout << a << " " << b << endl;
+        for(int i = 0 ; i < len2; i++) {
             if(a == 0 && b == 0) break;
+
+            if(a < 0 || b < 0) {
+                cout << -1 << endl;
+                minusFlag = true;
+                break;
+            }
 
             if(str.at(i) == '?') {
                 if(a > 0) {
                     str.at(i) = '0';
                     str.at(len - i - 1) = '0';
-                    a--;
+                    a -= 2;
+
+                    if(i == len - i - 1) a++;
                 } else {
                     str.at(i) = '1';
                     str.at(len - i - 1) = '1';
-                    b--;
+                    b -= 2;
+
+                    if(i == len - i - 1) b++;
                 }
             }
         }
+
+        if(minusFlag) continue;
+
+        if(a < 0 || b < 0) {
+            cout << -1 << endl;
+            minusFlag = true;
+        }
+
+        if(minusFlag) continue;
 
         cout << str << endl;
     }
