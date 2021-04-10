@@ -7,6 +7,6 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/1931_Conference_Room_Distribution/main.cpp
-bits/stdc++.h
+stdio.h
 -
 
