@@ -58,26 +58,36 @@ int main() {
         for(int i = 0 ; i < len2; i++) {
             if(a == 0 && b == 0) break;
 
-            if(a < 0 || b < 0) {
-                cout << -1 << endl;
-                minusFlag = true;
-                break;
-            }
-
             if(str.at(i) == '?') {
-                if(a > 0) {
+                if(a > 1) {
                     str.at(i) = '0';
                     str.at(len - i - 1) = '0';
                     a -= 2;
 
                     if(i == len - i - 1) a++;
-                } else {
+                } else if(b > 1) {
                     str.at(i) = '1';
                     str.at(len - i - 1) = '1';
                     b -= 2;
 
                     if(i == len - i - 1) b++;
                 }
+            }
+        }
+
+        if(len % 2 == 0 && (a % 2 != 0 || b % 2 != 0)) {
+            cout << -1 << endl;
+            minusFlag = true;
+        }
+
+        if(len % 2 != 0) {
+            if (a == 1 && str.at(len2 - 1) == '?') {
+                str.at(len2 - 1) = '0';
+                a--;
+            }
+            else if (b == 1 && str.at(len2 - 1) == '?') {
+                str.at(len2 - 1) = '1';
+                b--;
             }
         }
 
