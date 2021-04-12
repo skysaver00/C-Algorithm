@@ -101,7 +101,7 @@ int main() {
         if(minusFlag) continue;
 
         cout << str << endl;
-        
+
     }
     return 0;
 }
