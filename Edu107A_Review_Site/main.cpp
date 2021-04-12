@@ -23,6 +23,5 @@ int main() {
         }
         cout << up << endl;
     }
-
     return 0;
 }
