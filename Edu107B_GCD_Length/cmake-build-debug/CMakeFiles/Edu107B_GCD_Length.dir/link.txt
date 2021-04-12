@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Edu107B_GCD_Length.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\Edu107B_GCD_Length.dir/objects.a @CMakeFiles\Edu107B_GCD_Length.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Edu107B_GCD_Length.dir/objects.a -Wl,--no-whole-archive  -o Edu107B_GCD_Length.exe -Wl,--out-implib,libEdu107B_GCD_Length.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Edu107B_GCD_Length.dir\linklibs.rsp
