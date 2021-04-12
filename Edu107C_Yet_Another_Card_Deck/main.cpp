@@ -34,14 +34,11 @@ int main() {
                     query.push_front(dummy.back());
                     dummy.pop_back();
                 }
-                printf("%d %d\n", query.front(), query.back());
-
                 query.push_front(k);
-                printf("%d %d\n", query.front(), query.back());
                 break;
             }
         }
     }
-
+    printf("\n");
     return 0;
 }
