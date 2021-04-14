@@ -4,14 +4,17 @@ int arr[11];
 
 int main() {
     int t;
+    int n = 10000000;
+    random_device rd;
+    mt19937  mt(rd());
+    uniform_real_distribution<double> dist(0.0, 10.0);
 
-    while(arr[9] != 100000) {
-        random_device rd;
-        mt19937  mt(rd());
-        uniform_int_distribution<int> dist(1, 10);
+    while(arr[9] != 10000000) {
 
-        for(int i = 0; i < 8000; i++) {
-            int t = dist(mt);
+        for(int i = n; i < 8000000000; ++i) {
+            int t = ceil(dist(mt));
+            //cout << t << endl;
+            n++;
 
             if(t == 9) {
                 arr[t]++;
