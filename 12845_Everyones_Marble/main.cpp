@@ -9,20 +9,21 @@ int max(int i, int j) {
 int main() {
     int n;
     cin >> n;
-
     int big = 0;
     int len = 0;
+
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
         if(big < arr[i]) len = i;
         big = max(big, arr[i]);
     }
+
     int sum = big * (n - 1);
     for(int i = 0; i < n; i++) {
         if(len == i) continue;
         else sum += arr[i];
     }
-
+    
     cout << sum << endl;
     return 0;
 }
