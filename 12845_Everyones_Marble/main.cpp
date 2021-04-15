@@ -23,7 +23,7 @@ int main() {
         if(len == i) continue;
         else sum += arr[i];
     }
-    
+
     cout << sum << endl;
     return 0;
 }
