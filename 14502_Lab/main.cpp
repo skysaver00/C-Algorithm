@@ -78,16 +78,7 @@ int main() {
                             int safeRoom = l - 3;
                             int comp = startBFS(n, m, safeRoom);
 
-                            if(comp > max) {
-                                printf("%d\n", comp);
-                                max = comp;
-
-                                for(int x = 0; x < n; x++) {
-                                for(int y = 0; y < m; y++) {
-                                    printf("%d ", mirRoom[x][y]);
-                                } printf("\n");
-                            } printf("\n");
-                            }
+                            if(comp > max) max = comp;
 
                             /*for(int x = 0; x < n; x++) {
                                 for(int y = 0; y < m; y++) {
@@ -108,6 +99,5 @@ int main() {
     }
 
     printf("%d\n", max);
-
     return 0;
 }
