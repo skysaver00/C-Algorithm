@@ -14,8 +14,6 @@ int main() {
     for(int i = 0; i < e; i++) {
         scanf("%d %d %d", &arr[i][0], &arr[i][1], &arr[i][2]);
     }
-
-
-
+    
     return 0;
 }
