@@ -80,12 +80,6 @@ int main() {
 
                             if(comp > max) max = comp;
 
-                            /*for(int x = 0; x < n; x++) {
-                                for(int y = 0; y < m; y++) {
-                                    printf("%d ", mirRoom[x][y]);
-                                } printf("\n");
-                            } printf("\n");*/
-
                             for(int i = 0; i < n; i++) {
                                 for(int j = 0; j < m; j++) {
                                     mirRoom[i][j] = room[i][j];
