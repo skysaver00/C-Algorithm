@@ -26,7 +26,9 @@ int startBFS(int a, int b, int n) {
         for(int i = 0; i < 4; i++) {
             if(one + x[i] > n || one + x[i] < 0 || two + y[i] > n || two + y[i] < 0) continue;
             printf("%d %d %d %d\n", abs(terr[one + x[i]][two + y[i]] - terr[one][two]), one, two, i);
+            printf("pp: %d %d %d\n", open[one + x[i]][two + y[i]], one + x[i], two + y[i]);
             if(open[one + x[i]][two + y[i]] == 0 && (abs(terr[one + x[i]][two + y[i]] - terr[one][two]) >= l) && (abs(terr[one + x[i]][two + y[i]] - terr[one][two]) <= r)) {
+                printf("yes: %d %d\n", one + x[i], two + y[i]);
                 bfs.push({one + x[i], two + y[i]});
                 open[one + x[i]][two + y[i]] = n;
             }
