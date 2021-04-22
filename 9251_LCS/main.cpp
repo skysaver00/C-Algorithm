@@ -10,7 +10,7 @@ int main() {
 
     string mirStr;
     if(str1.length() < str2.length()) {
-        
+
     } else {
 
     }
