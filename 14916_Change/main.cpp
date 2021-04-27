@@ -23,5 +23,9 @@ int main() {
         if(arr[i] == 999999) arr[i] = -1;
     }
 
+    for(int i = 1; i <= n; i++) {
+        printf("%d ", arr[i]);
+    }
+
     printf("%d\n", arr[n]);
 }
