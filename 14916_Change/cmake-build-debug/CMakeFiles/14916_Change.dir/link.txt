@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\14916_Change.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\14916_Change.dir/objects.a @CMakeFiles\14916_Change.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\14916_Change.dir/objects.a -Wl,--no-whole-archive  -o 14916_Change.exe -Wl,--out-implib,lib14916_Change.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\14916_Change.dir\linklibs.rsp
