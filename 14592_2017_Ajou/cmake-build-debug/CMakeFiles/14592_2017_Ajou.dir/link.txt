@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\14592_2017_Ajou.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\14592_2017_Ajou.dir/objects.a @CMakeFiles\14592_2017_Ajou.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\14592_2017_Ajou.dir/objects.a -Wl,--no-whole-archive  -o 14592_2017_Ajou.exe -Wl,--out-implib,lib14592_2017_Ajou.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\14592_2017_Ajou.dir\linklibs.rsp
