@@ -1,28 +1,29 @@
 #include <stdio.h>
 #include <math.h>
-int arr[50001][2];
+int arr[50001];
+
+int min(int j, int k) {
+    return (j < k) ? j : k;
+}
 
 int main() {
     int n;
     scanf("%d", &n);
 
-    for(int i = sqrt(n); i >= 1; i--) {
-        for(int j = 1; j <= n; j++) {
-            if(arr[j][1] == j) continue;
-            if(arr[j][1] + (i * i) * ((j - arr[j][1]) / (i * i)) > j) continue;
-            arr[j][0] += (j - arr[j][1]) / (i * i);
-            arr[j][1] += (i * i) * ((j - arr[j][1]) / (i * i));
-
-            if(j == n)  {
-                printf("%d\n", arr[n][0]);
-                printf("%d\n", arr[n][1]);
-            }
-        }
+    int i = sqrt(n);
+    for(int k = 1; k <= n; i++) {
+        arr[k] = 9999;
     }
 
-    printf("%d\n", arr[n][0]);
-    printf("%d\n", arr[n][1]);
+    for(int k = 1; k <= i; k++) {
+        arr[k * k] = 1;
+    }
 
+    for(int j = 1; j <= n; j++) {
+        if(int k = 1; k <= sqrt(j); k++) {
+            
+        }
+    }
 
     return 0;
 }
