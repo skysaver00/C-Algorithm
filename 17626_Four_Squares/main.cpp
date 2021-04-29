@@ -11,7 +11,7 @@ int main() {
     scanf("%d", &n);
 
     int i = sqrt(n);
-    for(int k = 1; k <= n; i++) {
+    for(int k = 1; k <= n; k++) {
         arr[k] = 9999;
     }
 
@@ -19,11 +19,14 @@ int main() {
         arr[k * k] = 1;
     }
 
-    for(int j = 1; j <= n; j++) {
-        if(int k = 1; k <= sqrt(j); k++) {
-            
+    for(int j = 1; j <= n; ++j) {
+        int t = sqrt(j);
+        for(int k = 1; k <= t; ++k) {
+            arr[j] = min(arr[j], arr[k * k] + arr[j - k * k]);
         }
     }
+
+    printf("%d\n", arr[n]);
 
     return 0;
 }
