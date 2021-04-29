@@ -43,15 +43,20 @@ int main() {
             int len = path[val].size();
             for(int j = 0; j < len; j++) {
                 int next = path[val][j];
-                if(total[next] > total[val] + duration[next]) {
+                if(total[next] < total[val] + duration[next]) {
                     total[next] = total[val] + duration[next];
+                    topoQueue.push(next);
                 }
-                topoQueue.push(next);
             }
         }
 
-        for(int i  = 1; i <= n; i++) {
-            printf("%d\n", total[i]);
+        int ans;
+        scanf("%d", &ans);
+        printf("%d\n", total[ans]);
+
+        for(int i = 1; i <= n; i++) {
+            duration[i] = total[i] = level[i] = 0;
+            path[i].clear();
         }
     }
     return 0;
