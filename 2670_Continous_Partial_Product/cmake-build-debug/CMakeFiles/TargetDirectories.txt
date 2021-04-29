@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2670_Continous_Partial_Product/cmake-build-debug/CMakeFiles/2670_Continous_Partial_Product.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2670_Continous_Partial_Product/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2670_Continous_Partial_Product/cmake-build-debug/CMakeFiles/rebuild_cache.dir
