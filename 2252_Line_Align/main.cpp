@@ -27,12 +27,11 @@ int main() {
 
     while(!top.empty()) {
         int ans = top.front();
-        printf("%dx ", ans);
+        printf("%d ", ans);
         top.pop();
 
         int len = con[ans].size();
         for(int i = 0; i < len; i++) {
-            printf("%d\n", degree[con[ans][i]]);
             degree[con[ans][i]]--;
             if(degree[con[ans][i]] == 0) top.push(con[ans][i]);
         }
