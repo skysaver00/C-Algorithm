@@ -1,6 +1,10 @@
-#include <iostream>
+#include <stdio.h>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    int t;
+    scanf("%d", &t);
+
+    while(t--) {
+
+    }
 }
