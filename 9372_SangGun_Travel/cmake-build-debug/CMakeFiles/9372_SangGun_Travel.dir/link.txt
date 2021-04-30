@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\9372_SangGun_Travel.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\9372_SangGun_Travel.dir/objects.a @CMakeFiles\9372_SangGun_Travel.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\9372_SangGun_Travel.dir/objects.a -Wl,--no-whole-archive  -o 9372_SangGun_Travel.exe -Wl,--out-implib,lib9372_SangGun_Travel.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\9372_SangGun_Travel.dir\linklibs.rsp
