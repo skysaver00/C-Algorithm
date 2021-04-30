@@ -10,11 +10,13 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         for(int j = 1; j <= k; j++) {
-            if()
+            if(coin[i] == j) val[j] += 1;
+            else if(coin[i] > j) continue;
+            else val[j] += val[j - coin[i]];
         }
     }
 
-
+    printf("%d\n", val[k]);
 
     return 0;
 }
