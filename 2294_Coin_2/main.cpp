@@ -3,8 +3,8 @@ bool check[100001];
 int coin[101];
 int price[10001];
 
-int max(int i, int j) {
-    return (i > j) ?i:j;
+int min(int i, int j) {
+    return (i < j) ?i:j;
 }
 
 int main() {
@@ -31,14 +31,17 @@ int main() {
             if(j == coin[i]) price[j] = 1;
             else if(j < coin[i]) continue;
             else {
-                price[j] = max(price[j], price[j - coin[i]] + 1);
+                price[j] = min(price[j], price[j - coin[i]] + 1);
             }
         }
 
-        for(int j = 1; j <= k; j++) {
+        /*for(int j = 1; j <= k; j++) {
             printf("%d\n", price[j]);
-        } printf("\n");
+        } printf("\n");*/
     }
+
+    if(price[k] == 99999999) printf("-1\n");
+    else printf("%d\n", price[k]);
 
     return 0;
 }
