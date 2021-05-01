@@ -1,54 +1,33 @@
 #include <stdio.h>
-#include <queue>
-using namespace std;
-
 int gameArea[101][101];
-long long turn[101][101];
-
-queue<pair<int, int>> loc;
+long long path[101][101];
 
 int main() {
     int n;
     scanf("%d", &n);
 
-    for(int i = 0; i < n ; i++) {
+    for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             scanf("%d", &gameArea[i][j]);
         }
     }
 
-    turn[0][0] = 1;
-    loc.push({0, 0});
+    path[0][0] = 1;
 
-    while(!loc.empty()) {
-        int y = loc.front().first;
-        int x = loc.front().second;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            int jump = gameArea[i][j];
+            int right = jump + j;
+            int down = jump + i;
 
-        loc.pop();
+            if(jump == 0) continue;
 
-        int jump = gameArea[y][x];
-
-        turn[y + jump][x] += turn[y][x];
-        turn[y][x + jump] += turn[y][x];
-        //printf("right now: %d %d\n", y, x);
-
-        if(y + jump < n && y + jump != y) {
-            //printf("%d %d\n", y + jump, x);
-            if(y + jump != n - 1 || x != n - 1) loc.push({y + jump, x});
+            if(right < n) path[i][right] += path[i][j];
+            if(down < n) path[down][j] += path[i][j];
         }
-        if(x + jump < n && x + jump != x) {
-            //printf("%d %d\n", y, x + jump);
-            if(y != n - 1 || x + jump != n - 1) loc.push({y, x + jump});
-        }
-
-        /*for(int i = 0; i < n ; i++) {
-            for(int j = 0; j < n; j++) {
-                printf("%d ", turn[i][j]);
-            } printf("\n");
-        } printf("\n");*/
     }
 
-    printf("%lld\n", turn[n - 1][n - -1]);
+    printf("%lld\n", path[n - 1][n - 1]);
 
     return 0;
 }
