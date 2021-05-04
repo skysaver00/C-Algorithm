@@ -1,8 +1,9 @@
 #include <stdio.h>
-int arr[10][101];
+long long arr[10][101];
 
 int main() {
     for(int i = 1; i <= 9; i++) arr[i][0] = 1;
+
 
     int n;
     scanf("%d", &n);
@@ -17,17 +18,17 @@ int main() {
                 arr[i + 1][tr] += arr[i][tr - 1];
                 arr[i - 1][tr] += arr[i][tr - 1];
             }
-        }
+            arr[i - 1][tr] = arr[i - 1][tr] % 1000000000;
+            arr[i + 1][tr] = arr[i + 1][tr] % 1000000000;
 
-        for(int i = 0; i <= 9; i++) {
-            arr[i][tr] %= 1000000000;
+            printf("%lld %lld\n", arr[i - 1][tr], arr[i + 1][tr]);
         }
     }
 
-    int sum = 0;
+    long long sum = 0;
     for(int i = 0; i <= 9; i++) {
-        sum += arr[i][n - 1];
+        sum += arr[i][n - 1] % 1000000000;
     }
 
-    printf("%d\n", sum % 1000000000);
+    printf("%lld\n", sum % 1000000000);
 }
