@@ -1,6 +1,11 @@
-#include <iostream>
+#include <stdio.h>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    int s, t, d;
+    scanf("%d %d %d", &s, &t, &d);
+
+    int val = d / (2 * s);
+    printf("%d\n", t * val);
+
     return 0;
 }
