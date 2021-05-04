@@ -8,5 +8,5 @@ int main() {
         time += sec;
     }
 
-    printf("%d %d\n", time / 60, time % 60);
+    printf("%d\n%d\n", time / 60, time % 60);
 }
