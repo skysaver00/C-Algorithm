@@ -1,3 +1,0 @@
-C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/rebuild_cache.dir
-C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_b449c.dir
-C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/edit_cache.dir

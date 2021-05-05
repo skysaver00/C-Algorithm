@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx" "C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_b449c.dir/testCXXCompiler.cxx.obj"
+  "C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/main.cpp" "C:/Users/skysaver00/IdeaProjects/C, C++/9461_Wind_Wave_Permutation/cmake-build-debug/CMakeFiles/9461_Wind_Wave_Permutation.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
