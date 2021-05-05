@@ -8,13 +8,14 @@ int main() {
     arr[0] = 1;
 
     for(int i = 1; i <= n; i++) {
-        arr[i] = 1;
-        for(int j = 0; j <= i; j++) {
-            arr[i] *= arr[j] * arr[i - j];
+        for(int j = 0; j < i; j++) {
+            arr[i] += arr[j] * arr[i - j - 1];
         }
-
-        printf("%d\n", arr[i]);
     }
+
+
+    printf("%lld\n", arr[n]);
+
 
     return 0;
 }
