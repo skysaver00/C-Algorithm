@@ -5,8 +5,10 @@ int main() {
     scanf("%d", &N);
 
     if(N % 2 == 1) {
-        printf("")
+        printf("CY\n");
     } else {
-
+        printf("SK\n");
     }
+
+    return 0;
 }
