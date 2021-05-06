@@ -6,7 +6,7 @@ int health[21];
 int happy[21];
 
 int max(int i , int j) {
-    
+    return i > j ? i : j;
 }
 
 int main() {
@@ -35,14 +35,16 @@ int main() {
         }
     }
 
-    int
+    int biggest = 0;
     for(int i = 0; i <= 20; i++) {
         for(int j = 0; j <= 100; j++) {
-            if(hello[i][j] != 0) {
-                printf("%d %d %d\n", i, j, hello[i][j]);
+            if (hello[i][j] != 0) {
+                if (biggest < hello[i][j]) biggest = hello[i][j];
             }
-        }printf("\n");
+        }
     }
+
+    printf("%d\n", biggest);
 
     return 0;
 }
