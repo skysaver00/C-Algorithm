@@ -10,14 +10,12 @@ int multiply(int a, int p) {
         sum += floor(pow((double)val, (double)p) + 0.4);
         a /= 10;
     }
-
     return sum;
 }
 
 void check(int a, int p) {
     arr[a]++;
     if(arr[a] > 2) return;
-
     check(multiply(a, p), p);
 }
 
