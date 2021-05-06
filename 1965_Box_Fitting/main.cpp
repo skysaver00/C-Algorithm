@@ -22,10 +22,14 @@ int main () {
             if(arr[i] > arr[j]) total[i] = max(total[i], total[j] + 1);
         }
 
-        for(int j = 0; j < n; j++) {
+        for(int j = 0; j < n ; j++) {
             cout << total[j] << " ";
         }cout << endl;
     }
+
+    int biggest = 0;
+    for(int i = 0; i < n; i++) if(biggest < total[i]) biggest = total[i];
+    cout << biggest << endl;
 
     return 0;
 }
