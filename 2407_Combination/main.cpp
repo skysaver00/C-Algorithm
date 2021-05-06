@@ -9,7 +9,7 @@ int main() {
     long long up = 1;
     long long down = 1;
 
-    int r = m;
+    int r = 1;
 
     if(m < (n / 2)) m = 100 - n;
     printf("%d\n", m);
@@ -17,14 +17,16 @@ int main() {
         up *= i;
         down *= r;
 
+        printf("%d %d %lld %lld\n", i, r, up, down);
+
         if(up % down == 0) {
             up /= down;
             down = 1;
         }
-        r--;
-
-        printf("%d %d %lld %lld\n", i, r, up, down);
+        r++;
     }
+
+    printf("%lld %lld\n", up, down);
 
      return 0;
 }
