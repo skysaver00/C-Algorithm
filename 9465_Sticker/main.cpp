@@ -39,6 +39,6 @@ int main() {
 
         for(int i = 0; i <= t; i++) total[0][i] = total[1][i] = 0;
     }
-    
+
     return 0;
 }
