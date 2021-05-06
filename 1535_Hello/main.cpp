@@ -21,15 +21,16 @@ int main() {
         cin >> happy[i];
     }
 
-    hello[1][health[1]] = happy[1];
+    if(health[1] < 100) hello[1][health[1]] = happy[1];
 
     for(int i = 2; i <= n; i++) {
+        if(health[i] < 100) hello[i][health[i]] = happy[i];
         for(int j = 0; j < 100; j++) {
             if(hello[i - 1][j] != 0) {
                 hello[i][j] = hello[i - 1][j];
 
                 if(j + health[i] < 100) {
-                    hello[i][j + health[i]] = hello[i - 1][j] + happy[i];
+                    hello[i][j + health[i]] = max(hello[i - 1][j] + happy[i], );
                 }
             }
         }
@@ -39,6 +40,7 @@ int main() {
     for(int i = 0; i <= 20; i++) {
         for(int j = 0; j <= 100; j++) {
             if (hello[i][j] != 0) {
+                printf("%d %d %d\n", i, j ,hello[i][j]);
                 if (biggest < hello[i][j]) biggest = hello[i][j];
             }
         }
