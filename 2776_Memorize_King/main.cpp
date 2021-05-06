@@ -1,45 +1,14 @@
 #include <stdio.h>
-#include <algorithm>
-
-using namespace std;
-int arr[1000005];
-int brr[1000005];
-
-bool binary(int num, int a, int b) {
-    if(a > b) return false;
-
-    if(num > arr[(a + b) / 2]) {
-        binary(num, ((a + b) / 2) + 1, b);
-    } else if(num < arr[(a + b) / 2]) {
-        binary(num, a, ((a + b) / 2) - 1);
-    } else {
-        return true;
-    }
-}
+bool arr[1000001];
 
 int main() {
     int t;
     scanf("%d", &t);
 
     while(t--) {
-        int N;
-        scanf("%d", &N);
-        for(int i = 0; i < N; i++) {
-            scanf("%d", &arr[i]);
-        }
+        int n;
+        scanf("%d", &n);
 
-        int M;
-        scanf("%d", &M);
-        for(int i = 0; i < M; i++) {
-            scanf("%d", &brr[i]);
-        }
-
-        sort(arr, arr + N);
-        for(int i = 0; i < M; i++) {
-            bool check = binary(brr[i], 0, N);
-            printf("%d\n", check);
-        }
+        for(int i = 0; i < )
     }
-
-    return 0;
 }
