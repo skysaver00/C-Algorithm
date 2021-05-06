@@ -1,6 +1,48 @@
 #include <iostream>
+using namespace std;
+
+int arr[2][100001];
+int total[2][100005];
+
+int max(int i, int j) {
+    return i > j ? i : j;
+}
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    int n;
+    cin >> n;
+
+    while(n--) {
+        int t;
+        cin >> t;
+
+        for(int i = 0; i < t; i++) {
+            cin >> arr[0][i];
+        }
+        for(int i = 0; i < t; i++) {
+            cin >> arr[1][i];
+        }
+
+        total[0][1] = arr[0][0];
+        total[1][1] = arr[1][0];
+
+        for(int i = 2; i <= t; i++) {
+            total[0][i] = max(total[1][i - 1], total[1][i - 2]);
+            total[0][i] += arr[0][i - 1];
+
+            total[1][i] = max(total[0][i - 1], total[0][i - 2]);
+            total[1][i] += arr[1][i - 1];
+        }
+
+        for(int i = 0; i <= t; i++) {
+            printf("%d ", total[0][i]);
+        }
+
+        for(int i = 0; i <= t; i++) {
+            printf("%d ", total[1][i]);
+        }
+    }
+
+
     return 0;
 }
