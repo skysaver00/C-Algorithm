@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Program Files/JetBrains/CLion 2020.3.1/bin/cmake/win/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp" "C:/Users/skysaver00/IdeaProjects/C, C++/1965_Box_Fitting/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_1aba3.dir/CMakeCXXCompilerABI.cpp.obj"
+  "C:/Users/skysaver00/IdeaProjects/C, C++/1965_Box_Fitting/main.cpp" "C:/Users/skysaver00/IdeaProjects/C, C++/1965_Box_Fitting/cmake-build-debug/CMakeFiles/1965_Box_Fitting.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
