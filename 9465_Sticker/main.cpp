@@ -34,15 +34,11 @@ int main() {
             total[1][i] += arr[1][i - 1];
         }
 
-        for(int i = 0; i <= t; i++) {
-            printf("%d ", total[0][i]);
-        }
+        int big = max(total[0][t], total[1][t]);
+        printf("%d\n", big);
 
-        for(int i = 0; i <= t; i++) {
-            printf("%d ", total[1][i]);
-        }
+        for(int i = 0; i <= t; i++) total[0][i] = total[1][i] = 0;
     }
-
-
+    
     return 0;
 }
