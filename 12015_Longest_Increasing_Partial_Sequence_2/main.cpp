@@ -8,29 +8,29 @@ bool divide(int i, int left, int right) {
 
     while(left <= right) {
         mid  = (left + right) / 2;
-        printf("%d %d %d %d %d\n", left, right, arr[i], check[mid - 1], check[mid]);
+        //printf("%d %d %d %d %d\n", left, right, arr[i], check[mid - 1], check[mid]);
         if(arr[i] < check[mid] && arr[i] >= check[mid - 1]) {
-            printf("one\n");
+            //printf("one\n");
             if(arr[i] == check[mid - 1]) return true;
             check[mid] = arr[i];
             return true;
         } else if(arr[i] < check[mid - 1]) {
-            printf("two\n");
+            //printf("two\n");
             right = mid - 1;
         }
         else if(arr[i] >= check[mid]) {
-            printf("three\n");
+            //printf("three\n");
             left = mid + 1;
         }
-        printf("%d %d %d\n\n", arr[i], check[mid - 1], check[mid]);
+        //printf("%d %d %d\n\n", arr[i], check[mid - 1], check[mid]);
     }
-    printf("end: %d %d %d %d %d\n", left, right, arr[i], check[mid - 1], check[mid]);
+    //printf("end: %d %d %d %d %d\n", left, right, arr[i], check[mid - 1], check[mid]);
 
     return false;
 }
 
-int solve(int i, int n, int len2) {
-    printf("%d %d %d\n", arr[i], n, len2);
+int solve(int i, int len2) {
+    //printf("%d %d %d\n", arr[i], n, len2);
     if(len == 0) {
         check[len2] = arr[i];
         len++;
@@ -38,10 +38,13 @@ int solve(int i, int n, int len2) {
         bool v = divide(i, 0, len2 - 1);
 
         if(!v) {
+            if(arr[i] == check[len2 - 1]) return 0;
             check[len2] = arr[i];
             len++;
         }
     }
+
+    return 0;
 }
 
 int main() {
@@ -54,13 +57,17 @@ int main() {
     }
 
     for(int i = 0; i < n; i++) {
-        printf("%d %d %d\n", i, n, len);
-        solve(i, n, len);
-
-        for(int j = 0; j < n; j++) {
-            printf("%d ", check[j]);
-        }
+        //printf("%d %d %d\n", i, n, len);
+        solve(i, len);
     }
+
+    int therefore = 0;
+    for(int j = 0; j < n; j++) {
+        if(check[j] != 99999999) therefore++;
+        else break;
+    }
+
+    printf("%d\n", therefore);
 
     return 0;
 }
