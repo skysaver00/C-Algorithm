@@ -2,9 +2,10 @@
 #include <stack>
 using namespace std;
 
-int arr[100001];
-char does[200005];
+int arr[100010];
+char does[300005];
 stack<int> st;
+stack<int> emp;
 
 int main() {
     int n;
@@ -22,7 +23,16 @@ int main() {
 
         if(next > n && st.top() != arr[now]) {
             printf("NO\n");
+            st = emp;
             return 0;
+        }
+
+        if(st.empty()) {
+            st.push(next);
+            does[doesNow] = '+';
+            next++;
+            doesNow++;
+            continue;
         }
 
         if(st.top() != arr[now] || st.empty()) {
