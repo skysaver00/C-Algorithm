@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <algorithm>
 using namespace std;
-int arr[1000001];
+long long arr[1000001];
 
-long long binary(int n, int m, int left, int right) {
+long long binary(long long n, long long m, long long left, long long right) {
     int mid;
     long long ans = 0;
 
     while(left <= right) {
         mid = (left + right) / 2;
-        int sum = 0;
+        long long sum = 0;
 
         for(int i = 0; i < n; i++) {
             if(arr[i] < mid) continue;
@@ -26,11 +26,11 @@ long long binary(int n, int m, int left, int right) {
 }
 
 int main() {
-    int n, m;
-    scanf("%d %d", &n, &m);
+    long long n, m;
+    scanf("%lld %lld", &n, &m);
 
     for(int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%lld", &arr[i]);
     }
     sort(arr, arr + n);
 
