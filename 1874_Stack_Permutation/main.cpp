@@ -17,8 +17,15 @@ int main() {
     int next = 1;
     int now = 0;
     int doesNow = 0;
-    while(next != (n + 1) && st.empty()) {
-        if(st.top() != arr[now]) {
+    while(next <= (n + 1)) {
+        if(next > n && st.empty()) break;
+
+        if(next > n && st.top() != arr[now]) {
+            printf("NO\n");
+            return 0;
+        }
+
+        if(st.top() != arr[now] || st.empty()) {
             st.push(next);
             does[doesNow] = '+';
             next++;
@@ -29,10 +36,10 @@ int main() {
             does[doesNow] = '-';
             doesNow++;
         }
+    }
 
-        for(int i = 0; i < doesNow; i++) {
-            printf(" %c", does[i]);
-        }
+    for(int i = 0; i < doesNow; i++) {
+        printf("%c\n", does[i]);
     }
 
     return 0;
