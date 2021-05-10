@@ -1,6 +1,11 @@
-#include <iostream>
+#include <stdio.h>
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+int main () {
+    int a, b, v;
+    scanf("%d %d %d", &a, &b, &v);
+
+    int vmin = v - a;
+    int dvd = vmin / (a - b);
+
     return 0;
 }
