@@ -18,7 +18,6 @@ int main() {
     i = j = k = 0;
 
     while(i < n && j < m) {
-        //printf("%d %d %d\n", i, j, k);
         if(nrr[i] < mrr[j]) {
             sumarr[k] = nrr[i];
             i++, k++;
