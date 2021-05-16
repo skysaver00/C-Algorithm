@@ -7,5 +7,8 @@ int main () {
     int vmin = v - a;
     int dvd = vmin / (a - b);
 
+    if(vmin % (a - b) != 0) dvd++;
+    printf("%d\n", vmin);
+
     return 0;
 }
