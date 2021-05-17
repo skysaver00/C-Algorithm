@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\2630_Colored_Paper.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\2630_Colored_Paper.dir/objects.a @CMakeFiles\2630_Colored_Paper.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\2630_Colored_Paper.dir/objects.a -Wl,--no-whole-archive -o 2630_Colored_Paper.exe -Wl,--out-implib,lib2630_Colored_Paper.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\2630_Colored_Paper.dir\linklibs.rsp
