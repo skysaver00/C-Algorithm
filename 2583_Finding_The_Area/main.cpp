@@ -22,10 +22,16 @@ bool startBFS(int yy, int xx, int al) {
         bfs.pop();
         for(int i = 0; i < 4; i++) {
             if(_y + y[i] >= m || _y + y[i] < 0 || _x + x[i] >= n || _x + x[i] < 0) continue;
-            if(axis[_y + y[i]][_x + x[i]] == 0) {
+            if(axis[_y + y[i]][_x + x[i]] == 0 && cpaxis[_y + y[i]][_x + x[i]] == 0) {
                 bfs.push({_y + y[i], _x + x[i]});
                 cpaxis[_y + y[i]][_x + x[i]] = al;
             }
+        }
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                printf("%d ", cpaxis[i][j]);
+            }printf("\n");
         }
     }
 
@@ -44,6 +50,12 @@ int main() {
                 axis[k][j] = 1;
             }
         }
+    }
+
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d ", axis[i][j]);
+        }printf("\n");
     }
 
     int val = 0;
