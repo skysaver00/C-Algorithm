@@ -21,7 +21,7 @@ int main () {
         }
     }
 
-
+    solve(0, 0, n);
 
     return 0;
 }
