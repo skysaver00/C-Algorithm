@@ -1,8 +1,10 @@
 #include <cstdio>
 #include <queue>
+#include <algorithm>
 using namespace std;
 int axis[101][101];
 int cpaxis[101][101];
+int arr[10001];
 
 int m, n, k;
 int x[4] = {1, 0, -1, 0};
@@ -18,7 +20,7 @@ bool startBFS(int yy, int xx, int al) {
         int _x, _y;
         _y = bfs.front().first;
         _x = bfs.front().second;
-        printf("%d %d\n", _y, _x);
+        //printf("%d %d\n", _y, _x);
         bfs.pop();
         for(int i = 0; i < 4; i++) {
             if(_y + y[i] >= m || _y + y[i] < 0 || _x + x[i] >= n || _x + x[i] < 0) continue;
@@ -27,12 +29,11 @@ bool startBFS(int yy, int xx, int al) {
                 cpaxis[_y + y[i]][_x + x[i]] = al;
             }
         }
-
-        for(int i = 0; i < m; i++) {
+        /*for(int i = 0; i < m; i++) {
             for(int j = 0; j < n; j++) {
                 printf("%d ", cpaxis[i][j]);
             }printf("\n");
-        }
+        }*/
     }
 
     return true;
@@ -52,13 +53,13 @@ int main() {
         }
     }
 
-    for(int i = 0; i < m; i++) {
+    /*for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
             printf("%d ", axis[i][j]);
         }printf("\n");
-    }
+    }printf("\n");*/
 
-    int val = 0;
+    int val = 1;
     for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
             bool find = startBFS(i, j, val);
@@ -67,10 +68,22 @@ int main() {
         }
     }
 
-    for(int i = 0; i < m; i++) {
+    /*for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
             printf("%d ", cpaxis[i][j]);
         }printf("\n");
+    }*/
+
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            arr[cpaxis[i][j]]++;
+        }
+    }
+
+    sort(arr + 1, arr + val);
+    printf("%d\n", val - 1);
+    for(int i = 1; i < val; i++) {
+        printf("%d ", arr[i]);
     }
 
     return 0;
