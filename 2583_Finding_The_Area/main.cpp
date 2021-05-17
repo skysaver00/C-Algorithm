@@ -15,11 +15,16 @@ bool startBFS(int yy, int xx, int al) {
     bfs.push({yy, xx});
     cpaxis[yy][xx] = al;
     while(!bfs.empty()) {
+        int _x, _y;
+        _y = bfs.front().first;
+        _x = bfs.front().second;
+        printf("%d %d\n", _y, _x);
+        bfs.pop();
         for(int i = 0; i < 4; i++) {
-            if(yy + y[i] >= m || yy + y[i] < 0 || xx + x[i] >= n || xx + x[i] < 0) continue;
-            if(axis[yy + y[i]][xx + x[i]] == 0) {
-                bfs.push({yy + y[i], xx + x[i]});
-                cpaxis[yy + y[i]][xx + x[i]] = al;
+            if(_y + y[i] >= m || _y + y[i] < 0 || _x + x[i] >= n || _x + x[i] < 0) continue;
+            if(axis[_y + y[i]][_x + x[i]] == 0) {
+                bfs.push({_y + y[i], _x + x[i]});
+                cpaxis[_y + y[i]][_x + x[i]] = al;
             }
         }
     }
