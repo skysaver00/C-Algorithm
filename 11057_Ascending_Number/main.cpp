@@ -22,8 +22,7 @@ int main() {
             sum %= 10007;
         }
         arr[i] = sum;
-        printf("%d\n", sum);
     }
-    printf("%d\n", num[n]);
+    printf("%d\n", arr[n]);
     return 0;
 }
