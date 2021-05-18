@@ -1,14 +1,16 @@
 #include <iostream>
+using namespace std;
 int arr[1001];
 
 int main() {
-    int n;
-    scanf("%d", &n);
+    int t;
+    cin >> t;
 
-    arr[0] = 1, arr[1] = 3;
-    for(int i = 2; i < n; i++) {
-        arr[i] = (arr[i - 1] + 2 * arr[i - 2]) % 10007;
-    }
+    arr[1] = 1;
+    arr[2] = 3;
 
-    printf("%d\n", arr[n - 1]);
+    for(int i = 3; i <= t; i++) arr[i] = arr[i - 2] * 2 + arr[i - 1];
+    cout << arr[t];
+
+    return 0;
 }
