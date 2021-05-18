@@ -20,7 +20,6 @@ int main () {
             scanf("%d", &paper[i][j]);
         }
     }
-
     solve(0, 0, n);
 
     return 0;
