@@ -1,5 +1,5 @@
 #include <iostream>
-int arr[1000001];
+long long arr[1000001];
 
 int main() {
     int t;
@@ -10,7 +10,7 @@ int main() {
     arr[3] = 4;
     for(int i = 4; i <= 1000000; i++) {
         arr[i] = arr[i - 1] + arr[i - 2] + arr[i - 3];
-        arr
+        arr[i] %= 1000000009;
     }
 
     while(t--) {
