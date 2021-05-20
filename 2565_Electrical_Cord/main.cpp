@@ -31,25 +31,17 @@ int main() {
     }
 
     for(int i = 0; i < node; i++) {
-        cout << line[i] << endl;
-    }
-
-    for(int i = 0; i < node; i++) {
         for(int j = 0; j < i; j++) {
-            if(line[i] > line[j]) lis[i] = lis[j] + 1;
+            if(line[i] > line[j] && lis[i] < lis[j] + 1) {
+                lis[i] = lis[j] + 1;
+            }
         }
-    }
-
-    for(int i = 0; i < node; i++) {
-        cout << lis[i] << endl;
     }
 
     int ma = 0;
     for(int i = 0; i < node; i++) {
         ma = max(ma, lis[i]);
     }
-
-    cout << ma << endl;
     cout << t - ma - 1 << endl;
 
     return 0;
