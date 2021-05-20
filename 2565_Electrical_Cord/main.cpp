@@ -8,19 +8,53 @@ int max(int i, int j) {
 int arr[501];
 int line[501];
 
+int lis[501];
+
 int main() {
     int t;
     cin >> t;
 
     int down = 0;
-    while(t--) {
+    while (t--) {
         int a, b;
         cin >> a >> b;
         arr[a] = b;
-        if(down < a) down = a;
+        if (down < a) down = a;
     }
 
-    int value;
+    int node = 0;
+    for(int i = 1; i <= down; i++) {
+        if(arr[i] == 0) continue;
+
+        line[node] = arr[i];
+        node++;
+    }
+
+    for(int i = 0; i < node; i++) {
+        cout << line[i] << endl;
+    }
+
+    for(int i = 0; i < node; i++) {
+        for(int j = 0; j < i; j++) {
+            if(line[i] > line[j]) lis[i] = lis[j] + 1;
+        }
+    }
+
+    for(int i = 0; i < node; i++) {
+        cout << lis[i] << endl;
+    }
+
+    int ma = 0;
+    for(int i = 0; i < node; i++) {
+        ma = max(ma, lis[i]);
+    }
+
+    cout << t - ma - 1 << endl;
+
+    return 0;
+}
+
+    /*int value;
 
     int total = 0;
     while(1) {
@@ -67,4 +101,4 @@ int main() {
     cout << total << endl;
 
     return 0;
-}
+}*/
