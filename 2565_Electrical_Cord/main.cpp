@@ -15,7 +15,7 @@ int main() {
     cin >> t;
 
     int down = 0;
-    while (t--) {
+    for(int i = 0; i < t; i++) {
         int a, b;
         cin >> a >> b;
         arr[a] = b;
@@ -49,6 +49,7 @@ int main() {
         ma = max(ma, lis[i]);
     }
 
+    cout << ma << endl;
     cout << t - ma - 1 << endl;
 
     return 0;
