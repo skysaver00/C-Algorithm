@@ -8,16 +8,16 @@ int solve(int n, int r, int c) {
     if(n == 0) return total;
     if(r < pow(2, n - 1) && c < pow(2, n - 1)) {
         total += 0;
-        solve(n - 1, r, c);
+        return solve(n - 1, r, c);
     } else if(r < pow(2, n - 1) && c >= pow(2, n - 1)) {
-        total += pow(2, (n - 1) * 2);
-        solve(n - 1, r, c - int(pow(2, n - 1)));
+        total += int(pow(2, (n - 1) * 2));
+        return solve(n - 1, r, c - int(pow(2, n - 1)));
     } else if(r >= pow(2, n - 1) && c < pow(2, n - 1)) {
-        total += (2 * pow(2, (n - 1) * 2));
-        solve(n - 1, r - int(pow(2, n - 1)), c);
+        total += (2 * int(pow(2, (n - 1) * 2)));
+        return solve(n - 1, r - int(pow(2, n - 1)), c);
     } else if(r >= pow(2, n - 1) && c >= pow(2, n - 1)) {
-        total += (3 * pow(2, (n - 1) * 2));
-        solve(n - 1, r - int(pow(2, n - 1)), c - int(pow(2, n - 1)));
+        total += (3 * int(pow(2, (n - 1) * 2)));
+        return solve(n - 1, r - int(pow(2, n - 1)), c - int(pow(2, n - 1)));
     }
 }
 
