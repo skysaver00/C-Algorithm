@@ -21,9 +21,6 @@ void solve(int y, int x, int n) {
         }
     }
 
-
-    printf("%d %d %d\n", y, x, n);
-
     if (check == 1) one++;
     else if (check == 0) zero++;
     else if (check == -1) minus++;
@@ -40,7 +37,6 @@ int main() {
     }
 
     solve(0, 0, n);
-    printf("%d %d %d\n", one, zero, minus);
-
+    printf("%d\n%d\n%d\n",minus,zero,one);
     return 0;
 }
