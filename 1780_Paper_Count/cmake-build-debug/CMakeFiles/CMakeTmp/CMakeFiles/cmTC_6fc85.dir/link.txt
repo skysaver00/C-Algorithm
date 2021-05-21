@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_6fc85.dir/objects.a
-X:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_6fc85.dir/objects.a @CMakeFiles\cmTC_6fc85.dir\objects1.rsp
-X:\MinGW\bin\gcc.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_6fc85.dir/objects.a -Wl,--no-whole-archive -o cmTC_6fc85.exe -Wl,--out-implib,libcmTC_6fc85.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
