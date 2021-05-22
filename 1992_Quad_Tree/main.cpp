@@ -1,6 +1,9 @@
 #include <cstdio>
+#include <queue>
+using namespace std;
 
 int arr[65][65];
+queue<char> val;
 
 void solve(int y, int x, int n) {
     int check = arr[y][x];
@@ -11,12 +14,17 @@ void solve(int y, int x, int n) {
         }
 
         if(check == 2) {
+            val.push('(');
             solve(y, x, n / 2);
             solve(y, x + (n / 2), n / 2);
             solve(y + (n / 2), x, n / 2);
             solve(y + (n / 2), x + (n / 2), n / 2);
+            val.push(')');
         }
     }
+
+    if(check == 1) val.push('1');
+    else if(check == 0) val.push('0');
 }
 
 int main() {
@@ -29,7 +37,14 @@ int main() {
         }
     }
 
+    val.push('(');
     solve(0, 0, n);
+    val.push(')');
 
+    int len = val.size();
+    while(!val.empty()) {
+        printf("%c", val.front());
+        val.pop();
+    }
     return 0;
 }
