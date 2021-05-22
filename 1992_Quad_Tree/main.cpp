@@ -11,8 +11,8 @@ void solve(int y, int x, int n) {
     int check = arr[y][x];
     for(int i = y; i < y + n; i++) {
         for(int j = x; j < x + n; j++) {
-            if(check == 0 && arr[y][x] == '1') check = 2;
-            else if(check == 1 && arr[y][x] == '0') check = 2;
+            if(check == 0 && arr[i][j] == 1) check = 2;
+            else if(check == 1 && arr[i][j] == 0) check = 2;
         }
 
         if(check == 2) {
@@ -38,8 +38,16 @@ int main() {
 
     for(int i = 0; i < n ; i++) {
         scanf("%s", var[i]);
-        printf("%s", var[i]);
+        for(int j = 0; j < n; j++) {
+            arr[i][j] = var[i][j] - 0x30;
+        }
     }
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d ", arr[i][j]);
+        }printf("\n");
+    }printf("\n");
 
     val.push('(');
     solve(0, 0, n);
