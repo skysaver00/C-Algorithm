@@ -16,7 +16,6 @@ void solve(int y, int x, int n) {
         }
 
         if(check == 2) {
-            printf("%d %d %d\n", y, x, n / 2);
             val.push('(');
             solve(y, x, n / 2);
             solve(y, x + (n / 2), n / 2);
@@ -27,7 +26,6 @@ void solve(int y, int x, int n) {
             return;
         }
     }
-    printf("%d %d %d\n", y, x, n / 2);
     if(check == 1) val.push('1');
     else if(check == 0) val.push('0');
 }
@@ -43,17 +41,7 @@ int main() {
         }
     }
 
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            printf("%d ", arr[i][j]);
-        }printf("\n");
-    }printf("\n");
-
-    val.push('(');
     solve(0, 0, n);
-    val.push(')');
-
-    int len = val.size();
     while(!val.empty()) {
         printf("%c", val.front());
         val.pop();
