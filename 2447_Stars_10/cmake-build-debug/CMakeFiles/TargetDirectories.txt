@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2447_Stars_10/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2447_Stars_10/cmake-build-debug/CMakeFiles/2447_Stars_10.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2447_Stars_10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
