@@ -4,6 +4,7 @@
 char arr[2200][2200];
 
 void print(int n, int x, int y, int t) {
+    printf("%d %d %d\n", x, y, n);
     if(t == 5) {
         int k = n;
         for(int i = x; i < x + k; i++) {
