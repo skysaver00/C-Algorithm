@@ -1,6 +1,17 @@
-#include <iostream>
+#include <cstdio>
+
+int mem[101];
+int off[101];
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    int n, m;
+    scanf("%d %d", &n, &m);
+
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &mem[i]);
+    }
+
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &off[i]);
+    }
 }
