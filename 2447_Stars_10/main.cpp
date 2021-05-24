@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 char arr[2200][2200];
 
