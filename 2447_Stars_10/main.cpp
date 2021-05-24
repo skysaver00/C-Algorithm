@@ -11,6 +11,7 @@ void print(int n, int x, int y, int t) {
                 arr[i][j] = ' ';
             }
         }
+        return;
     }
     if(n == 3) {
         for(int i = x; i < x + 3; i++) {
@@ -22,11 +23,12 @@ void print(int n, int x, int y, int t) {
                 arr[i][j] = '*';
             }
         }
+        return;
     }
     else {
         for(int i = 0; i < 3; i++) {
             for(int j = 1; j <= 3; j++) {
-                printf("%d %d %d %d\n", n, x + i * (n / 3), (j - 1) * (n / 3), t);
+                printf("%d %d %d %d %d\n", n, x + i * (n / 3), (j - 1) * (n / 3), t, (i * 3) + j);
                 print(n / 3, x + i * (n / 3), (j - 1) * (n / 3), (i * 3) + j);
             }
         }
@@ -37,6 +39,14 @@ void print(int n, int x, int y, int t) {
 int main() {
     int n;
     scanf("%d", &n);
-
+    
     print(n, 0, 0, 0);
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d", arr[i][j]);
+        }printf("\n");
+    }
+
+    return 0;
 }
