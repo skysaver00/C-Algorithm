@@ -3,7 +3,7 @@
 int mem[101];
 int off[101];
 
-int dp[101][2];
+int dp[10001];
 
 int max(int i, int j) {
     return i > j ? i : j;
@@ -17,19 +17,26 @@ int main() {
         scanf("%d", &mem[i]);
     }
 
+    int sum = 0;
     for(int i = 0; i < n; i++) {
         scanf("%d", &off[i]);
+        sum += off[i];
     }
 
-    for(int i = 0; i <= 10000; i++) {
-        for(int j = 0; j < 100; j++) {
-            for(int k = 0; k <= j; k++) {
-                if(dp[k][1] + off[j] <= i) {
-                    dp[j][0] = max(dp[k][0] + mem[k], dp[j][0]);
-                    if(dp[j][0] == dp[k][0] + mem[k]) dp[k][1]
-                }
+    for(int i = 0; i < n; i++) {
+        for(int j = sum; j >= off[i]; j--) {
+            dp[j] = max(dp[j], dp[j - off[i]] + mem[i]);
+        }
+
+        int flag = 0;
+        for(int i = 0; i <= sum; i++) {
+            if(dp[i] >= m) {
+                printf("%d\n", i);
+                flag = 1;
+                break;
             }
         }
+        if(flag == 1) break;
     }
 
     return 0;
