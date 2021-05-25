@@ -1,39 +1,54 @@
-#include <cstdio>
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<pair<int, int>> arr[20001];
+int val[300005];
 int INF = 2147483647;
-int point[1001][1001];
-bool check[1001];
-int dist[1001][1001];
 
-void dijk(int n) {
-    for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) {
-            printf("%d ", point[i][j]);
-        }printf("\n");
-    }
+void dijkstra(int k) {
+    val[k] = 0;
+    priority_queue<pair<int, int>> pq;
+    pq.push(make_pair(0, k));
 
-    for(int i = 1; i <= n; i++) {
+    while(!pq.empty()) {
+        int curr = pq.top().second;
+        int dist = -pq.top().first;
 
+        pq.pop();
+        if(val[curr] < dist) continue;
+        int size = arr[curr].size();
+        for(int i = 0; i < size; i++) {
+            int next = arr[curr][i].first;
+            int nextDist = dist + arr[curr][i].second;
+
+            if(nextDist < val[next]) {
+                val[next] = nextDist;
+                pq.push(make_pair(-nextDist, next));
+            }
+        }
     }
 }
 
 int main() {
-    int n, m, x;
-    scanf("%d %d %d", &n, &m, &x);
+    int v, e;
+    int k;
+    scanf("%d %d", &v, &e);
+    scanf("%d", &k);
 
-    for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) {
-            if(i != j) point[i][j] = INF;
-            else point[i][j] = 0;
-        }
-    }
+    for(int i = 1; i <= v; i++) val[i] = INF;
 
-    for(int i = 0; i < m; i++) {
+    for(int i = 0; i < e; i++) {
         int from, to, len;
         scanf("%d %d %d", &from, &to, &len);
-        point[from][to] = len;
+
+        arr[from].push_back(make_pair(to, len));
     }
 
-    dijk(n);
+    dijkstra(k);
+    for(int i = 1; i <= v; i++) {
+        if(val[i] == INF) printf("INF\n");
+        else printf("%d\n", val[i]);
+    }
 
     return 0;
 }
