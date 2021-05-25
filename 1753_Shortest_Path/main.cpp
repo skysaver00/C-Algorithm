@@ -8,11 +8,11 @@ int INF = 2147483647;
 void dijkstra(int k) {
     val[k] = 0;
     priority_queue<pair<int, int>> pq;
-    pq.push(make_pair(k, 0));
+    pq.push(make_pair(0, k));
 
     while(!pq.empty()) {
-        int curr = pq.top().first;
-        int dist = -pq.top().second;
+        int curr = pq.top().second;
+        int dist = -pq.top().first;
 
         pq.pop();
         if(val[curr] < dist) continue;
@@ -23,7 +23,7 @@ void dijkstra(int k) {
 
             if(nextDist < val[next]) {
                 val[next] = nextDist;
-                pq.push(make_pair(next, -nextDist));
+                pq.push(make_pair(-nextDist, next));
             }
         }
     }
