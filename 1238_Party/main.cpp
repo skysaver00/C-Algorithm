@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<pair<int, int>> arr[20001];
-int val[300005];
+vector<pair<int, int>> arr[1001];
+int val[1001];
+int val2[1001][1001];
 int INF = 2147483647;
 
 void dijkstra(int k) {
@@ -44,11 +45,17 @@ int main() {
         arr[from].push_back(make_pair(to, len));
     }
 
-    dijkstra(k);
     for(int i = 1; i <= v; i++) {
-        if(val[i] == INF) printf("INF\n");
-        else printf("%d\n", val[i]);
+        dijkstra(i);
+        for(int j = 1; j <= v; j++) {
+            val2[i][j] = val[j];
+        }
+        for(int i = 1; i <= v; i++) val[i] = INF;
     }
+
+    int max = 0;
+    for(int i = 1; i <= v; i++) if(max < val2[i][k] + val2[k][i]) max = val2[i][k] + val2[k][i];
+    printf("%d\n", max);
 
     return 0;
 }

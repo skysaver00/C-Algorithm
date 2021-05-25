@@ -7,6 +7,6 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/1238_Party/main.cpp
-cstdio
+bits/stdc++.h
 -
 
