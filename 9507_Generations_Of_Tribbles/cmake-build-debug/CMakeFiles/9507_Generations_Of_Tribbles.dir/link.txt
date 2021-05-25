@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\9507_Generations_Of_Tribbles.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\9507_Generations_Of_Tribbles.dir/objects.a @CMakeFiles\9507_Generations_Of_Tribbles.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\9507_Generations_Of_Tribbles.dir/objects.a -Wl,--no-whole-archive -o 9507_Generations_Of_Tribbles.exe -Wl,--out-implib,lib9507_Generations_Of_Tribbles.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\9507_Generations_Of_Tribbles.dir\linklibs.rsp
