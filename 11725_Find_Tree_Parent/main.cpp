@@ -1,13 +1,26 @@
 #include <stdio.h>
+int n;
 int arr[100001][3];
 int check[100001];
 int root[100001];
 
+void dfs(int i) {
+    if(check[i] == 1) return;
+    check[i] = 1;
+
+    for(int j = 0; j < 3; j++) {
+        if(arr[i][j] != 0 && check[arr[i][j]] == 0) {
+            root[arr[i][j]] = i;
+            dfs(arr[i][j]);
+        }
+        if(arr[i][j] == 0) return;
+    }
+}
+
 int main() {
-    int n;
     scanf("%d", &n);
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n - 1; i++) {
         int one, two;
         scanf("%d %d", &one, &two);
 
@@ -25,10 +38,8 @@ int main() {
             }
         }
     }
-
-    for(int i = 0; i < n; i++) {
-        printf("%d %d %d\n", arr[i][0], arr[i][1], arr[i][2]);
-    }
+    dfs(1);
+    for(int i = 2; i <= n; i++) printf("%d\n", root[i]);
 
     return 0;
 }
