@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\11726_2xN_Tiling.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\11726_2xN_Tiling.dir/objects.a @CMakeFiles\11726_2xN_Tiling.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\11726_2xN_Tiling.dir/objects.a -Wl,--no-whole-archive -o 11726_2xN_Tiling.exe -Wl,--out-implib,lib11726_2xN_Tiling.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\11726_2xN_Tiling.dir\linklibs.rsp
