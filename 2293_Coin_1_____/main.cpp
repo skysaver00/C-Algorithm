@@ -7,27 +7,17 @@ int main () {
     scanf("%d %d", &n, &k);
     for(int i = 0; i < n; i++) {
         scanf("%d", &coin[i]);
-        dp[coin[i]] = 1;
     }
 
     for(int i = 0; i < n; i++) {
         for(int j = 1; j <= k; j++) {
-            
+            if(j == coin[i]) dp[j] += 1;
+            else if(j - coin[i] < 0) continue;
+            else dp[j] += dp[j - coin[i]];
         }
     }
 
-    for(int i = 1; i <= k; i++) {
-        for(int j = 0; j < n; j++) {
-            if(i - coin[j] < 0);
-            else {
-                dp[i] += dp[i - coin[j]];
-            }
-        }
-
-        for(int j = 1; j <= k; j++) {
-            printf("%d ", dp[j]);
-        }printf("\n");
-    }
+    printf("%d\n", dp[k]);
 
     return 0;
 }
