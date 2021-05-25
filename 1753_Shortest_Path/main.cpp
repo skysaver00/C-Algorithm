@@ -46,7 +46,8 @@ int main() {
 
     dijkstra(k);
     for(int i = 1; i <= v; i++) {
-        printf("%d\n", val[i]);
+        if(val[i] == INF) printf("INF\n");
+        else printf("%d\n", val[i]);
     }
 
     return 0;
