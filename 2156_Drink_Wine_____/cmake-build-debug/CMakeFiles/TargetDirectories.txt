@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2156_Drink_Wine_____/cmake-build-debug/CMakeFiles/2156_Drink_Wine_____.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2156_Drink_Wine_____/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2156_Drink_Wine_____/cmake-build-debug/CMakeFiles/rebuild_cache.dir
