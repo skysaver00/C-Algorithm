@@ -1,12 +1,18 @@
 #include <cstdio>
-#define INF (unsigned)!((int)0)
+int INF = 2147483647;
 int point[1001][1001];
+bool check[1001];
+int dist[1001][1001];
 
 void dijk(int n) {
     for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++) {
             printf("%d ", point[i][j]);
         }printf("\n");
+    }
+
+    for(int i = 1; i <= n; i++) {
+
     }
 }
 
@@ -16,7 +22,8 @@ int main() {
 
     for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++) {
-            point[i][j] = INF;
+            if(i != j) point[i][j] = INF;
+            else point[i][j] = 0;
         }
     }
 
