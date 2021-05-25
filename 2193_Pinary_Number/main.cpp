@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int arr[91][2];
+long long arr[91][2];
 
 int main() {
     int n;
@@ -12,11 +12,9 @@ int main() {
     for(int i = 2; i <= n; i++) {
         arr[i][0] = arr[i - 1][0] + arr[i - 1][1];
         arr[i][1] = arr[i - 1][0];
-
-        printf("%d %d\n", arr[i][0], arr[i][1]);
     }
 
-    printf("%d\n" arr[n][0] + arr[n][1]);
+    cout << arr[n][0] + arr[n][1] << endl;
 
     return 0;
 }
