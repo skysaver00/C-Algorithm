@@ -1,7 +1,7 @@
 #include <stdio.h>
 int a, b, c;
 
-void desc(int num, int now, int dest) {
+int desc(int num, int now, int dest) {
     int fact = num;
 
     int flag = 0;
@@ -20,8 +20,8 @@ void desc(int num, int now, int dest) {
 
     if(flag == 0) {
         if(now == dest) {
-            printf("%d\n", num);
-            return;
+            c = num;
+            return 1;
         }
         a = now + 1;
         b = num + 1;
@@ -30,15 +30,20 @@ void desc(int num, int now, int dest) {
         a = now;
         b = num + 1;
     }
-    return;
+    return 0;
 }
 
 int main() {
     int n;
     scanf("%d", &n);
 
-    for(int i = 0; i <= 42; i++) {
-        desc(b, a, n);
-        printf("%d %d %d\n", a, b, n);
+    for(int i = 0; i <= 1000000; i++) {
+        int check = desc(b, a, n);
+        printf("%d %d %d %d\n", a, b, n, c);
+        if(check == 1) break;
     }
+    printf("%d %d\n", a, c);
+
+    if(a != 0 && c == 0) printf("-1\n");
+    else printf("%d\n", c);
 }
