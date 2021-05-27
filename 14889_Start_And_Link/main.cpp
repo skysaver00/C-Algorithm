@@ -15,15 +15,13 @@ void comp() {
 
     for(int i = 1; i <= r - 1; i++) {
         for(int j = i + 1; j <= r; j++) {
-            printf("%d %d %d %d\n", arr[start[i]][start[j]], arr[start[j]][start[i]], arr[link[i]][link[j]], arr[link[j]][link[i]]);
             one += (arr[start[i]][start[j]] + arr[start[j]][start[i]]);
             two += (arr[link[i]][link[j]] + arr[link[j]][link[i]]);
         }
-        int val = one - two;
-        if(val <= 0) val *= -1;
-        if(max > val) max = val;
-        printf("%d %d %d\n",one, two, max);
     }
+    int val = one - two;
+    if(val <= 0) val *= -1;
+    if(max > val) max = val;
 }
 
 void comb(int num, int idx) {
@@ -36,14 +34,6 @@ void comb(int num, int idx) {
                 v++;
             }
         }
-        /*for(int i = 1; i <= r; i++) {
-            printf("%d ", start[i]);
-        }printf("\n");
-
-        for(int i = 1; i <= r; i++) {
-            printf("%d ", link[i]);
-        }printf("\n");*/
-
         comp();
 
         for(int i = 1; i <= n; i++) check[i] = 0;
