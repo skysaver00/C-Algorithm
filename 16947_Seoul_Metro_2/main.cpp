@@ -3,21 +3,22 @@
 using namespace std;
 
 vector<int> v[3001];
-int check[3001];
 int visit[3001];
+int prv[3001];
+int fin[3001];
+int st, en;
 
-int cycle(int pre, int n) {
-    if(check[n] == 1) return n;
-    check[n] = 1;
+void cycle(int n, int pre) {
+    visit[n] = 1;
 
-    int prev = n;
     int s = v[n].size();
     for(int i = 0; i < s; i++) {
-        if(prev == v[n][i]) continue;
-        printf("c: : %d\n", v[n][i]);
-        cycle(prev, v[n][i]);
+        if (visit[v[n][i]] == 0) {
+            prv[v[n][i]] = n;
+            cycle(v[n][i], n);
+        } else if (fin[v[n][i]] == 0 && v[n][i] != pre) st = v[n][i], en = n;
     }
-    return 0;
+    fin[n] = true;
 }
 
 int main() {
@@ -32,9 +33,15 @@ int main() {
         v[l2].push_back(l1);
     }
 
+    cycle(1, 0);
+    printf("%d %d\n", st, en);
     for(int i = 1; i <= n; i++) {
-        int t = cycle(-1, i);
-        printf("%d\n", t);
-    }
+        printf("%d ", visit[i]);
+    }printf("\n");
+
+    prv[st] = en;
+    for(int i = 1; i <= n; i++) {
+        printf("%d %d\n", i, prv[i]);
+    }printf("\n");
 
 }
