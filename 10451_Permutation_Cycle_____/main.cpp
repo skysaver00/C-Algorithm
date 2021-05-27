@@ -1,10 +1,6 @@
 #include <stdio.h>
-#include <deque>
-using namespace std;
 int arr[1001];
 int check[1001];
-
-deque<int> dq;
 
 void dfs(int n, int val) {
     if(check[n] != 0) return;
@@ -29,9 +25,8 @@ int main() {
             dfs(i, t);
         }
 
-        int min = 0;
-        for(int i = 1; i <= n; i++) if(check[i] > min) min = check[i];
-        printf("%d\n", min);
+        printf("%d\n", t);
         for(int i = 1; i <= n; i++) check[i] = 0;
     }
+    return 0;
 }
