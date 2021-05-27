@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/10451_Permutation_Cycle_____/main.cpp
-stdio.h
--
-deque
+iostream
 -
 
