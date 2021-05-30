@@ -11,10 +11,10 @@ int main () {
     for(int i = 0; i < n; i++) {
         int x;
         scanf("%d", &x);
-
         pq.push(x);
-        printf("%d\n", pq.top());
+        if(pq.size() > k) pq.pop();
     }
+    printf("%d\n", pq.top());
 
     return 0;
 }
