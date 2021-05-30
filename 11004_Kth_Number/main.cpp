@@ -1,6 +1,20 @@
-#include <iostream>
+#include <stdio.h>
+#include <queue>
+using namespace std;
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+priority_queue<int> pq;
+
+int main () {
+    int n, k;
+    scanf("%d %d", &n, &k);
+
+    for(int i = 0; i < n; i++) {
+        int x;
+        scanf("%d", &x);
+
+        pq.push(x);
+        printf("%d\n", pq.top());
+    }
+
     return 0;
 }
