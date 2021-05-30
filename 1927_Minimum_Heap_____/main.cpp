@@ -17,7 +17,8 @@ int main() {
                 pq.pop();
             }
         } else {
-            
+            pq.push(x);
         }
     }
+    return 0;
 }
