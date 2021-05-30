@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/11004_Kth_Number/cmake-build-debug/CMakeFiles/11004_Kth_Number.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/11004_Kth_Number/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/11004_Kth_Number/cmake-build-debug/CMakeFiles/rebuild_cache.dir
