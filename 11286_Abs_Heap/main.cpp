@@ -7,10 +7,8 @@ priority_queue<pr, vector<pr>, greater<pr>> pq;
 
 int main() {
     int n; scanf("%d", &n);
-
     while(n--) {
         int x; scanf("%d", &x);
-
         if(x == 0) {
             if(pq.empty()) printf("0\n");
             else {
