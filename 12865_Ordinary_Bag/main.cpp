@@ -12,7 +12,7 @@ int max(int a, int b) {
 void sort() {
     int key;
     for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n - 1 - i; j++) {
+        for(int j = 1; j <= n - i; j++) {
             if(w[j] > w[j + 1]) {
                 int temp = w[j];
                 w[j] = w[j + 1];
@@ -26,6 +26,10 @@ void sort() {
 }
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     cin >> n >> k;
 
     for(int i = 1; i <= n ; i++) {
@@ -34,17 +38,14 @@ int main() {
 
     sort();
 
-    for(int i = 1; i <= n; i ++) {
-        printf("%d %d\n", w[i], v[i]);
-    }
-
     for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= k; j++) {
-            if(k - w[i] )
+            if(j - w[i] >= 0) arr[i][j] = max(arr[i - 1][j], arr[i - 1][j - w[i]] + v[i]);
+            else arr[i][j] = arr[i - 1][j];
         }
     }
 
-
-
+    int largest = arr[n][k];
+    cout << largest << "\n";
     return 0;
 }
