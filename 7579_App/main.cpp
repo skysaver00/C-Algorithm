@@ -23,7 +23,14 @@ int main() {
 
     int min = 10001;
     for(int i = 0; i < n; i++) {
-        for(int j = sum; j >= off[i]; j--) dp[j] = max(dp[j], dp[j - off[i]] + mem[i]);
+        for(int j = sum; j >= off[i]; j--) {
+            dp[j] = max(dp[j], dp[j - off[i]] + mem[i]);
+
+            for(int k = 0; k <= sum; k++) {
+                printf("%d ", dp[k]);
+            }printf("\n");
+        }
+
         for(int i = 0; i <= sum; i++) {
             if(dp[i] >= m && i < min) {
                 min = i;

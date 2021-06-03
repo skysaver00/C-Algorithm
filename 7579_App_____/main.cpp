@@ -22,11 +22,15 @@ int main() {
         sum += c[i];
     }
 
+    int min = 10001;
     for(int i = 1; i <= n; i++) {
-        for(int j = sum; j >= c[i]; j--) {
-            dp[j] = max(dp[j], dp[j])
+        for(int j = c[i]; j <= sum; j++) {
+            dp[j] = max(dp[j], dp[j - c[i]] + a[i]);
+        }
+        for(int j = 0; j <= sum; j++) {
+            if(dp[i] > m && i < min) min = i;
         }
     }
-
+    printf("%d\n", min);
     return 0;
 }
