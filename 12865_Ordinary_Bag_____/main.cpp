@@ -17,9 +17,6 @@ int main() {
             if(j - wei[i] >= 0) dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - wei[i]] + val[i]);
             else dp[i][j] = dp[i - 1][j];
         }
-        for(int j = 1; j <= k; j++) {
-            printf("%d ", dp[i][j]);
-        }printf("\n");
     }
 
     printf("%d\n", dp[n][k]);

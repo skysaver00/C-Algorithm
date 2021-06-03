@@ -25,7 +25,11 @@ int main() {
     int min = 10001;
     for(int i = 1; i <= n; i++) {
         for(int j = c[i]; j <= sum; j++) {
-            dp[j] = max(dp[j], dp[j - c[i]] + a[i]);
+            dp[j] = max(dp[j], dp[j + c[i]] + a[i]);
+
+            for(int k = 0; k <= sum; k++) {
+                printf("%d ", dp[k]);
+            }printf("\n");
         }
         for(int j = 0; j <= sum; j++) {
             if(dp[i] > m && i < min) min = i;
