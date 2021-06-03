@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/12865_Ordinary_Bag_____/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/12865_Ordinary_Bag_____/cmake-build-debug/CMakeFiles/12865_Ordinary_Bag_____.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/12865_Ordinary_Bag_____/cmake-build-debug/CMakeFiles/rebuild_cache.dir
