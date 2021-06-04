@@ -15,11 +15,11 @@ int main() {
 
             if(c == 'I') s.insert(n);
             else if(c == 'D') {
+                if(s.size() == 0) continue;
                 if(n == -1) s.erase(s.begin());
                 else if(n == 1) s.erase(s.end());
             }
-            for(auto i : s) cout << i << " ";
-            cout << "\n";
+            cout << s.size() << endl;
         }
     }
 
