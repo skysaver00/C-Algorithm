@@ -15,8 +15,7 @@ int main() {
             char t = mes.at(i);
             A[t - 0x41]++;
             if(A[t - 0x41] % 3 == 0 && A[t - 0x41] != 0) {
-                cout << t << " " << len - 1 << "\n";
-                if (t == len - 1) {
+                if (i == len - 1) {
                     cout << "FAKE\n";
                     flag = 1;
                     break;
@@ -24,12 +23,11 @@ int main() {
                     cout << "FAKE\n";
                     flag = 1;
                     break;
+                } else {
+                    A[t - 0x41] = 0;
+                    i++;
                 }
             }
-
-            for(int j = 0; j < 26; j++) {
-                cout << A[j] << " ";
-            }cout << "\n";
         }
 
         if(flag == 0) cout << "OK\n";
