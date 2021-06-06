@@ -41,13 +41,12 @@ void startDFS(int i, int j, int val) {
     check[i][j] = val;
     dfscheck = 1;
     for(int a = 0; a < 8; a++) {
-        int _y = que.front().first + y[a];
-        int _x = que.front().second + x[a];
+        int _y = i + y[a];
+        int _x = j + x[a];
 
         if(_y < m && _x < n && _y >= 0 && _x >= 0);
         else continue;
 
-        printf("%d %d\n", _y, _x);
         startDFS(_y, _x, val);
     }
 }
@@ -67,12 +66,6 @@ int main() {
             startDFS(i, j, val);
             if(dfscheck == 1) val++;
             dfscheck = 0;
-
-            for(int k = 0; k < m; k++) {
-                for(int h = 0; h < n; h++) {
-                    printf("%d ", check[k][h]);
-                }printf("\n");
-            }printf("\n");
         }
     }
     printf("%d\n", --val);
