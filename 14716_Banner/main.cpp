@@ -2,6 +2,7 @@
 #include <queue>
 using namespace std;
 int m, n;
+int dfscheck = 0;
 bool banner[251][251];
 int check[251][251];
 
@@ -33,12 +34,21 @@ bool startBFS(int i, int j, int val) {
     return 1;
 }
 
-bool startDFS(int i, int j, int val) {
-    if(banner[i][j] == 0) return 0;
-    if(check[i][j] != 0) return 0;
+void startDFS(int i, int j, int val) {
+    if(banner[i][j] == 0) return;
+    if(check[i][j] != 0) return;
 
+    check[i][j] = val;
+    dfscheck = 1;
     for(int a = 0; a < 8; a++) {
-        
+        int _y = que.front().first + y[a];
+        int _x = que.front().second + x[a];
+
+        if(_y < m && _x < n && _y >= 0 && _x >= 0);
+        else continue;
+
+        printf("%d %d\n", _y, _x);
+        startDFS(_y, _x, val);
     }
 }
 
@@ -54,8 +64,15 @@ int main() {
     int val = 1;
     for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
-            int ck = startBFS(i, j, val);
-            if(ck == 1) val++;
+            startDFS(i, j, val);
+            if(dfscheck == 1) val++;
+            dfscheck = 0;
+
+            for(int k = 0; k < m; k++) {
+                for(int h = 0; h < n; h++) {
+                    printf("%d ", check[k][h]);
+                }printf("\n");
+            }printf("\n");
         }
     }
     printf("%d\n", --val);
