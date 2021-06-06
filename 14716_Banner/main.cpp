@@ -33,6 +33,15 @@ bool startBFS(int i, int j, int val) {
     return 1;
 }
 
+bool startDFS(int i, int j, int val) {
+    if(banner[i][j] == 0) return 0;
+    if(check[i][j] != 0) return 0;
+
+    for(int a = 0; a < 8; a++) {
+        
+    }
+}
+
 int main() {
     scanf("%d %d", &m, &n);
 
