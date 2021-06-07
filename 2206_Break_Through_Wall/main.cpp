@@ -23,12 +23,15 @@ void startBFS(int a, int b) {
             int _x = b + x[i];
 
             if(check[_y][_x] != 0) continue;
+            if(_y < n && _x < m && _y >= 0 && _x >= 0) {}
+            else continue;
 
             if(mp[_y][_x] == 1) {
                 if(used[a][b] == 1) continue;
                 else {
                     used[_y][_x] = true;
                     check[_y][_x] = val++;
+                    que.push({_y, _x});
                 }
             } else if(mp[_y][_x] == 0) {
                 check[_y][_x] = val++;
@@ -43,9 +46,9 @@ void startBFS(int a, int b) {
                 printf("             ");
                 for(int k = 0; k < m; k++) {
                     printf("%d ", used[j][k]);
-                }
+                }printf("\n");
             }printf("\n");
-        }printf("\n");
+        }
     }
 }
 
