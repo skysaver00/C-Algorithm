@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1987_Alphabet/cmake-build-debug/CMakeFiles/1987_Alphabet.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1987_Alphabet/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1987_Alphabet/cmake-build-debug/CMakeFiles/rebuild_cache.dir
