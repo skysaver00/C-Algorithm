@@ -7,6 +7,7 @@ int check[1001][1001];
 bool used[1001][1001];
 queue<pair<int, int>> que;
 int val = 1;
+int n, m;
 
 int x[4] = {1, 0, -1, 0};
 int y[4] = {0, 1, 0, -1};
@@ -34,12 +35,21 @@ void startBFS(int a, int b) {
                 used[_y][_x] = used[a][b];
                 que.push({_y, _x});
             }
-        }
+
+            for(int j = 0; j < n; j++) {
+                for(int k = 0; k < m; k++) {
+                    printf("%d ", check[j][k]);
+                }
+                printf("             ");
+                for(int k = 0; k < m; k++) {
+                    printf("%d ", used[j][k]);
+                }
+            }printf("\n");
+        }printf("\n");
     }
 }
 
 int main() {
-    int n, m;
     scanf("%d %d", &n, &m);
 
     for(int i = 0; i < n; i++) scanf("%s", mp[i]);
