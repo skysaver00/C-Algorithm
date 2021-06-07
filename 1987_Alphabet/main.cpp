@@ -10,9 +10,13 @@ int y[4] = {0, 1, 0, -1};
 
 void startDFS(int a, int b) {
     if(check[a][b] != 0) {
+        check[a][b] = false;
         return;
     }
-    if(Acheck[arr[a][b] - 0x41]) return;
+    if(Acheck[arr[a][b] - 0x41]) {
+        Acheck[arr[a][b] - 0x41] = false;
+        return;
+    }
 
     Acheck[arr[a][b] - 0x41] = true;
     check[a][b] = true;
@@ -23,6 +27,7 @@ void startDFS(int a, int b) {
         if(_x < r && _y < c && _x >= 0 && _y >= 0) {}
         else continue;
 
+        if(check[_x][_y] != 0) continue;
         route[_x][_y] = route[a][b] + 1;
 
         for(int j = 0; j < r; j++) {
@@ -36,6 +41,7 @@ void startDFS(int a, int b) {
                 printf("%d ", check[j][k]);
             }printf("\n");
         }printf("\n");
+        printf("---------------------------------");
         startDFS(_x, _y);
     }
 }
