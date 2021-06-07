@@ -14,9 +14,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    int flag = 0;
-    up[1] = 1;
-    for(int i = 1; i <= n; i++) {
+    for(int i = 0; i <= n; i++) {
         for(int j = 1; j < i; j++) {
             if(arr[i] > arr[j]) {
                 if(up[i] <= up[j]) {
@@ -28,7 +26,39 @@ int main() {
 
     int ma = 0;
     int loc = 0;
+    for(int i = n; i >= 1; i--) {
+        if(ma != max(up[i], ma) || ma == up[i]) {
+            ma = max(up[i], ma);
+            loc = i;
+        }
+    }
     for(int i = 1; i <= n; i++) {
         printf("%d ", up[i]);
     }printf("\n");
+    printf("%d\n", loc);
+
+    down[loc] = 0;
+    for(int i = 0; i <= n; i++) {
+        for(int j = 1; j < i; j++) {
+            if(arr[i] < arr[j]) {
+                if(down[i] >= down[j]) {
+                    down[i] = down[j] + 1;
+                }
+            }
+        }
+    }
+
+    for(int i = 1; i <= n; i++) {
+        printf("%d ", down[i]);
+    }printf("\n");
+    int asc = 0;
+    int desc = 0;
+    for(int i = 1; i <= n; i++) {
+        if(asc < up[i]) asc = up[i];
+        if(desc < down[i]) desc = down[i];
+    }
+
+    printf("%d %d\n", asc, desc);
+
+    return 0;
 }
