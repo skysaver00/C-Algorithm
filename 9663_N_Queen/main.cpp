@@ -1,6 +1,11 @@
-#include <iostream>
+#include <stdio.h>
+int x[16], y[16];
+
+int check(int a, int b) {
+    
+}
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
     return 0;
 }
