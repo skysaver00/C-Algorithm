@@ -4,7 +4,7 @@ int route[21][21];
 bool Acheck[27];
 int r, c;
 int t = 1;
-int realma = 0;
+int realma = 1;
 
 int max(int i, int j) {
     return i > j ? i : j;
@@ -23,8 +23,8 @@ void startDFS(int a, int b, int t) {
 
         if(Acheck[arr[_x][_y] - 0x41]) continue;
         Acheck[arr[_x][_y] - 0x41] = true;
-        realma = max(realma, route[_x][_y]);
         route[_x][_y] = route[a][b] + 1;
+        realma = max(realma, route[_x][_y]);
 
         startDFS(_x, _y, ++t);
         Acheck[arr[_x][_y] - 0x41] = false;
@@ -41,7 +41,6 @@ int main() {
     route[0][0] = 1;
     startDFS(0, 0, t);
 
-    int ma = -9999;
     printf("%d\n", realma);
 
     return 0;
