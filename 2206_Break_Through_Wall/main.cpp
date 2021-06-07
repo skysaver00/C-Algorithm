@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <queue>
 using namespace std;
+int min(int i, int j) {
+    return i < j ? i : j;
+}
 
 char mp[1001][1001];
 int check[1001][1001];
@@ -21,7 +24,6 @@ void startBFS(int a, int b) {
     check[a][b] = 1;
 
     while(!que.empty()) {
-        printf("right now: %d %d\n", que.front().first, que.front().second);
         int xx, yy;
         yy = que.front().first;
         xx = que.front().second;
@@ -29,8 +31,6 @@ void startBFS(int a, int b) {
         for(int i = 0; i < 4; i++) {
             int _y = yy + y[i];
             int _x = xx + x[i];
-
-            printf("%d %d %d\n", _y, _x, check[_y][_x]);
 
             if(check[_y][_x] != 0) continue;
 
@@ -53,16 +53,6 @@ void startBFS(int a, int b) {
                 }
                 que.push({_y, _x});
             }
-
-            for(int j = 0; j < n; j++) {
-                for(int k = 0; k < m; k++) {
-                    printf("%d ", check[j][k]);
-                }
-                printf("             ");
-                for(int k = 0; k < m; k++) {
-                    printf("%d ", used[j][k]);
-                }printf("\n");
-            }printf("\n");
         }
     }
 }
@@ -72,7 +62,6 @@ void startBFSback(int a, int b) {
     check2[a][b] = 1;
 
     while(!que2.empty()) {
-        printf("right now: %d %d\n", que2.front().first, que2.front().second);
         int xx, yy;
         yy = que2.front().first;
         xx = que2.front().second;
@@ -80,8 +69,6 @@ void startBFSback(int a, int b) {
         for(int i = 0; i < 4; i++) {
             int _y = yy + y[i];
             int _x = xx + x[i];
-
-            printf("%d %d %d\n", _y, _x, check2[_y][_x]);
 
             if(check2[_y][_x] != 0) continue;
 
@@ -104,16 +91,6 @@ void startBFSback(int a, int b) {
                 }
                 que2.push({_y, _x});
             }
-
-            for(int j = 0; j < n; j++) {
-                for(int k = 0; k < m; k++) {
-                    printf("%d ", check2[j][k]);
-                }
-                printf("             ");
-                for(int k = 0; k < m; k++) {
-                    printf("%d ", used2[j][k]);
-                }printf("\n");
-            }printf("\n");
         }
     }
 }
@@ -124,15 +101,20 @@ int main() {
     for(int i = 0; i < n; i++) scanf("%s", mp[i]);
 
     startBFS(0, 0);
-    printf("nope\n");
     startBFSback(n - 1, m - 1);
 
     int ans = check[n - 1][m - 1];
-    int ans2 = check2[n - 1][m - 1];
-    
+    int ans2 = check2[0][0];
 
-    if(check[n - 1][m - 1] != 0) printf("%d\n", check[n - 1][m - 1]);
-    else printf("-1\n");
+    if(ans == 0 && ans2 == 0) {
+        printf("-1\n");
+        return 0;
+    } else if(ans == 0) printf("%d\n", ans2);
+    else if(ans2 == 0) printf("%d\n", ans);
+    else {
+        int mi = min(ans, ans2);
+        printf("%d\n", mi);
+    }
 
     return 0;
 }
