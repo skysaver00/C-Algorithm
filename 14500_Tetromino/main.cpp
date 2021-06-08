@@ -170,19 +170,16 @@ int main() {
         for (int j = 0; j < m; j++) {
             int t = one(i, j);
             if(val < t) val = t;
-            printf("%d\n", val);
             t = two(i, j);
             if(val < t) val = t;
-            printf("two: %d\n", t);
             t = three(i, j);
             if(val < t) val = t;
-            printf("three: %d\n", t);
             t = four(i, j);
             if(val < t) val = t;
-            printf("four: %d\n", t);
-
+            t = five(i, j);
+            if(val < t) val = t;
         }
     }
-
+    printf("%d\n", val);
     return 0;
 }
