@@ -134,8 +134,26 @@ int four(int i, int j) {
     return t;
 }
 
-int five() {
+int five(int i, int j) {
+    int t = 0;
+    for (int a = 0; a < 4; a++) {
+        int val = 0;
+        int flag = 0;
+        for (int b = 0; b < 4; b++) {
+            if (i + fi5Y[b][a] < n && i + fi5Y[b][a] >= 0 && j + fi5X[b][a] < m && j + fi5X[b][a] >= 0) {}
+            else {
+                flag = 1;
+                break;
+            }
+            val += arr[i + fi5Y[b][a]][j + fi5X[b][a]];
+        }
 
+        if (flag == 1) continue;
+        else {
+            if (t < val) t = val;
+        }
+    }
+    return t;
 }
 
 int main() {
@@ -159,6 +177,10 @@ int main() {
             t = three(i, j);
             if(val < t) val = t;
             printf("three: %d\n", t);
+            t = four(i, j);
+            if(val < t) val = t;
+            printf("four: %d\n", t);
+
         }
     }
 
