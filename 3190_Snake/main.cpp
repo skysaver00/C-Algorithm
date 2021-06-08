@@ -15,7 +15,7 @@ struct order oder[10001];
 int face = 0;
 
 int startSnake(int i, int j) {
-    int t = 0;
+    int t = 1;
     int x = j;
     int y = i;
     int now = 0;
@@ -48,12 +48,12 @@ int startSnake(int i, int j) {
             now++;
         }
 
-        printf("%d %d %d\n", y, x, t);
+        /*printf("%d %d %d\n", y, x, t);
         for(int k = 1; k <= n; k++) {
             for(int l = 1; l <= n; l++) {
                 printf("%d ", mp[k][l]);
             }printf("\n");
-        }printf("\n");
+        }printf("\n");*/
         t++;
     }
 
