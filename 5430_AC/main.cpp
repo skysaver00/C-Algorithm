@@ -50,9 +50,10 @@ int main(){
         int sz = deq.size();
         if(sz == 0) {
             cout << "error\n";
+            P.clear();
+            str.clear();
             continue;
         }
-
         cout << "[";
         for(int i = 0; i < sz; i++) {
             if(fb == 0) {
