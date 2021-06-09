@@ -41,7 +41,7 @@ int main() {
         }
     }
 
-    int t = 1;
+    int t = 0;
     for(int i = 0; i <= n; i++) {
         if(arr2[i] == 0) break;
         t++;
