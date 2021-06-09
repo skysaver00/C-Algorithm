@@ -33,6 +33,7 @@ int main(){
 
         len = P.length();
         int fb = 0;
+        int flag = 0;
         for(int i = 0; i < len; i++) {
             if(P.at(i) == 'R') {
                 if(fb == 0) fb = 1;
@@ -43,12 +44,15 @@ int main(){
                 if(sz > 0) {
                     if (fb == 0) deq.pop_front();
                     else deq.pop_back();
+                } else {
+                    flag = 1;
+                    break;
                 }
             }
         }
 
         int sz = deq.size();
-        if(sz == 0) {
+        if(sz == 0 && flag == 1) {
             cout << "error\n";
             P.clear();
             str.clear();
