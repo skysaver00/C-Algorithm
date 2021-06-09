@@ -21,15 +21,37 @@ int main() {
     }
 
     for(int i = 1; i <= n; i++) {
+        cout << check[i] << " ";
+    }cout << "\n";
+
+    int max = -9999;
+    for(int i = n; i >= 1; i--) {
+        if(max < check[i]) {
+            max = check[i];
+            for(int j = 0; j <= n; j++) {
+                ckPer[j] = false;
+                arr2[j] = false;
+            }
+        }
         if(!ckPer[check[i]]) {
             ckPer[check[i]] = true;
             arr2[check[i]] = arr[i];
+        } else {
+            if(arr2[check[i]] > arr[i]) arr2[check[i]] = arr[i];
         }
     }
 
+    int t = 1;
     for(int i = 0; i <= n; i++) {
         if(arr2[i] == 0) break;
-        printf("%d ", arr2[i]);
-    }printf("\n");
+        t++;
+    }
+
+    cout << t << "\n";
+    for(int i = 0; i <= n; i++) {
+        if(arr2[i] == 0) break;
+        cout << arr2[i] << " ";
+    }cout << "\n";
+
     return 0;
 }
