@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 int mp[51][51];
-int t[13][101];
+int t[15][101];
+int low[15];
 
 int main() {
     int n, m;
@@ -34,11 +35,20 @@ int main() {
 
     for(int i = 0; i <= now; i++) {
         int sum = 0;
+        int rom = 999999;
         for(int j = 0; j < now2; j++) {
+            if(rom > t[j][i]) {
+                rom = t[j][i];
+                low[i] = j;
+            }
             printf("%d ", t[i][j]);
             sum += t[i][j];
         }
         printf("sum: %d\n", sum);
+    }printf("\n");
+
+    for(int i = 0; i <= now; i++) {
+        printf("%d ", low[i]);
     }printf("\n");
 
     return 0;
