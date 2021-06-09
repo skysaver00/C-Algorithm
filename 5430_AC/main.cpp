@@ -22,6 +22,7 @@ int main(){
         int val = 0;
         for(int i = 0; i < len; i++) {
             if(str.at(i) == ',' || str.at(i) == ']') {
+                if(val == 0) continue;
                 deq.push_back(val);
                 val = 0;
             } else if(str.at(i) == '[') {} else {
