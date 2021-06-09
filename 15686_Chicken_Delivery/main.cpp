@@ -37,13 +37,10 @@ int main() {
         int sum = 0;
         int rom = 999999;
         for(int j = 0; j < now2; j++) {
-            if(rom > t[j][i]) {
-                rom = t[j][i];
-                low[i] = j;
-            }
             printf("%d ", t[i][j]);
             sum += t[i][j];
         }
+        low[i] = sum;
         printf("sum: %d\n", sum);
     }printf("\n");
 
