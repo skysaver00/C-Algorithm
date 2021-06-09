@@ -1,14 +1,12 @@
 /*
- * import sys
-n = int(input())
-m = int(input())
+n, m = map(int, input().split())
 
 x = 1
-for i in range(n - m, n):
-	x *= i
+for i in range(n - m + 1, n + 1):
+	x = x * i
 
-for i in range(m, n):
-	x /= i
+for i in range(1, m + 1):
+	x = x // i
 
-print(x)
+print(int(x))
  */
