@@ -1,3 +1,3 @@
 "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\20410_Lottery_Shootout.dir/objects.a
 X:\MinGW\bin\ar.exe cr CMakeFiles\20410_Lottery_Shootout.dir/objects.a @CMakeFiles\20410_Lottery_Shootout.dir\objects1.rsp
-X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\20410_Lottery_Shootout.dir/objects.a -Wl,--no-whole-archive  -o 20410_Lottery_Shootout.exe -Wl,--out-implib,lib20410_Lottery_Shootout.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\20410_Lottery_Shootout.dir\linklibs.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\20410_Lottery_Shootout.dir/objects.a -Wl,--no-whole-archive -o 20410_Lottery_Shootout.exe -Wl,--out-implib,lib20410_Lottery_Shootout.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\20410_Lottery_Shootout.dir\linklibs.rsp

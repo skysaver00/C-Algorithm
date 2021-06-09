@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/skysaver00/IdeaProjects/C, C++/20410 Lottery_Shootout
+# Install script for directory: C:/Users/skysaver00/IdeaProjects/C, C++/1915_Biggest_Quad
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/20410_Lottery_Shootout")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/1915_Biggest_Quad")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/skysaver00/IdeaProjects/C, C++/20410 Lottery_Shootout/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/skysaver00/IdeaProjects/C, C++/1915_Biggest_Quad/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
