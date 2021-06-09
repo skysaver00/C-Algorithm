@@ -9,7 +9,7 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            scanf("%d", &mp);
+            scanf("%d", &mp[i][j]);
         }
     }
 
@@ -32,10 +32,13 @@ int main() {
         }
     }
 
-    for(int i = 0; i < now; i++) {
+    for(int i = 0; i <= now; i++) {
+        int sum = 0;
         for(int j = 0; j < now2; j++) {
             printf("%d ", t[i][j]);
-        }printf("\n");
+            sum += t[i][j];
+        }
+        printf("sum: %d\n", sum);
     }printf("\n");
 
     return 0;
