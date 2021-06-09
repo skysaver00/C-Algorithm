@@ -6,6 +6,7 @@ int check[1001];
 
 bool ckPer[1001];
 int arr2[1001];
+int arr3[1001];
 
 int main() {
     int n; cin >> n;
@@ -25,14 +26,15 @@ int main() {
     }cout << "\n";
 
     int max = -9999;
+    for(int i = n; i >= 0; i--) {
+        arr3[check[i]] = i;
+    }
+
+    for(int i = 0; i <= n; i++) {
+        cout << arr3[i] << " ";
+    }cout << "\n";
+
     for(int i = n; i >= 1; i--) {
-        if(max < check[i]) {
-            max = check[i];
-            for(int j = 0; j <= n; j++) {
-                ckPer[j] = false;
-                arr2[j] = false;
-            }
-        }
         if(!ckPer[check[i]]) {
             ckPer[check[i]] = true;
             arr2[check[i]] = arr[i];
