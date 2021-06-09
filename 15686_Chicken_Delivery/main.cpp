@@ -2,7 +2,7 @@
 #include <math.h>
 int mp[51][51];
 int t[15][101];
-int low[15];
+int low[15][2];
 
 int main() {
     int n, m;
@@ -40,12 +40,24 @@ int main() {
             printf("%d ", t[i][j]);
             sum += t[i][j];
         }
-        low[i] = sum;
+        low[i][0] = sum;
         printf("sum: %d\n", sum);
     }printf("\n");
 
     for(int i = 0; i <= now; i++) {
-        printf("%d ", low[i]);
+        int cnt = 1;
+        for(int j = 0; j <= now; j++) {
+            if(low[i][0] > low[j][0]) cnt++;
+        }
+        low[i][1] = cnt;
+    }
+
+    for(int i = 0; i <= now; i++) {
+        printf("%d ", low[i][0]);
+    }printf("\n");
+
+    for(int i = 0; i <= now; i++) {
+        printf("%d ", low[i][1]);
     }printf("\n");
 
     return 0;
