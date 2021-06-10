@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.19)
+project(12738_Longest_Increasing_Partial_Sequence_3)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(12738_Longest_Increasing_Partial_Sequence_3 main.cpp)
