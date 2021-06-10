@@ -4,9 +4,7 @@ using namespace std;
 int arr[1001];
 int check[1001];
 
-bool ckPer[1001];
-int arr2[1001];
-int arr3[1001];
+int ans[1001];
 
 int main() {
     int n; cin >> n;
@@ -25,34 +23,26 @@ int main() {
         cout << check[i] << " ";
     }cout << "\n";
 
-    int max = -9999;
-    for(int i = n; i >= 0; i--) {
-        arr3[check[i]] = i;
+    int max = 0;
+    for(int i = 1; i <= n; i++) {
+        if(max < check[i]) max = check[i];
+        ans[i] = 99999999;
     }
 
-    for(int i = 0; i <= n; i++) {
-        cout << arr3[i] << " ";
-    }cout << "\n";
-
-    for(int i = n; i >= 1; i--) {
-        if(!ckPer[check[i]]) {
-            ckPer[check[i]] = true;
-            arr2[check[i]] = arr[i];
-        } else {
-            if(arr2[check[i]] > arr[i]) arr2[check[i]] = arr[i];
+    int p = max + 1;
+    while(max != -1) {
+        for(int i = n; i >= 1; i--) {
+            if(check[i] == max) {
+                ans[max + 1] = arr[i];
+                break;
+            }
         }
+        max--;
     }
 
-    int t = 0;
-    for(int i = 0; i <= n; i++) {
-        if(arr2[i] == 0) break;
-        t++;
-    }
-
-    cout << t << "\n";
-    for(int i = 0; i <= n; i++) {
-        if(arr2[i] == 0) break;
-        cout << arr2[i] << " ";
+    cout << p << endl;
+    for(int i = 1; i <= p; i++) {
+        cout << ans[i] << " ";
     }cout << "\n";
 
     return 0;
