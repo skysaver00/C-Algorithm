@@ -10,30 +10,30 @@ int solve(int i) {
     int mid;
 
     int flag = 0;
-    cout << "ITS " << seq[i] <<  "   !!!!" << len << "  !!!!!\n";
+    //cout << "ITS " << seq[i] <<  "   !!!!" << len << "  !!!!!\n";
     while(left <= right) {
         mid = (left + right) / 2;
-        cout << mid << " " << left << " " << right << "\n";
+        /*cout << mid << " " << left << " " << right << "\n";
         for(int k = 0; k <= len; k++) {
             cout << check[k] << " || ";
-        }cout << "\n";
+        }cout << "\n";*/
         if(check[mid] < seq[i]) left = mid + 1;
         else if(check[mid] > seq[i]) right = mid - 1;
         else if(check[mid] == seq[i]) {
-            cout << "mumchuryo: " << mid << "\n";
+            //cout << "mumchuryo: " << mid << "\n";
             break;
         }
     }
 
-    cout << left << " " << right << " " << mid << " ddddd\n";
+    //cout << left << " " << right << " " << mid << " ddddd\n";
     if(left == len) {
         check[len] = seq[i];
         len++;
-
         return 0;
     }
 
     if(check[left] > seq[i]) check[left] = seq[i];
+    return 0;
 }
 
 int main() {
@@ -47,9 +47,9 @@ int main() {
         solve(i);
     }
 
-    for(int k = 0; k <= len; k++) {
+    /*for(int k = 0; k <= len; k++) {
         cout << check[k] << " || ";
-    }cout << "\n";
+    }cout << "\n";*/
 
     cout << len - 1 << endl;
 
