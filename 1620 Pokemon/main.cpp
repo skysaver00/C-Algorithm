@@ -11,7 +11,7 @@ int main() {
     ios_base :: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
+
     int N, M; cin >> N >> M;
     string nme;
 
@@ -30,15 +30,8 @@ int main() {
             val = stoi(nme2);
             flag = 1;;
         }
-
         if(flag == 1) cout << pokem2[val -1] << "\n";
         else cout << pokem[nme2] << "\n";
-
     }
-
-    for(auto i = pokem.begin(); i != pokem.end(); i++) {
-        //out << i->first << " " << i->second << "\n";
-    }
-
     return 0;
 }
