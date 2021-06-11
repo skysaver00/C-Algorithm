@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/Practice_Combination_Backtracking/cmake-build-debug/CMakeFiles/Practice_Combination_Backtracking.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/Practice_Combination_Backtracking/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/Practice_Combination_Backtracking/cmake-build-debug/CMakeFiles/rebuild_cache.dir
