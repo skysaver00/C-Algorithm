@@ -1,30 +1,30 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
+int arr[10];
+int res[10];
+bool visit[10];
 
-void swap(int i, int j) {
-    int temp = i;
-    i = j;
-    j = temp;
-}
+void NnM(int cnt, int m, int n) {
+    if(cnt == m) {
+        for(int i = 0; i < cnt; i++) {
+            cout << res[i] << " ";
+        }cout << "\n";
 
-void permutation(int arr[], int depth, int k) {
-    if(depth == k) {
-        for(int i = 0; i <= k; i++) {
-            printf("%d ", arr[i]);
-        }printf("\n");
+        return;
     }
-    else {
-        for(int i = depth; i <= k; i++) {
-            swap(arr[depth], arr[i]);
-            permutation(arr, depth + 1, k);
-            swap(arr[k], arr[i]);
-        }
+
+    for(int i = 0; i < n; i++) {
+        res[cnt] = arr[i];
+        visit[i] = true;
+        NnM(cnt + 1, m, n);
+        visit[i] = false;
     }
 }
 
 int main() {
-    int
+    int n, m; cin >> n >> m;
+    for(int i = 0; i < n; i++) arr[i] = i + 1;
 
+    NnM(0, m, n);
     return 0;
 }
