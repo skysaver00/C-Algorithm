@@ -1,22 +1,24 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <map>
+using namespace std;
 
-char pokemon[100005][21];
+map<string, int> pokem;
+string pokem2[100001];
 
 int main() {
-    int N, M;
-    scanf("%d %d", &N, &M);
+    int N, M; cin >> N >> M;
+    string nme;
 
-    for(int i = 1; i <= N; i++) {
-        scanf("%s", pokemon[i]);
+    for(int i = 0; i < N; i++) {
+        cin >> nme;
+        pokem.insert(make_pair(nme, i + 1));
+        pokem2[i] = nme;
     }
 
-    char target[21];
-
-    for(int i = 1; i <= M; i++) {
-        scanf("%s", target);
-
-        printf("%d\n", strcmp(target, pokemon[i]));
+    for(int i = 0; i < N; i++) {
+        cout << pokem[i].name << " " << pokem[i].value << "\n";
     }
 
     return 0;

@@ -7,8 +7,10 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/1620 Pokemon/main.cpp
-stdio.h
+iostream
 -
-string.h
+string
+-
+algorithm
 -
 
