@@ -18,8 +18,6 @@ void dfs(int cnt, int max, int sz, int now) {
         res[cnt] = arr[i];
         cout << "now is: " << now << "\n";
         dfs(cnt + 1, max, sz, now + 1);
-        cout << "now is: " << now << "\n";
-        res[cnt] = 0;
         visit[i] = false;
     }
 }
