@@ -8,6 +8,10 @@ map<string, int> pokem;
 string pokem2[100001];
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
     int N, M; cin >> N >> M;
     string nme;
 
@@ -28,7 +32,7 @@ int main() {
         }
 
         if(flag == 1) cout << pokem2[val -1] << "\n";
-        else cout << pokem.find(nme2)->second << "\n";
+        else cout << pokem[nme2] << "\n";
 
     }
 
