@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Practice_Permutation_Backtracking.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\Practice_Permutation_Backtracking.dir/objects.a @CMakeFiles\Practice_Permutation_Backtracking.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Practice_Permutation_Backtracking.dir/objects.a -Wl,--no-whole-archive -o Practice_Permutation_Backtracking.exe -Wl,--out-implib,libPractice_Permutation_Backtracking.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Practice_Permutation_Backtracking.dir\linklibs.rsp
