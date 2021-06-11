@@ -19,7 +19,7 @@ void dfs(int cnt, int max, int sz, int now) {
         return;
     }
     for(int i = 0; i < sz; i++) {
-        //if(visit[i] == true) continue; //이미 방문했다면 패스!
+        //if(visit[i] == true) continue; //이미 방문했다면 패스! 안넣어주면 중복순열
         visit[i] = true;
         res[cnt] = arr[i];
         //cout << "now is: " << now << "\n";
