@@ -14,6 +14,7 @@ void NnM(int cnt, int m, int n) {
     }
 
     for(int i = 0; i < n; i++) {
+        if(visit[i]) continue;
         res[cnt] = arr[i];
         visit[i] = true;
         NnM(cnt + 1, m, n);
