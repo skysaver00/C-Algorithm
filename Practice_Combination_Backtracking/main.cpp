@@ -1,26 +1,21 @@
 #include <iostream>
 using namespace std;
 int arr[50];
-int res[50];
 bool visit[50];
 
-void dfs(int left, int cnt, int max, int size, int now) {
+void dfs(int idx, int cnt, int max, int size, int now) {
     if(cnt == max) {
-        for(int i = 0; i < cnt; i++) {
-            cout << res[i] << " ";
+        for(int i = 0; i < size; i++) {
+            if(visit[i]) cout << arr[i] << " ";
         }cout << "\n";
         return;
     }
-
-    for(int i = left; i < size; i++) {
+    for(int i = idx; i < size; i++) {
         if(visit[i]) continue;
         visit[i] = true;
-        res[cnt] = arr[i];
-        cout << "now is: " << now << "\n";
-        dfs(left, cnt + 1, max, size, now + 1);
+        dfs(i,cnt + 1, max, size, now + 1);
         visit[i] = false;
     }
-    left++;
 }
 
 int main() {
