@@ -2,29 +2,30 @@
 #include <vector>
 using namespace std;
 
-vector<int> height;
+vector<long long> height;
 
-int solve(int left, int right) {
+long long solve(int left, int right) {
     if(left == right) return height[left];
     int mid = (left + right) / 2;
-    int ret = max(solve(left, mid), solve(mid + 1, right));
-    cout << "RET..... " << ret << endl;
+    long long ret = max(solve(left, mid), solve(mid + 1, right));
+    //cout << "RET..... " << ret << endl;
     int lo = mid, hi = mid + 1;
-    int hei = min(height[lo], height[hi]);
+    long long hei = min(height[lo], height[hi]);
     ret = max(ret, hei * 2);
-    cout << "RET HEI..... " << ret << " <> " << hei << endl;
+    //cout << "RET HEI..... " << ret << " <> " << hei << endl;
 
     while(left < lo || hi < right) {
         if(hi < right && (lo == left || height[lo - 1] < height[hi + 1])) {
             ++hi;
             hei = min(hei, height[hi]);
-            cout << "Up" << hi << " <> " << hei << endl;
+            //cout << "Up" << hi << " <> " << hei << endl;
         } else {
             --lo;
             hei = min(hei, height[lo]);
-            cout << "Low" << hi << " <> " << hei << endl;
+            //cout << "Low" << hi << " <> " << hei << endl;
         }
-        cout << "HI, LO is..... " << hi << " <> " << lo << endl;
+        //cout << "HI, LO is..... " << hi << " <> " << lo << endl;
+        //cout << "RET..... " << ret << endl;
         ret = max(ret, hei * (hi - lo + 1));
     }
     return ret;
@@ -42,7 +43,7 @@ int main() {
             height.push_back(t);
         }
 
-        int ans = solve(0, n - 1);
+        long long ans = solve(0, n - 1);
         cout << ans << "\n";
         height.clear();
     }
