@@ -1,52 +1,32 @@
-#include <stdio.h>
-#include <math.h>
-
-int arr[6][6];
+#include <cstdio>
+#include <cmath>
+bool chess[7][7];
 
 int main() {
-    char loc[2];
-    scanf("%s", loc);
+    char c1, c2;
+    int n1, n2;
+    bool check = true;
 
-    int firstx, firsty;
-    firstx = loc[0];
-    firsty = loc[1];
-    int prex, prey;
-    int x, y;
-    prex = loc[0];
-    prey = loc[1];
+    scanf(" %c%d", &c1, &n1);
+    if(c1 <= 'F' && c1 >= 'A' && n1 <= 6 && n1 >= 1) {}
+    else check = false;
 
-    arr[prex - 65][prey - 49]++;
+    for(int i = 0; i < 35; i++) {
+        scanf(" %c%d", &c2, &n2);
+        printf("%c %d %c %d\n", c1, n1, c2, n2);
 
-    int flag = 0;
+        if(c2 <= 'F' && c2 >= 'A' && n2 <= 6 && n2 >= 1) {}
+        else check = false;
 
-    for(int i = 1; i <= 35; i++) {
-        scanf("%s", loc);
+        int cnt = abs(c1 - c2) + abs(n1 - n2);
+        printf("%d\n", cnt);
+        if(cnt != 3) check = false;
+        printf("%d\n", check);
 
-        x = loc[0];
-        y = loc[1];
-
-        if(arr[x - 65][y - 49] != 0) flag = 1;
-        else arr[x - 65][y - 49]++;
-
-        int _x = abs(x - prex);
-        int _y = abs(y - prey);
-
-        if(_x + _y == 3 || (_x != 3 || _y != 3)) {
-            prex = x;
-            prey = y;
-        }
-        else {
-            flag = 1;
-        }
-
-        printf("%d\n", flag);
+        c1 = c2; n1 = n2;
     }
 
-    firstx = abs(x - firstx);
-    firsty = abs(y - firsty);
-    if(firstx + firsty != 3 || (firstx == 3 || firsty == 3)) flag = 1;
-
-    if(flag == 0) printf("Valid\n");
+    if(check) printf("Valid\n");
     else printf("Invalid\n");
 
     return 0;
