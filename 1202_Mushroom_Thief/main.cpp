@@ -15,13 +15,14 @@ int main() {
     sort(pa, pa + n);
     sort(bag, bag + k);
 
-    int sum = 0;
+    long long sum = 0;
     int now = 0;
     for(int i = 0; i < k; i++) {
-        while(bag[i] >= pa[now].first && now < n) {
+        while(now < n && bag[i] >= pa[now].first) {
             que.push(pa[now].second);
             now++;
         }
+        //cout << que.size() << "\n";
         sum += que.top();
         que.pop();
     }
