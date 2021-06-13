@@ -1,68 +1,36 @@
-#include <iostream>
-#include <string>
-#include <stack>
-using namespace std;
-stack<char> st;
-string str;
-string bomb;
-char realStr[1000005];
-int arr[40];
+#include <cstdio>
+#include <cstring>
+
+char str[1000005];
+char bomb[40];
+char res[1000005];
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
+    scanf("%s %s", str, bomb);
 
-    cin >> str;
-    cin >> bomb;
-
-    //cout << str << "\n";
-
-    int len = str.length();
-    int bLen = bomb.length();
-    int now = 0;
+    int index = 0;
+    int len = strlen(str);
     for(int i = 0; i < len; i++) {
-        if(str.at(i) == bomb.at(now)) {
-            arr[now]++;
-            now++;
-            st.push(str.at(i));
-        } else if(str.at(i) == bomb.at(0)) {
-            arr[0]++;
-            now = 1;
-            st.push(str.at(i));
-        } else {
-            for(int j = 0; j < bLen; j++) arr[j] = 0;
-            now = 0;
-            st.push(str.at(i));
-        }
+        res[index] = str[i];
+        index++;
 
-        /*cout << "yes-----------------   " << st.top() << " " << st.size() << "\n";
-        for(int j = 0; j < bLen; j++) {
-            cout << arr[j] << " ";
-        }cout << "\n";*/
-
-        if(now == bLen) {
-            for(int j = 0; j < now; j++) {
-                st.pop();
-                arr[j]--;
-            }
-            now = 0;
+        int bLen = strlen(bomb);
+        if(res[index - 1] == bomb[bLen - 1]) {
+            if(index - bLen < 0) continue;
+            bool detect = true;
             for(int j = 0; j < bLen; j++) {
-                if(arr[j] == 0) break;
-                now++;
+                if(res[index - j - 1] != bomb[bLen - j - 1]) {
+                    detect = false;
+                    break;
+                }
             }
+
+            if(detect) index = index - bLen;
         }
     }
 
-    if(st.empty()) {
-        cout << "FRULA" << "\n";
-        return 0;
-    }
-    int sz = st.size() - 1;
-    while(!st.empty()) {
-        realStr[sz] = st.top();
-        st.pop();
-        sz--;
-    }
-    cout << realStr << "\n";
+    if(index == 0) printf("FRULA\n");
+    else printf("%s\n", res);
+
     return 0;
 }
