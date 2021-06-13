@@ -39,65 +39,23 @@ int pick() {
 
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < N; j++) {
-            if(arr[i + dy[0]][j + dx[0]] == NULL) {flag = 1;}
-            else {
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[0]][j + dx[0]];
-                arr[i + dy[0]][j + dx[0]] = temp;
+            for(int k = 0; k < 4; k++) {
+                if(i + dy[k] >= N || i + dy[k] < 0 || i + dx[k] >= N || i + dx[k] < 0) {flag = 1;}
+                else {
+                    temp = arr[i][j];
+                    arr[i][j] = arr[i + dy[k]][j + dx[k]];
+                    arr[i + dy[k]][j + dx[k]] = temp;
+                }
+
+                if(flag == 0) {
+                    candy = count();
+                    if(max < candy) max = candy;
+
+                    temp = arr[i][j];
+                    arr[i][j] = arr[i + dy[k]][j + dx[k]];
+                    arr[i + dy[k]][j + dx[k]] = temp;
+                } else {flag = 0;}
             }
-            if(flag == 0) {
-                candy = count();
-                if(max < candy) max = candy;
-
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[0]][j + dx[0]];
-                arr[i + dy[0]][j + dx[0]] = temp;
-            } else {flag = 0;}
-
-            if(arr[i + dy[1]][j + dx[1]] == NULL) {flag = 1;}
-            else {
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[1]][j + dx[1]];
-                arr[i + dy[1]][j + dx[1]] = temp;
-            }
-            if(flag == 0) {
-                candy = count();
-                if(max < candy) max = candy;
-
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[1]][j + dx[1]];
-                arr[i + dy[1]][j + dx[1]] = temp;
-            } else {flag = 0;}
-
-            if(arr[i + dy[2]][j + dx[2]] == NULL) {flag = 1;}
-            else {
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[2]][j + dx[2]];
-                arr[i + dy[2]][j + dx[2]] = temp;
-            }
-            if(flag == 0) {
-                candy = count();
-                if(max < candy) max = candy;
-
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[2]][j + dx[2]];
-                arr[i + dy[2]][j + dx[2]] = temp;
-            } else {flag = 0;}
-
-            if(arr[i + dy[3]][j + dx[3]] == NULL) {flag = 1;}
-            else {
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[3]][j + dx[3]];
-                arr[i + dy[3]][j + dx[3]] = temp;
-            }
-            if(flag == 0) {
-                candy = count();
-                if(max < candy) max = candy;
-
-                temp = arr[i][j];
-                arr[i][j] = arr[i + dy[3]][j + dx[3]];
-                arr[i + dy[3]][j + dx[3]] = temp;
-            } else {flag = 0;}
         }
     }
     return max;
