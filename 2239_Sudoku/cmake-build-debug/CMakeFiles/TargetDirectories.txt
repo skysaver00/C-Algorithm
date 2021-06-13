@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/2239_Sudoku/cmake-build-debug/CMakeFiles/2239_Sudoku.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2239_Sudoku/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/2239_Sudoku/cmake-build-debug/CMakeFiles/rebuild_cache.dir
