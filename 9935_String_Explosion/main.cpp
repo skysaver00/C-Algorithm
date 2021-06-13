@@ -9,6 +9,10 @@ char realStr[1000005];
 int arr[40];
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
     cin >> str;
     cin >> bomb;
 
@@ -49,7 +53,7 @@ int main() {
     }
 
     if(st.empty()) {
-        cout << "FURLA" << "\n";
+        cout << "FRULA" << "\n";
         return 0;
     }
     int sz = st.size() - 1;
