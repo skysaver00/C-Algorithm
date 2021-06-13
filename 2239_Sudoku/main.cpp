@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 using namespace std;
 
@@ -25,30 +24,33 @@ bool check(int y, int x, int num) {
 void print() {
     for(int i = 0; i < 9; i++) {
         for(int j = 0; j < 9; j++) {
-            cout << 
-        }
+            cout << sudoku[i][j];
+        }cout << "\n";
     }
+    arr.clear();
     exit(0);
 }
 
-int solve(int index) {
+void solve(int index) {
     if(index == arr.size()) print();
 
-    int y = arr[index].first;
-    int x = arr[index].second;
+    if(index < arr.size()) {
+        int y = arr[index].first;
+        int x = arr[index].second;
 
-    for(int i = 1; i <= 9; i++) {
-        int ck = check(y, x, i);
-        if(ck) {
-            sudoku[y][x] = i;
-            solve(index + 1);
+        for (int i = 1; i <= 9; i++) {
+            int ck = check(y, x, i);
+            if (ck) {
+                sudoku[y][x] = i;
+                solve(index + 1);
+            }
         }
+        sudoku[y][x] = 0;
     }
-    sudoku[y][x] = 0;
 }
 
 int main() {
-    for(int i = 0; i < 9; i++) cin >> mir[i];
+    for(int i = 0; i < 9; i++) scanf("%s", mir[i]);
     for(int i = 0; i < 9; i++) {
         for(int j = 0; j < 9; j++) {
             sudoku[i][j] = mir[i][j] - 0x30;
@@ -57,6 +59,5 @@ int main() {
     }
 
     solve(0);
-
     return 0;
 }
