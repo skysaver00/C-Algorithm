@@ -13,10 +13,22 @@ int main() {
 
     int len = str.length();
     int bLen = bomb.length();
+
+    int now = 0;
     for(int i = 0; i < len; i++) {
-        for(int j = 0; j < bLen; j++) {
-
+        if(str.at(i) == bomb.at(now)) {
+            arr[now]++;
+            now++;
+        } else {
+            for(int j = 0; j < bLen; j++) {
+                arr[j] = 0;
+                now = 0;
+            }
         }
-    }
 
+        for(int j = 0; j < bLen; j++) {
+            printf("%d ", arr[j]);
+        }printf("\n");
+    }
+    return 0;
 }
