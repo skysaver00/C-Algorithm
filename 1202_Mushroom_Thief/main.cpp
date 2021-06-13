@@ -22,9 +22,11 @@ int main() {
             que.push(pa[now].second);
             now++;
         }
-        //cout << que.size() << "\n";
-        sum += que.top();
-        que.pop();
+
+        if(!que.empty()) {
+            sum += que.top();
+            que.pop();
+        }
     }
 
     cout << sum << endl;
