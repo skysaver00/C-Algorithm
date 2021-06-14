@@ -16,8 +16,8 @@ void insertion(int n) {
             for(int k = 0; k < 10; k++) {
                 cout << arr[k] << " ";
             }cout << "\n";
-            arr[j + 1] = key;
         }
+        arr[j + 1] = key;
     }
 }
 
@@ -33,17 +33,9 @@ int main() {
             arr[str[i].at(j) - 0x41] += sum;
             sum *= 10;
         }
-
-        for(int j = 0; j < 10; j++) {
-            cout << arr[j] << " ";
-        }cout << "\n";
     }
-
-    insertion(n);
-
-    for(int j = 0; j < 10; j++) {
-        cout << arr[j] << " ";
-    }cout << "\n";
+    insertion(10);
+    
 
     return 0;
 }
