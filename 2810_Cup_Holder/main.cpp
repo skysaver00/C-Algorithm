@@ -13,11 +13,12 @@ int main() {
     int nl = 0;
     for(int i = 0; i < len; i++) {
         if(arr[i] == 'S') ns++;
-        else if(arr[i] == 'L') nl++;
+        else if(arr[i] == 'L' && arr[i + 1] == 'L') {
+            i += 1;
+            nl++;
+        }
     }
-    nl /= 2;
-
-    printf("%d\n", ns + nl + );
-
+    if(nl != 0)printf("%d\n", ns + nl + 1);
+    else printf("%d\n", ns);
     return 0;
 }
