@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1339_Word_Math/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1339_Word_Math/cmake-build-debug/CMakeFiles/1339_Word_Math.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1339_Word_Math/cmake-build-debug/CMakeFiles/edit_cache.dir
