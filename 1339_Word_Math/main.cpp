@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 string str[11];
 int arr[11];
@@ -13,8 +12,12 @@ void insertion(int n) {
             if(key > arr[j]) {
                 arr[j + 1] = arr[j];
             } else break;
+
+            for(int k = 0; k < 10; k++) {
+                cout << arr[k] << " ";
+            }cout << "\n";
+            arr[j + 1] = key;
         }
-        arr[j + 1] = key;
     }
 }
 
@@ -35,6 +38,7 @@ int main() {
             cout << arr[j] << " ";
         }cout << "\n";
     }
+
     insertion(n);
 
     for(int j = 0; j < 10; j++) {
