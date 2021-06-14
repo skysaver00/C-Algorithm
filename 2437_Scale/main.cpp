@@ -21,7 +21,20 @@ int main() {
         sumWei[i] = sum;
     }
 
-    for(int i = 0; i < n; i++) {
-        
+    if(wei[0] > 1) {
+        cout << 1 << "\n";
+        return 0;
+    } else {
+        int max = sumWei[0] + 1;
+        for(int i = 1; i < n; i++) {
+            if(max >= wei[i]) max = sumWei[i] + 1;
+            else {
+                cout << max << "\n";
+                return 0;
+            }
+        }
+        cout << max << "\n";
     }
+
+    return 0;
 }
