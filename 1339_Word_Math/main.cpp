@@ -3,20 +3,7 @@
 #include <algorithm>
 using namespace std;
 string str[11];
-int arr[11];
-
-void insertion(int n) {
-    int i, j;
-    for(i = 1; i < n; i++) {
-        int key = arr[i];
-        for(j = i - 1; j >= 0; j--) {
-            if(key > arr[j]) {
-                arr[j + 1] = arr[j];
-            } else break;
-        }
-        arr[j + 1] = key;
-    }
-}
+int arr[26];
 
 bool compare(int i, int j) {
     return i > j;
@@ -35,8 +22,7 @@ int main() {
             sum *= 10;
         }
     }
-    //insertion(10);
-    sort(arr, arr + 10, compare);
+    sort(arr, arr + 26, compare);
 
     int sum = 0;
     int num = 9;
