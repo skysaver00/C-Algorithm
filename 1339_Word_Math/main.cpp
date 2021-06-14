@@ -1,8 +1,22 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 string str[11];
 int arr[11];
+
+void insertion(int n) {
+    int i, j;
+    for(i = 1; i < n; i++) {
+        int key = arr[i];
+        for(j = i - 1; j >= 0; j--) {
+            if(key > arr[j]) {
+                arr[j + 1] = arr[j];
+            } else break;
+        }
+        arr[j + 1] = key;
+    }
+}
 
 int main() {
     int n; cin >> n;
@@ -21,4 +35,11 @@ int main() {
             cout << arr[j] << " ";
         }cout << "\n";
     }
+    insertion(n);
+
+    for(int j = 0; j < 10; j++) {
+        cout << arr[j] << " ";
+    }cout << "\n";
+
+    return 0;
 }
