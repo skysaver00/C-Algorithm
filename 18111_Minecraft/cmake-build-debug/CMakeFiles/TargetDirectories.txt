@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/18111_Minecraft/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/18111_Minecraft/cmake-build-debug/CMakeFiles/18111_Minecraft.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/18111_Minecraft/cmake-build-debug/CMakeFiles/edit_cache.dir
