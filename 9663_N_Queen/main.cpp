@@ -25,6 +25,5 @@ int main() {
     nqueen(0, n);
 
     cout << ans << "\n";
-
     return 0;
 }
