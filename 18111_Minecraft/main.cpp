@@ -20,13 +20,40 @@ int main() {
         }
     }
 
+    int realSum = 2000000000;
     for(int hei = mi; hei <= ma; hei++) {
+        int sum = 0;
+        int rock = b;
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                
+                if(hei < map[i][j]) {
+                    sum += (map[i][j] - hei) * 2;
+                    rock += (map[i][j] - hei);
+                }
             }
         }
+
+        int flag = 0;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                if(hei >= map[i][j]) {
+                    if(rock >= (hei - map[i][j])) {
+                        sum += map[i][j] - hei;
+                        rock -= (map[i][j] - hei);
+                    } else flag = 1;
+                }
+
+                if(flag == 1) break;
+            }
+            if(flag == 1) break;
+        }
+        if(flag == 1) continue;
+        realSum = min(realSum, sum);
+
+        printf("%d\n", sum);
     }
+
+    printf("%d\n", realSum);
 
     return 0;
 }
