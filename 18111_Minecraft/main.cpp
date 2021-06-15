@@ -2,11 +2,11 @@
 int map[501][501];
 
 int min(int i, int j) {
-    return i < j;
+    return (i < j) ? i : j;
 }
 
 int max(int i, int j) {
-    return i > j;
+    return (i >= j) ? i : j;
 }
 
 int main() {
@@ -21,6 +21,7 @@ int main() {
     }
 
     int realSum = 2000000000;
+    int realHei = 0;
     for(int hei = mi; hei <= ma; hei++) {
         int sum = 0;
         int rock = b;
@@ -38,8 +39,8 @@ int main() {
             for(int j = 0; j < m; j++) {
                 if(hei >= map[i][j]) {
                     if(rock >= (hei - map[i][j])) {
-                        sum += map[i][j] - hei;
-                        rock -= (map[i][j] - hei);
+                        sum += (hei - map[i][j]);
+                        rock -= (hei - map[i][j]);
                     } else flag = 1;
                 }
 
@@ -48,12 +49,13 @@ int main() {
             if(flag == 1) break;
         }
         if(flag == 1) continue;
-        realSum = min(realSum, sum);
 
-        printf("%d\n", sum);
+        if(realSum >= sum) {
+            realSum = sum;
+            realHei = hei;
+        }
     }
 
-    printf("%d\n", realSum);
-
+    printf("%d %d\n", realSum, realHei);
     return 0;
 }
