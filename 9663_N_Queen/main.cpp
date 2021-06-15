@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 int x[16], y[16];
 
 int check(int a, int b) {
@@ -6,6 +8,6 @@ int check(int a, int b) {
 }
 
 int main() {
-
+    
     return 0;
 }
