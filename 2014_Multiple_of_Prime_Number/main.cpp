@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-priority_queue<int, vector<int>, greater<int>> pq;
+priority_queue<long long, vector<long long>, greater<long long>> pq;
 int num[200000];
 
 int main() {
@@ -13,19 +13,18 @@ int main() {
     }
 
     int cnt = 1;
-    long long prev = 0;
     while(cnt != n) {
         long long val = pq.top();
         pq.pop();
-        if(prev == val) continue;
         for(int i = 0; i < k; i++) {
-            int t = val * num[i];
-            if(t > 2147483647) continue;
-            else pq.push(t);
-
-            cout << t << endl;
+            long long t = val * num[i];
+            if(t > 2147483647) break;
+            else {
+                pq.push(t);
+                cout << t << endl;
+                if(t % num[i] == 0) break;
+            }
         }
-        prev = val;
         cnt++;
     }
     int ans = pq.top();
