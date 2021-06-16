@@ -13,7 +13,6 @@ int main() {
         r %= 1234567891;
         sum %= 1234567891;
     }
-
     printf("%d\n", sum);
     return 0;
 }
