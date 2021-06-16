@@ -21,8 +21,7 @@ int main() {
             if(t > 2147483647) break;
             else {
                 pq.push(t);
-                cout << t << endl;
-                if(t % num[i] == 0) break;
+                if(val % num[i] == 0) break;
             }
         }
         cnt++;
