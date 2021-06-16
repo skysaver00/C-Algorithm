@@ -13,17 +13,19 @@ int main() {
     }
 
     int cnt = 1;
+    long long prev = 0;
     while(cnt != n) {
         long long val = pq.top();
         pq.pop();
-
+        if(prev == val) continue;
         for(int i = 0; i < k; i++) {
             int t = val * num[i];
-            if(val > 2147483647) continue;
+            if(t > 2147483647) continue;
             else pq.push(t);
 
             cout << t << endl;
         }
+        prev = val;
         cnt++;
     }
     int ans = pq.top();
