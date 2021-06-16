@@ -7,7 +7,7 @@ int num[200000];
 int main() {
     int k, n; cin >> k >> n;
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < k; i++) {
         cin >> num[i];
         pq.push(num[i]);
     }
@@ -18,13 +18,16 @@ int main() {
         pq.pop();
 
         for(int i = 0; i < k; i++) {
-            val = val * num[i];
+            int t = val * num[i];
             if(val > 2147483647) continue;
-            else pq.push(val);
+            else pq.push(t);
+
+            cout << t << endl;
         }
         cnt++;
     }
-
     int ans = pq.top();
-    printf("%d\n", )
+    cout << ans << "\n";
+
+    return 0;
 }
