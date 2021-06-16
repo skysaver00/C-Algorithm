@@ -7,7 +7,7 @@ int num = 0;
 int cha;
 int ans;
 int c = 0;
-//int minLimit, maxLimit;
+int minLimit, maxLimit;
 
 int min(int i, int j) {
     return i < j ? i : j;
@@ -25,7 +25,6 @@ void permutation(int cnt, int max, int size) {
     for(int i = 0; i < size; i++) {
         num *= 10;
         num += live[i];
-        //printf("%d, %d, %d\n", num, i, live[i]);
         permutation(cnt + 1, max, size);
         num /= 10;
     }
