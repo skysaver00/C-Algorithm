@@ -3,26 +3,23 @@
 using namespace std;
 
 bool arr[201][201];
-int line[201];
+int line[1001];
 int check[201];
 int n, m;
 queue<int> pairQue;
 
 void startBFS(int i) {
     pairQue.push(i);
-    check[i] = 1;
 
     while(!pairQue.empty()) {
         int val = pairQue.front();
         pairQue.pop();
+        check[val] = true;
 
         for(int k = 1; k <= n; k++) {
             if(arr[val][k] == 0 || check[k] != 0) continue;
             else {
-                check[k] = check[val] + 1;
                 pairQue.push(k);
-
-
             }
         }
     }
