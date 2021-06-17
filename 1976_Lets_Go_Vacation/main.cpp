@@ -1,36 +1,54 @@
 #include <stdio.h>
-#include <algorithm>
+#include <queue>
 using namespace std;
 
-int num[50];
-int res[50];
-bool visit[50];
+bool arr[201][201];
+int line[201];
+int check[201];
+int n, m;
+queue<int> pairQue;
 
-void solve(int cnt, int max, int size) {
-    if(cnt == max) {
-        for(int i = 0; i < max; i++) {
-            printf("%d ", res[i]);
-        }printf("\n");
-        return;
-    }
+void startBFS(int i) {
+    pairQue.push(i);
+    check[i] = 1;
 
-    for(int i = 0; i < size; i++) {
-        if(visit[i]) continue;
-        res[cnt] = num[i];
-        visit[i] = true;
-        solve(cnt + 1, max, size);
-        visit[i] = false;
+    while(!pairQue.empty()) {
+        int val = pairQue.front();
+        pairQue.pop();
+
+        for(int k = 1; k <= n; k++) {
+            if(arr[val][k] == 0 || check[k] != 0) continue;
+            else {
+                check[k] = check[val] + 1;
+                pairQue.push(k);
+
+
+            }
+        }
     }
 }
 
 int main() {
-    int n, m; scanf("%d", &n, &m);
+    scanf("%d", &n);
+    scanf("%d", &m);
 
-    for(int i = 0; i < n; i++) {
-        scanf("%d", &num[i]);
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n; j++) {
+            scanf("%d", &arr[i][j]);
+        }
     }
-    sort(num, num + n);
-    solve(0, n, m);
-
+    for(int i = 0; i < m; i++) scanf("%d", &line[i]);
+    /*for(int i = 1; i <= n; i++) {
+        startBFS(i);
+        for(int j = 1; j <= n; j++) check[j] = 0;
+    }*/
+    startBFS(line[0]);
+    for(int i = 0; i < m; i++) {
+        if(check[line[i]] == 0) {
+            printf("NO\n");
+            return 0;
+        }
+    }
+    printf("YES\n");
     return 0;
 }
