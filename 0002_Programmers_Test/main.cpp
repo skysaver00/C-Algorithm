@@ -3,41 +3,42 @@
 #include <vector>
 using namespace std;
 
-int arr[21];
-bool check[21];
-
-int min(int i, int j) {
-    return (i < j) ? i : j;
-}
-
 int main() {
-    string nam;
-    cin >> nam;
-
-    int len = nam.length();
-    for(int i = 0; i < len; i++) {
-        arr[i] = nam.at(i) - 'A';
-        arr[i] = min(arr[i], abs('Z' + 1 - nam.at(i)));
-    }
+    string s;
+    cin >> s;
 
     int val = 0;
-    int border = nam.length() / 2 + 1;
+    int all = 0;
+    int len = s.length();
 
-    int right = 0;
-    for(int i = 0; i < border; i++) {
-        if(nam.at(i) != 'A') right = i;
+    while(len != 1) {
+        string t;
+        for(int i = 0; i < len; i++) {
+            if(s.at(i) == '0') all++;
+            else {
+                t.push_back(s.at(i));
+            }
+        }
+        int sz = t.size();
+        s.clear();
+        while(sz != 0) {
+            int v = sz % 2;
+            if(v == 0) s.push_back('0');
+            else s.push_back('1');
+            sz /= 2;
+        }
+
+        len = s.length();
+        for(int i = 0; i < len / 2; i ++) {
+            swap(s[i], s[len - i - 1]);
+        }
+        val++;
     }
-    int left = 0;
-    for(int i = len - 1; i >= border; i--) {
-        if(nam.at(i) != 'A') left = i;
-    }
 
-    int cursor = min(len - 1, 2 * right + len - left);
+    cout << val << all << "\n";
 
-    for(int i = 0; i < len; i++) {
-        val += arr[i];
-    }
-    cout << val + cursor << "\n";
-
-    return 0;
+    vector<int> answer;
+    answer.push_back(val);
+    answer.push_back(all);
+    return answer;
 }
