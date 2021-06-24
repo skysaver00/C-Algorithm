@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-char str[] = "Hello World!\n";
 
 int main() {
+    char str[] = "Hello World!\n";
     int len = strlen(str);
 
     printf("%d\n", len);
@@ -31,4 +31,12 @@ int main() {
         case 8:
             printf("case 8\n");
     }
+    char *str2 = "Taiwan Number One\n";
+    printf("%s", str2);
+    printf("%s", str2 + 3);
+    printf("%s", str2 + 6);
+    printf("%c\n", *str2);
+    printf("%c\n", *(str2 + 3));
+    printf("%c\n", *str2 + 3);
+    printf("%s", &str2);
 }
