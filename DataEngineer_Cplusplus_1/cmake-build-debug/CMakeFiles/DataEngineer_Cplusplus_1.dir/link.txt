@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\DataEngineer_Cplusplus_1.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\DataEngineer_Cplusplus_1.dir/objects.a @CMakeFiles\DataEngineer_Cplusplus_1.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\DataEngineer_Cplusplus_1.dir/objects.a -Wl,--no-whole-archive -o DataEngineer_Cplusplus_1.exe -Wl,--out-implib,libDataEngineer_Cplusplus_1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\DataEngineer_Cplusplus_1.dir\linklibs.rsp

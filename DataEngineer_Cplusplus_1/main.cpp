@@ -1,6 +1,6 @@
-#include <iostream>
+#include <stdio.h>
+char str[] = "Hello World!\n";
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    printf("%s", &str[6]);
 }
