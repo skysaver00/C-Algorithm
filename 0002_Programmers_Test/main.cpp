@@ -1,44 +1,37 @@
-#include <iostream>
 #include <string>
 #include <vector>
+#include <cmath>
+#include <iostream>
 using namespace std;
 
+vector<long long> numbers;
+vector<long long> answer;
+
 int main() {
-    string s;
-    cin >> s;
-
-    int val = 0;
-    int all = 0;
-    int len = s.length();
-
-    while(len != 1) {
-        string t;
-        for(int i = 0; i < len; i++) {
-            if(s.at(i) == '0') all++;
-            else {
-                t.push_back(s.at(i));
-            }
-        }
-        int sz = t.size();
-        s.clear();
-        while(sz != 0) {
-            int v = sz % 2;
-            if(v == 0) s.push_back('0');
-            else s.push_back('1');
-            sz /= 2;
-        }
-
-        len = s.length();
-        for(int i = 0; i < len / 2; i ++) {
-            swap(s[i], s[len - i - 1]);
-        }
-        val++;
+    int t;
+    cin >> t;
+    for(int i = 0; i < t; i++) {
+        long long num;
+        cin >> num;
+        numbers.push_back(num);
     }
 
-    cout << val << all << "\n";
+    int len = numbers.size();
+    for(int i = 0; i < len; i++) {
+        long long val = numbers[i];
+        int num = 0;
+        while(1) {
+            int ck = val % 2;
+            if(ck == 0) break;
+            val /= 2;
+            num++;
+        }
 
-    vector<int> answer;
-    answer.push_back(val);
-    answer.push_back(all);
-    return answer;
+        long long inc = 1;
+        if(num <= 1) answer.push_back(numbers[i] + inc);
+        else answer.push_back(numbers[i] + (inc << (num - 1)));
+        cout << answer[i] << " ";
+    }
+
+    return 0;
 }
