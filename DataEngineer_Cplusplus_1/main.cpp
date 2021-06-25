@@ -40,7 +40,7 @@ int main() {
     printf("%c\n", *str2 + 3);
     printf("%s", &str2);
 }*/
-//207페이지 5번
+//206페이지 5번
 /*#include <stdio.h>
 int main() {
     int c = 1;
@@ -55,6 +55,19 @@ int main() {
     printf("%d", c); //-8출력
 }*/
 
+//206페이지 6번
+/*#include <stdio.h>
+int main() {
+    int a = 3, b = 10;
+    if(b > 5) //실행
+        printf("%x\n", a + b); //13이고, %x니까,a = 10 -> d를 출력
+    else //실행 X
+        printf("%x\n", b - a);
+
+    printf("%X\n", a + b); //대문자 X이니까, 대문자 D를 출력할 것 이다.
+}*/
+
+//207페이지 7번
 
 
 //207페이지 8번
