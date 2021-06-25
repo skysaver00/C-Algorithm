@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int main() {
@@ -39,4 +39,16 @@ int main() {
     printf("%c\n", *(str2 + 3));
     printf("%c\n", *str2 + 3);
     printf("%s", &str2);
+}*/
+
+//207페이지 8번
+#include <stdio.h>
+int main(void) {
+    int i, j, n;
+    n = 7;
+    for(i = 1; i <= n; i++) {
+        for(j = 1; j <= i; j++)
+            printf("%3d", j);
+        printf("\n");
+    }
 }
