@@ -88,3 +88,15 @@ int main(void) {
         printf("\n");
     }
 }*/
+
+//208페이지 9번
+/*#include <stdio.h>
+int main() {
+    int i = 10, hap = 0;
+    while(i > 1) {
+        i--; //9, 8, 7, 6 ...... 2, 1까지. 1가능하다. 나중에 막힘.
+        if(i % 3 == 1) //7, 4, 1일때 hap -> 0 -> 7 -> 11 -> 12
+            hap += i;
+    }
+    printf("%d\n", hap); //12출력
+}*/
