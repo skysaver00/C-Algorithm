@@ -40,9 +40,25 @@ int main() {
     printf("%c\n", *str2 + 3);
     printf("%s", &str2);
 }*/
+//207페이지 5번
+/*#include <stdio.h>
+int main() {
+    int c = 1;
+    switch(3) {
+        case 1: c += 3;
+        case 2: c++; //실행 X
+        case 3: c = 0; //1 -> 0
+        case 4: c += 3; //0 -> 3
+        case 5: c -= 10; //3 -> -7
+        default: c--; //-7 -> -8
+    }
+    printf("%d", c); //-8출력
+}*/
+
+
 
 //207페이지 8번
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void) {
     int i, j, n;
     n = 7;
@@ -51,4 +67,4 @@ int main(void) {
             printf("%3d", j);
         printf("\n");
     }
-}
+}*/
