@@ -100,3 +100,19 @@ int main() {
     }
     printf("%d\n", hap); //12출력
 }*/
+
+//209페이지 11번
+/*#include <stdio.h>
+int main() {
+    int i, a[5], cnt = 0;
+
+    for(i = 0; i < 5; i++)
+        scanf("%d", &a[i]);
+
+    for(i = 0; i < 5; i++) {
+        if(a[i] % 2 != 0) //홀수의 개수를 세는 거니까 !=가 들어가면 된다.
+            cnt = cnt + 1;
+    }
+
+    printf("odd: %d\n", cnt);
+}*/
