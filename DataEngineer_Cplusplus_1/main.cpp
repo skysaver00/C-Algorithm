@@ -55,6 +55,17 @@ int main() {
     printf("%d %d\n", L, m); // 1 0출력
 }*/
 
+//198페이지 8번
+#include <stdio.h>
+int main() {
+    int a = 5, b = 10, c = 15, d = 30, result;
+    result = a * 3 + b > d || c - b / a <= d && 1; //뒤에 1은 참이니까 고민 안해도 된다.
+    //기억할건 앞에꺼들 a * 3 + b -> 5 * 3 + 10 -> 25 > 30 -> 0
+    // c - b / a <= d -> 15 - 10 / 5 -> 13 <= 30 -> 1
+    // 0 || 1 && 1; -> true이니까 result = 1
+    printf("%d\n", result);
+}
+
 //206페이지 5번
 /*#include <stdio.h>
 int main() {
