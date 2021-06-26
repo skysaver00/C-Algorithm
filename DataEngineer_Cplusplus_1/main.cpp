@@ -38,6 +38,23 @@ int main() {
     printf("%d %d\n", i, j);//8 + 5 -> 13, 2 * 16 + 2 -> 34. 13 34가 출력된다.
 }*/
 
+//196페이지 6번
+/*#include <stdio.h>
+int main() {
+    int j = 024, k = 24, L = 0x24, hap; //024 -> 8진법으로 24이다. 0x24 -> 16진법
+    hap = j + k + L; //2 * 8 + 4 -> 20, 16 * 2 + 4 -> 36, 20 + 24 + 36;
+    printf("%d %d %d %d\n", j, k, L, hap); //20 24 36 80이 출력된다.
+}*/
+
+//197페이지 7번
+/*#include <stdio.h>
+int main() {
+    int i = 5, j = 4, k = 1, L, m;
+    L = i > 5 || j != 0; //앞에꺼 false, 뒤에꺼 true 0 || 1 -> 1 L = 1;
+    m = j <= 4 && k < 1; //앞에꺼 true, 뒤에꺼 false 1 && 0 -> 0 m = 0;
+    printf("%d %d\n", L, m); // 1 0출력
+}*/
+
 //206페이지 5번
 /*#include <stdio.h>
 int main() {
