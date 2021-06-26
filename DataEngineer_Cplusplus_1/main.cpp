@@ -11,14 +11,32 @@ int main() { //C도 그렇고, JAVA도 그렇지만 main() 함수가 있어야 �
 //헝가리안 표기법이란 변수의 이름을 지을때 이름에 해당 변수의 자료형을 추가해서 적는 표기법을 뜻한다.
 
 //195페이지 2번
-#include <stdio.h>
+/*#include <stdio.h>
 int main() {
     int i = 10, j = 10, k = 30;
     i /= j; //i = 1이된다.
     j -= i; //10 - 1이니까, j = 9가 된다.
     k %= j; //30 % 9는 3, k는 3이 된다.
     printf("%d %d %d\n", i, j, k); //1, 9, 3출력
-}
+}*/
+
+//196페이지 4번
+/*#include <stdio.h>
+int main() {
+    int result, a = 100, b = 200, c = 300;
+    result = a < b ? b++ : --c; //b++ -> result에 b의 값을 저장, b는 1증가
+    //--c -> c는 1감소, result에 c의 값을 저장
+    //100 < 200은 참이니까 ?가 실행. result는 200이 된다.
+    printf("%d %d %d\n", result, b, c); //200 201 300이 정답. --c는 실행되지 않는다.
+}*/
+
+//196페이지 5번
+/*#include <stdio.h>
+int main() {
+    int i, j;
+    scanf("%o#%x", &i, &j);//15#22를 입력한다. 15는 8진법, 22는 16진법으로 들어간다.
+    printf("%d %d\n", i, j);//8 + 5 -> 13, 2 * 16 + 2 -> 34. 13 34가 출력된다.
+}*/
 
 //206페이지 5번
 /*#include <stdio.h>
