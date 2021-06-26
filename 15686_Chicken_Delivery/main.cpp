@@ -24,10 +24,7 @@ void combination(int idx, int cnt, int max, int size) {
             }
         }
         int disCount = 0;
-        for(int i = 0; i < sz; i++) {
-            cout << dis[i] << " ";
-            disCount += dis[i];
-        }cout << "\n";
+        for(int i = 0; i < sz; i++) disCount += dis[i];
         minimum = min(minimum, disCount);
         for(int i = 0; i < sz; i++) dis[i] = 99999999;
         return;
