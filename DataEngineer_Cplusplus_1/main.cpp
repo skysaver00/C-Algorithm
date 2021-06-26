@@ -1,45 +1,11 @@
-/*#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hello World!\n";
-    int len = strlen(str);
-
-    printf("%d\n", len);
-    for(int i = 0; i < len; i++) {
-        printf("%s", &str[i]);
-    }
-
-    switch(len) {
-        case 15:
-            printf("case 15\n");
-        case 14:
-            printf("case 14\n");
-        case 13:
-            printf("case 13\n");
-        case 12:
-            printf("case 12\n");
-        case 11:
-            printf("case 11\n");
-        case 10:
-            printf("case 10\n");
-        default:
-            printf("Default\n"); //default는 오직 하나만 가능
-        case 9:
-            printf("case 9\n");
-            break; //이 밑으로 실행 안됨
-        case 8:
-            printf("case 8\n");
-    }
-    char *str2 = "Taiwan Number One\n";
-    printf("%s", str2);
-    printf("%s", str2 + 3);
-    printf("%s", str2 + 6);
-    printf("%c\n", *str2);
-    printf("%c\n", *(str2 + 3));
-    printf("%c\n", *str2 + 3);
-    printf("%s", &str2);
-}*/
+//190페이지 예제
+#include <stdio.h> //헤더파일
+int main() { //C도 그렇고, JAVA도 그렇지만 main() 함수가 있어야 실행 가능하다.
+    int i, j, k; //변수 i, j, k선언. 아직 Null값을 가지고 있다. 마지막은 ;(세미콜론)으로 끝난다.
+    scanf("%d %d", &i, &j); //입력을 받게 된다. i, j에 값이 저장된다.
+    k = i + j; //k는 i, j를 합친 값.
+    printf("%d\n", k); //k를 출력한다.
+}
 //206페이지 5번
 /*#include <stdio.h>
 int main() {
