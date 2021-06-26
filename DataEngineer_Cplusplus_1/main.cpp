@@ -56,7 +56,7 @@ int main() {
 }*/
 
 //198페이지 8번
-#include <stdio.h>
+/*#include <stdio.h>
 int main() {
     int a = 5, b = 10, c = 15, d = 30, result;
     result = a * 3 + b > d || c - b / a <= d && 1; //뒤에 1은 참이니까 고민 안해도 된다.
@@ -64,7 +64,7 @@ int main() {
     // c - b / a <= d -> 15 - 10 / 5 -> 13 <= 30 -> 1
     // 0 || 1 && 1; -> true이니까 result = 1
     printf("%d\n", result);
-}
+}*/
 
 //206페이지 5번
 /*#include <stdio.h>
@@ -141,4 +141,31 @@ int main() {
     }
 
     printf("odd: %d\n", cnt);
+}*/
+
+//210페이지 예제
+/*#include <stdio.h>
+int main() {
+    int a = 50; //변수 a에는 50이 저장
+    int *b = &a; //변수 b는 a의 주소를 레퍼런스하게 된다.
+    //이제 a가 바뀌면 b는 a의 주소의 값을 가져오는 거니까 b도 바뀌는 거다.
+    *b = *b + 20; //당연히 b를 가지고 바꿔도 a의 값이 변하게 된다.
+    // b가 가지고 있는 주소의 값에 20을 추가
+    printf("%d %d\n", a, *b); //70 70출력
+    char *s;
+    s = "gilbut"; //문자열 s는 gilbut를 뜻한다.
+    //s가 gilbut인게 아니다. s가 가진 주소의 값을 보니 gilbut가 있는것.
+    for(int i = 0; i < 6; i += 2) {
+        printf("%c, ", s[i]); //당연히 문자열이니 이렇게 출력 가능
+        //g, l, u를 출력한다.
+        printf("%c, ", *(s + i)); //s + 0, s + 2, s + 4가 가르키는 값의 문자를 출력
+        //g, l, u를 출력한다.
+        printf("%s\n", s + i); //얘는 \0이 나올때까지 출력한다.
+        //gilbut, lbut, ut를 출력할 것이다.
+        따라서 결과는...
+         * g, g, gilbut
+         * l, l, lbut
+         * u, u, ut
+         * 가 될것이다.
+    }
 }*/
