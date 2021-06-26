@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <math.h>
+#include <vector>
+using namespace std;
 int mp[51][51];
 int t[15][101];
 int low[15][2];
+
+vector<pair<int, int>> vec;
 
 int main() {
     int n, m;
