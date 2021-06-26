@@ -1,11 +1,14 @@
 //190페이지 예제
-#include <stdio.h> //헤더파일
+/*#include <stdio.h> //헤더파일
 int main() { //C도 그렇고, JAVA도 그렇지만 main() 함수가 있어야 실행 가능하다.
     int i, j, k; //변수 i, j, k선언. 아직 Null값을 가지고 있다. 마지막은 ;(세미콜론)으로 끝난다.
     scanf("%d %d", &i, &j); //입력을 받게 된다. i, j에 값이 저장된다.
     k = i + j; //k는 i, j를 합친 값.
     printf("%d\n", k); //k를 출력한다.
-}
+}*/
+
+
+
 //206페이지 5번
 /*#include <stdio.h>
 int main() {
