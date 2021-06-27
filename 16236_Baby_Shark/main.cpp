@@ -14,7 +14,6 @@ int y[4] = {-1, 0, 0, 1};
 void bfs() {
     que.push({point.first, point.second});
     ckMap[point.first][point.second] = 1;
-
     while(!que.empty()) {
         int i = que.front().first;
         int j = que.front().second;
@@ -22,33 +21,39 @@ void bfs() {
         que.pop();
         bool flag = false;
         for (int a = 0; a < 4; a++) {
-            int ii = i + x[a];
-            int jj = j + y[a];
+            int ii = i + y[a];
+            int jj = j + x[a];
 
             if (ii > n && ii < 0 && jj > n && jj < 0) continue;
+
+            if(ckMap[ii][jj] != 0) continue;
             else {
-                if (map[ii][jj] < level) {
+                if (map[ii][jj] >= level || map[ii][jj] == 0) {
                     ckMap[ii][jj] = ckMap[i][j] + 1;
                     que.push({ii, jj});
                 } else {
                     ckMap[ii][jj] = ckMap[i][j] + 1;
 
+                    printf("%d %d\n", ii, jj);
+                    printf("%d %d\n", level, map[ii][jj]);
                     for(int b = 0; b < n; b++){
                         for(int c = 0; c < n; c++) {
                             printf("%d ", ckMap[b][c]);
                         }printf("\n");
                     }printf("\n");
 
-                    cnt += ckMap[ii][jj];
-                    map[ii][jj] = 0;
-
+                    cnt += (ckMap[ii][jj] - 1);
+                    map[ii][jj] = 9;
+                    map[point.first][point.second] = 0;
                     point.first = ii, point.second = jj;
                     flag = true;
                 }
             }
             if (flag) break;
         }
-        if (flag) while(!que.empty()) que.pop();
+        if (flag) {
+            while(!que.empty()) que.pop();
+        }
     }
 
     for(int i = 0; i < n; i++) {
@@ -66,6 +71,12 @@ void solve(int ate) {
         level++;
         food = 0;
     }
+
+    for(int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", map[i][j]);
+        }printf("\n");
+    }printf(":)\n");
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
