@@ -226,3 +226,20 @@ int main() {
     }
     printf("%s\n", st); //!moT ma Ir가 된다.
 }*/
+
+//217페이지 예제
+#include <stdio.h>
+int factorial(int n); //이렇게 함수를 선언하면 main보다 밑에 함수가 있더라도 인식한다.
+
+int main() {
+    int (*pf)(int); //int니까 반환값 int, (*pf) -> 함수가 저장된 곳의 위치 저장하는 포인터의 이름이 pf
+    //(int) 함수가 전달받는 인수의 자료형
+    pf = factorial; ///factorial함수의 시작주소를 pf에 저장한다. 따라서 pf자체가 팩토리얼 함수의 주소를 가지고 있는것.
+    printf("%d", pf(3)); //이제 factorial(3)이 아니라, pf(3)해도 된다!
+}
+
+int factorial(int n) { //나머지는 자동으로
+    if(n <= 1) return 1;
+    else return n * factorial(n - 1);
+    //3 * factorial(2) -> 3 * 2 * factorial(1) -> 3 * 2 * 1 -> 6반환하게 된다.
+}
