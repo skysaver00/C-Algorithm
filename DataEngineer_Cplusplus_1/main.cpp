@@ -228,7 +228,7 @@ int main() {
 }*/
 
 //217페이지 예제
-#include <stdio.h>
+/*#include <stdio.h>
 int factorial(int n); //이렇게 함수를 선언하면 main보다 밑에 함수가 있더라도 인식한다.
 
 int main() {
@@ -242,4 +242,7 @@ int factorial(int n) { //나머지는 자동으로
     if(n <= 1) return 1;
     else return n * factorial(n - 1);
     //3 * factorial(2) -> 3 * 2 * factorial(1) -> 3 * 2 * 1 -> 6반환하게 된다.
-}
+    //정확히는 factorial(1)에서 1반환, - > 1
+    //factorial(2)에서 2하고, factorial(1)에서 반환된 1 곱하서 반환. -> 2 * 1 = 2
+    //3 * 2 -> factorial(3)반환, 정답은 6
+}*/
