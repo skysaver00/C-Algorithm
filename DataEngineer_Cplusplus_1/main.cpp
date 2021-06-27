@@ -306,7 +306,7 @@ int main() {
 }*/
 
 //223페이지 4번
-#include <stdio.h>
+/*#include <stdio.h>
 int Fibonacci(int n) {
     if(n == 0)
         return 0;
@@ -320,4 +320,17 @@ int main() {
     for(i = 0; i < 10; i++)
         printf("%d ", Fibonacci(i)); //0 1 1 2 3 5 8...이 나올것이다.
     return 0;
+}*/
+
+//224페이지 5번
+/*#include <stdio.h>
+void func(int *p) {//주소의 값을 가르키게 된다.
+    printf("%d\n", *p); //a의 경우 *p = a[]의 첫번째 = a[0] -> 1
+    printf("%d\n", p[2]); //a[0]에서 2번째 주소 -> a[2] -> 3
 }
+int main() {
+    int a[7] = {1,2,3,4,5};
+    func(a);
+    func(a + 2); //이거의 경우 p + 2만큼이 기본 값 *p -> a[2], p[2] -> a[4]
+    //결과는 1, 3, 3, 5가 각 줄마다 나오게 된다.
+}*/
