@@ -1,94 +1,62 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 using namespace std;
 
 int n, level = 2, cnt = 0;
 int map[21][21];
 int ckMap[21][21];
-queue<pair<int, int>> que2;
-priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> que;
+queue<pair<int, int>> que;
+vector<pair<int, int>> vec;
+int vecArr[401];
 pair<int, int> point;
 
 int x[4] = {0, -1, 1, 0};
 int y[4] = {-1, 0, 0, 1};
 
 bool bfs() {
-    que.push({point.first, point.second});
-    ckMap[point.first][point.second] = 1;
-
-    bool flag = false;
-    while(!que.empty()) {
-        int i = que.top().first;
-        int j = que.top().second;
-
-        que.pop();
-        for (int a = 0; a < 4; a++) {
-            int ii = i + y[a];
-            int jj = j + x[a];
-
-            //printf("%d %d %d %d %d %d %d\n", que.size(), y[a], x[a], i, j, ii, jj);
-
-            if ((ii > n || ii < 0) || (jj > n || jj < 0)) continue;
-
-            if(ckMap[ii][jj] != 0) continue;
-            else {
-                if (map[ii][jj] >= level || map[ii][jj] == 0) {
-                    ckMap[ii][jj] = ckMap[i][j] + 1;
-
-                    for(int b = 0; b < n; b++) {
-                        for (int c = 0; c < n; c++) {
-                            printf("%d ", ckMap[b][c]);
-                        }printf("\n");
-                    }printf("\n");
-
-                    que.push({ii, jj});
-                } else {
-                    ckMap[ii][jj] = ckMap[i][j] + 1;
-
-                    printf("%d %d\n", ii, jj);
-                    printf("%d %d\n", level, map[ii][jj]);
-                    for(int b = 0; b < n; b++){
-                        for(int c = 0; c < n; c++) {
-                            printf("%d ", ckMap[b][c]);
-                        }printf("\n");
-                    }printf("\n");
-
-                    cnt += (ckMap[ii][jj] - 1);
-                    cout << "Cnt is: " << cnt << "\n";
-                    map[ii][jj] = 9;
-                    map[point.first][point.second] = 0;
-                    point.first = ii, point.second = jj;
-                    flag = true;
-                }
-            }
-            if (flag) break;
-        }
-
-
-
-        if (flag) {
-            while(!que.empty()) que.pop();
-        }
-    }
-
+    int a = point.first, b = point.second;
+    int max = 9999;
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            ckMap[i][j] = 0;
+        for (int j = 0; j < n; j++) {
+            if((max > (abs(a - i) + abs(b - j))) && map[i][j] < level && map[i][j] != 0) {
+                max = abs(a - i) + abs(b - j);
+                vec.clear();
+                cout << "push: " << i << "  " << j << ":\n";
+                vec.push_back({i, j});
+            } else if(max == (abs(a - i) + abs(b - j)) && map[i][j] < level && map[i][j] != 0) {
+                cout << "push: " << i << "  " << j << ":\n";
+                vec.push_back({i, j});
+            } else {
+                continue;
+            }
+            cout << max << "\n";
         }
     }
 
-    if (flag) return true;
-    else return false;
+    printf("%d %d\n", vec[0].first, vec[0].second);
+    if(max == 9999) return false;
+    else {
+        cnt += max;
+        cout << "Cnt is: " << cnt << "\n";
+        map[point.first][point.second] = 0;
+        point.first = vec[0].first, point.second = vec[0].second;
+        map[point.first][point.second] = 9;
+        vec.clear();
+
+        return true;
+    }
 }
 
 void solve(int ate) {
     bool possible = false;
     int food = ate;
-    cout << ate << "\n";
     if(food == level) {
         level++;
         food = 0;
     }
+    printf("___________________food level %d %d\n", food, level);
+    cout << "ate " << food << "\n";
 
     for(int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
