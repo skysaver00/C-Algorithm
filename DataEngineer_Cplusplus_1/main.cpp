@@ -267,7 +267,7 @@ int main() {
         printf("%d ", a[i]); //50 75 85 95 100를 출력하게 된다.
 }*/
 
-//221번 2번
+//221페이지 2번
 /*#include <stdio.h>
 int r1() {
     return 4; //r1은 4를 반환
@@ -281,4 +281,26 @@ int r100() {
 int main() {
     printf("%d\n", r100()); //먼저 r100 호출 -> 234를 반환받게 되고, 234출력
     return 0;
+}*/
+
+//222페이지 3번
+/*#include <stdio.h>
+int sub(int i, int j) {
+    return i - j;
+}
+int add(int i, int j) {
+    return i + j;
+}
+int main() {
+    int i, j, result;
+    int (*pf)(int, int);
+    scanf("%d, %d", &i, &j);
+
+    pf = add; //함수를 지정해줄 수 있다.
+    result = pf(i, j); //result에 pf가 가르키는 함수의 결과를 반환
+    printf("%d, ", result); //18
+
+    pf = sub;
+    result = pf(i, j);
+    printf("%d", result); //6
 }*/
