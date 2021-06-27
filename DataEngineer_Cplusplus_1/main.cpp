@@ -304,3 +304,20 @@ int main() {
     result = pf(i, j);
     printf("%d", result); //6
 }*/
+
+//223페이지 4번
+#include <stdio.h>
+int Fibonacci(int n) {
+    if(n == 0)
+        return 0;
+    else if(n == 1)
+        return 1;
+    else
+        return Fibonacci(n - 2) + Fibonacci(n - 1); //n -2, n - 1으로 실행
+}
+int main() {
+    int i = 0;
+    for(i = 0; i < 10; i++)
+        printf("%d ", Fibonacci(i)); //0 1 1 2 3 5 8...이 나올것이다.
+    return 0;
+}
