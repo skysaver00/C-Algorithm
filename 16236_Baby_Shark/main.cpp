@@ -8,44 +8,73 @@ int map[21][21];
 int ckMap[21][21];
 queue<pair<int, int>> que;
 vector<pair<int, int>> vec;
-int vecArr[401];
 pair<int, int> point;
 
 int x[4] = {0, -1, 1, 0};
 int y[4] = {-1, 0, 0, 1};
 
-bool bfs() {
-    int a = point.first, b = point.second;
-    int max = 9999;
-    for(int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if((max > (abs(a - i) + abs(b - j))) && map[i][j] < level && map[i][j] != 0) {
-                max = abs(a - i) + abs(b - j);
-                vec.clear();
-                cout << "push: " << i << "  " << j << ":\n";
-                vec.push_back({i, j});
-            } else if(max == (abs(a - i) + abs(b - j)) && map[i][j] < level && map[i][j] != 0) {
-                cout << "push: " << i << "  " << j << ":\n";
-                vec.push_back({i, j});
-            } else {
-                continue;
+void bfs() {
+    que.push({point.first, point.second});
+    ckMap[point.first][point.second] = 1;
+    int now = 2;
+    while(!que.empty()) {
+        int i = que.front().first;
+        int j = que.front().second;
+
+        que.pop();
+        bool flag = false;
+        for (int a = 0; a < 4; a++) {
+            int ii = i + y[a];
+            int jj = j + x[a];
+
+            if(ii > n || ii < 0 || jj > n || jj < 0) continue;
+            if(map[ii][jj] > level) continue;
+            if(ckMap[ii][jj] != 0) continue;
+
+            ckMap[ii][jj] = ckMap[i][j] + 1;
+        }
+
+        if(que.empty()) {
+            bool flag2 = false;
+            /*for (int a = 0; a < n; a++) {
+                for (int b = 0; b < n; b++) {
+                    printf("%d ", ckMap[a][b]);
+                }
+                printf("\n");
+            }printf("\n");*/
+
+            for (int a = 0; a < n; a++) {
+                for (int b = 0; b < n; b++) {
+                    if(ckMap[a][b] == now && map[a][b] < level && map[a][b] != 0) {
+                        cnt += (ckMap[a][b] - 1);
+                        //cout << "Cnt is: " << cnt << "\n";
+                        map[a][b] = 9;
+                        map[point.first][point.second] = 0;
+                        point.first = a, point.second = b;
+                        flag2 = true;
+                        break;
+                    }
+                }
+                if(flag2) break;
             }
-            cout << max << "\n";
+
+            if(!flag2) {
+                for (int a = 0; a < n; a++) {
+                    for (int b = 0; b < n; b++) {
+                        if(ckMap[a][b] == now) que.push({a, b});
+                    }
+                }
+                now++;
+            } else {
+                for (int a = 0; a < n; a++) {
+                    for (int b = 0; b < n; b++) {
+                        ckMap[a][b] = 0;
+                    }
+                }
+            }
         }
     }
-
-    printf("%d %d\n", vec[0].first, vec[0].second);
-    if(max == 9999) return false;
-    else {
-        cnt += max;
-        cout << "Cnt is: " << cnt << "\n";
-        map[point.first][point.second] = 0;
-        point.first = vec[0].first, point.second = vec[0].second;
-        map[point.first][point.second] = 9;
-        vec.clear();
-
-        return true;
-    }
+    return;
 }
 
 void solve(int ate) {
@@ -55,26 +84,25 @@ void solve(int ate) {
         level++;
         food = 0;
     }
-    printf("___________________food level %d %d\n", food, level);
+    /*printf("___________________food level %d %d\n", food, level);
     cout << "ate " << food << "\n";
 
     for(int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             printf("%d ", map[i][j]);
         }printf("\n");
-    }printf(":)\n");
+    }printf(":)\n");*/
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            if(map[i][j] < level) possible = true;
+            if(i == point.first && j == point.second) continue;
+            if(map[i][j] < level && map[i][j] != 0) possible = true;
         }
     }
 
     if(possible) {
-        bool yes = bfs();
-        if(yes) {
-            solve(food + 1);
-        }
+        bfs();
+        solve(food + 1);
     } else return;
 }
 
