@@ -194,3 +194,17 @@ int main() {
     p = &a[2]; //p는 C를 가르키게 된다.
     printf("%c %c\n", *p, *(p - 2)); //C A를 출력하게 된다.
 }*/
+
+//216페이지 3번
+#include <stdio.h>
+int main() {
+    int a[5], b = 1, sum = 0;
+    for(int i = 0; i < 5; i++) {
+        a[i] = b; //a[0] = 1, a[1] = 2, a[2] = 4, a[3] = 8, a[4] = 16
+        b *= 2; //b = 2, b = 4, b = 6, b = 8, b = 16, b = 32
+    }
+    for(int i = 0; i < 5; i += 2) {
+        sum += *(a + i); //a + 0, a + 2, a + 4 => 1 + 4 + 16
+    }
+    printf("%d\n", sum); //sum = 1 + 4 + 16 -> 21 21을 출력한다.
+}
