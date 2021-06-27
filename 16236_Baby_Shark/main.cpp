@@ -1,13 +1,11 @@
 #include <iostream>
 #include <queue>
-#include <vector>
 using namespace std;
 
 int n, level = 2, cnt = 0;
 int map[21][21];
 int ckMap[21][21];
 queue<pair<int, int>> que;
-vector<pair<int, int>> vec;
 pair<int, int> point;
 
 int x[4] = {0, -1, 1, 0};
@@ -35,13 +33,6 @@ bool bfs() {
         }
 
         if(que.empty()) {
-            /*for (int a = 0; a < n; a++) {
-                for (int b = 0; b < n; b++) {
-                    printf("%d ", ckMap[a][b]);
-                }
-                printf("\n");
-            }printf("\n");*/
-
             for (int a = 0; a < n; a++) {
                 for (int b = 0; b < n; b++) {
                     if(ckMap[a][b] == now && map[a][b] < level && map[a][b] != 0) {
@@ -84,14 +75,6 @@ void solve(int ate) {
         level++;
         food = 0;
     }
-    /*printf("___________________food level %d %d\n", food, level);
-    cout << "ate " << food << "\n";
-
-    for(int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%d ", map[i][j]);
-        }printf("\n");
-    }printf(":)\n");*/
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
