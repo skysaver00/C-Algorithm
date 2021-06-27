@@ -13,16 +13,16 @@ pair<int, int> point;
 int x[4] = {0, -1, 1, 0};
 int y[4] = {-1, 0, 0, 1};
 
-void bfs() {
+bool bfs() {
     que.push({point.first, point.second});
     ckMap[point.first][point.second] = 1;
     int now = 2;
+    bool flag = false;
     while(!que.empty()) {
         int i = que.front().first;
         int j = que.front().second;
 
         que.pop();
-        bool flag = false;
         for (int a = 0; a < 4; a++) {
             int ii = i + y[a];
             int jj = j + x[a];
@@ -35,7 +35,6 @@ void bfs() {
         }
 
         if(que.empty()) {
-            bool flag2 = false;
             /*for (int a = 0; a < n; a++) {
                 for (int b = 0; b < n; b++) {
                     printf("%d ", ckMap[a][b]);
@@ -51,14 +50,14 @@ void bfs() {
                         map[a][b] = 9;
                         map[point.first][point.second] = 0;
                         point.first = a, point.second = b;
-                        flag2 = true;
+                        flag = true;
                         break;
                     }
                 }
-                if(flag2) break;
+                if(flag) break;
             }
 
-            if(!flag2) {
+            if(!flag) {
                 for (int a = 0; a < n; a++) {
                     for (int b = 0; b < n; b++) {
                         if(ckMap[a][b] == now) que.push({a, b});
@@ -74,7 +73,8 @@ void bfs() {
             }
         }
     }
-    return;
+    if(flag) return true;
+    else return false;
 }
 
 void solve(int ate) {
@@ -101,8 +101,8 @@ void solve(int ate) {
     }
 
     if(possible) {
-        bfs();
-        solve(food + 1);
+        int yes = bfs();
+        if(yes) solve(food + 1);
     } else return;
 }
 
