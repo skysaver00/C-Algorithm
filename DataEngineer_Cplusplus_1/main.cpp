@@ -196,7 +196,7 @@ int main() {
 }*/
 
 //216페이지 3번
-#include <stdio.h>
+/*#include <stdio.h>
 int main() {
     int a[5], b = 1, sum = 0;
     for(int i = 0; i < 5; i++) {
@@ -207,4 +207,22 @@ int main() {
         sum += *(a + i); //a + 0, a + 2, a + 4 => 1 + 4 + 16
     }
     printf("%d\n", sum); //sum = 1 + 4 + 16 -> 21 21을 출력한다.
-}
+}*/
+
+//216페이지 4번
+/*#include <stdio.h>
+#include <string.h>
+int main() {
+    int k, n;
+    char st[] = "I am Tom!";
+    char temp;
+    n = strlen(st); //n은 st 문자열 포인터가 가르키는 값의 길이
+    n--; //n은 1이 감소. st[n]은 \0을가르키니까, st[n - 1] => !가 된다.
+    for(k = 0; k < n; k++) { //보니까 swap를 하는것 같다.
+        temp = *(st + k); //temp -> I, ' ', a, m, ' '
+        *(st + k) = *(st + n); // *(st + n) -> !, m, o, T, ' '
+        *(st + n) = temp; //서로 swap를 해준다.
+        n--; //n = 5가될때까지.
+    }
+    printf("%s\n", st); //!moT ma Ir가 된다.
+}*/
