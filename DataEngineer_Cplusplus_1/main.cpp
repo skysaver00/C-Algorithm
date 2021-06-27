@@ -246,3 +246,39 @@ int factorial(int n) { //나머지는 자동으로
     //factorial(2)에서 2하고, factorial(1)에서 반환된 1 곱하서 반환. -> 2 * 1 = 2
     //3 * 2 -> factorial(3)반환, 정답은 6
 }*/
+
+//221페이지 1번
+/*#include <stdio.h>
+void align(int a[]) {
+    int temp;
+    for(int i = 0; i < 4; i++) //0, 1, 2, 3까지
+        for(int j = 0; j < 4 - i; j++)//3, 2, 1, 0까지
+            if(a[j] > a[j + 1]) { //버블소트다. //하지만 이걸통해, a[4]도 탐색하게 된다.
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp; //버블 소트로 정렬
+            }
+}
+
+int main() {
+    int a[] = {85, 75, 50, 100, 95 };
+    align(a); //0 ~ 4까지 정렬
+    for(int i = 0; i < 5; i++)
+        printf("%d ", a[i]); //50 75 85 95 100를 출력하게 된다.
+}*/
+
+//221번 2번
+/*#include <stdio.h>
+int r1() {
+    return 4; //r1은 4를 반환
+}
+int r10() {
+    return (30 + r1()); // 30 + r1 호출 -> r1은 4가 반환되니까, 30 + 4 = 34를 반환
+}
+int r100() {
+    return (200 + r10()); //200 + r10 호출 -> 역시 200 + 34를 반환
+}
+int main() {
+    printf("%d\n", r100()); //먼저 r100 호출 -> 234를 반환받게 되고, 234출력
+    return 0;
+}*/
