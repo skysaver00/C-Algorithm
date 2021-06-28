@@ -14,10 +14,16 @@ int main() {
     for(int i = 2; i <= n; i++) {
         for(int j = 1; j < i; j++) {
             if(arr[i] > arr[j]) {
-                if(check[i] <= check[j]) check[i] = check[j] + 1;
+                if(check[i] <= check[j]) {
+                    check[i] = check[j] + 1;
+                }
             }
         }
     }
+
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << "\n";
+    }cout << "\n";
 
     for(int i = 1; i <= n; i++) {
         cout << check[i] << " ";
