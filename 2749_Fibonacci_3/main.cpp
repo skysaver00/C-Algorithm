@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int arr[100][6][6];
+long long arr[100][6][6];
 int count[100];
-int brr[100][6][6];
+long long brr[100][6][6];
 
 int main() {
     int a = 2;
@@ -11,7 +11,7 @@ int main() {
 
     for (int i = 0; i < a; i++) {
         for (int j = 0; j < a; j++) {
-            scanf("%d", &arr[0][i][j]);
+            scanf("%lld", &arr[0][i][j]);
         }
     }
 
@@ -24,7 +24,7 @@ int main() {
         else {
             cnt++;
             num /= 2;
-            printf("%d %d\n", cnt, num);
+            printf("%d %lld\n", cnt, num);
         }
     }
     for (int i = 0; i < cnt; i++) {
@@ -44,7 +44,7 @@ int main() {
                 for (int m = 0; m < a; m++) {
                     arr[i][j][k] += arr[i - 1][j][m] * arr[i - 1][m][k];
                 }
-                arr[i][j][k] %= 1000;
+                arr[i][j][k] %= 1000000;
             }
         }
     }
@@ -67,7 +67,7 @@ int main() {
                     for (int m = 0; m < a; m++) {
                         brr[ei][j][k] += brr[ei - 1][j][m] * arr[i][m][k];
                     }
-                    brr[ei][j][k] %= 1000;
+                    brr[ei][j][k] %= 1000000;
                 }
             }
             ei++;
@@ -77,7 +77,7 @@ int main() {
 
     for (int i = 0; i < a; i++) {
         for (int j = 0; j < a; j++) {
-            printf("%d ", brr[ei - 1][i][j]);
+            printf("%lld ", brr[ei - 1][i][j]);
         }
         printf("\n");
     }
