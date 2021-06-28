@@ -8,9 +8,12 @@ int v[1001];
 
 int main() {
     int n; cin >> n;
-    for(int i = 1; i <= n; i++) cin >> arr[i];
+    for(int i = 1; i <= n; i++) {
+        cin >> arr[i];
+        check[i] = 1;
+    }
 
-    check[1] = 0;
+    check[1] = 1;
     for(int i = 2; i <= n; i++) {
         for(int j = 1; j < i; j++) {
             if(arr[i] > arr[j]) {
@@ -22,7 +25,7 @@ int main() {
         }
     }
 
-    for(int i = 1; i <= n; i++) {
+    /*for(int i = 1; i <= n; i++) {
         cout << arr[i] << "\t";
     }cout << "\n";
 
@@ -32,7 +35,7 @@ int main() {
 
     for(int i = 1; i <= n; i++) {
         cout << v[i] << "\t";
-    }cout << "\n";
+    }cout << "\n";*/
 
     int max = 0;
     int maxLoc = 0;
@@ -51,7 +54,7 @@ int main() {
     }
 
     cout << max << "\n";
-    for(int i = 0; i <= max; i++) {
+    for(int i = 1; i <= max; i++) {
         cout << ans[i] << " ";
     }cout << "\n";
 
