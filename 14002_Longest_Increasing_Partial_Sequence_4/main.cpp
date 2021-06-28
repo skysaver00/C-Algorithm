@@ -3,8 +3,8 @@ using namespace std;
 
 int arr[1001];
 int check[1001];
-
 int ans[1001];
+int v[1001];
 
 int main() {
     int n; cin >> n;
@@ -16,38 +16,42 @@ int main() {
             if(arr[i] > arr[j]) {
                 if(check[i] <= check[j]) {
                     check[i] = check[j] + 1;
+                    v[i] = j;
                 }
             }
         }
     }
 
-    for(int i = 0; i < n; i++) {
-        cout << arr[i] << "\n";
+    for(int i = 1; i <= n; i++) {
+        cout << arr[i] << "\t";
     }cout << "\n";
 
     for(int i = 1; i <= n; i++) {
-        cout << check[i] << " ";
+        cout << check[i] << "\t";
+    }cout << "\n";
+
+    for(int i = 1; i <= n; i++) {
+        cout << v[i] << "\t";
     }cout << "\n";
 
     int max = 0;
+    int maxLoc = 0;
     for(int i = 1; i <= n; i++) {
-        if(max < check[i]) max = check[i];
-        ans[i] = 99999999;
-    }
-
-    int p = max + 1;
-    while(max != -1) {
-        for(int i = n; i >= 1; i--) {
-            if(check[i] == max) {
-                ans[max + 1] = arr[i];
-                break;
-            }
+        if(max < check[i]) {
+            max = check[i];
+            maxLoc = i;
         }
-        max--;
     }
 
-    cout << p << endl;
-    for(int i = 1; i <= p; i++) {
+    int d = max;
+    while(d >= 0) {
+        ans[d] = arr[maxLoc];
+        maxLoc = v[maxLoc];
+        d--;
+    }
+
+    cout << max << "\n";
+    for(int i = 0; i <= max; i++) {
         cout << ans[i] << " ";
     }cout << "\n";
 
