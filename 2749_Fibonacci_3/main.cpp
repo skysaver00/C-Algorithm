@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-int fibo[80][2][2];
+long long fibo[80][2][2];
 int count[80];
-int val[2][2][2];
+long long val[2][2][2];
 
 void makeFibo(int cnt) {
     for(int i = 1; i <= cnt; i++) {
@@ -18,7 +18,7 @@ void makeFibo(int cnt) {
 }
 
 void makeVal(int cnt) {
-    for(int i = 1; i <= cnt; i++) {
+    for(int i = 0; i < cnt; i++) {
         if(count[i] == 1) {
             for(int j = 0; j < 2; j++) {
                 for(int k = 0; k < 2; k++) {
@@ -31,8 +31,9 @@ void makeVal(int cnt) {
         }
         else continue;
         for(int j = 0; j < 2; j++) {
-            for(int k = 0; k < 2; k++) {
+            for (int k = 0; k < 2; k++) {
                 val[0][j][k] = val[1][j][k];
+                val[1][j][k] = 0;
             }
         }
     }
@@ -52,19 +53,16 @@ int main() {
     while(num!= 0) {
         cnt++;
         num /= 2;
-        cout << cnt << "  " << num << "\n";
     }
 
     for(int i = 0; i < cnt; i++) {
         if(b % 2 == 1) count[i] = 1;
         else count[i] = 0;
         b /= 2;
-
-        cout << count[i] << " ";
-    }cout << "\n";
+    }
 
     makeFibo(cnt);
     makeVal(cnt);
-
+    cout << val[0][0][1] << "\n";
     return 0;
 }
