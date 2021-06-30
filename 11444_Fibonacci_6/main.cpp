@@ -10,20 +10,37 @@ void init() {
     val[0][0][0] = val[0][1][1] = 1; //val 단위행렬
 }
 
-int makeFibo(int cnt) {
+void makeFibo(int cnt) {
     for(int i = 1; i <= cnt; i++) {
         for(int j = 0; j < 2; j++) {
             for(int k = 0; k < 2; k++) {
-                for(int l = 0; l < 2; l++) {
-                    fibo[i][j][k] += fibo[i - 1][k][l] * fibo[i - 1][]
-                }
+                for(int l = 0; l < 2; l++)
+                    fibo[i][j][k] += fibo[i - 1][j][l] * fibo[i - 1][l][k];
+                fibo[i][j][k] %= 1000000007;
             }
         }
     }
 }
 
-int makeVal(int cnt) {
-
+void makeVal(int cnt) {
+    for(int i = 0; i <= cnt; i++) {
+        if(bin[i] != 0) {
+            for(int j = 0; j < 2; j++) {
+                for(int k = 0; k < 2; k++) {
+                    for(int l = 0; l < 2; l++)
+                        val[1][j][k] += val[0][j][l] * fibo[i][l][k];
+                    val[1][j][k] %= 1000000007;
+                }
+            }
+        }
+        else continue;
+        for(int j = 0; j < 2; j++) {
+            for(int k = 0; k < 2; k++) {
+                val[0][j][k] = val[1][j][k];
+                val[1][j][k] = 0;
+            }
+        }
+    }
 }
 
 int main() {
@@ -40,13 +57,10 @@ int main() {
         m /= 2;
     }
 
-    cout << cnt << "\n";
-    for(int i = 0; i < cnt; i++) {
-        cout << bin[i] << " ";
-    }cout << "\n";
-
     makeFibo(cnt);
     makeVal(cnt);
+
+    cout << val[0][0][1] << "\n";
 
     return 0;
 }
