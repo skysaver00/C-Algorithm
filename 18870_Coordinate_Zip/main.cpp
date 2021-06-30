@@ -6,10 +6,6 @@ using namespace std;
 int cor[1000001];
 vector<pair<int,int>> vec;
 
-bool cmp(const pair<int, int> &a, const pair<int, int> &b) {
-    return a.second < b.second;
-}
-
 int main() {
     int N; scanf("%d", &N);
     for(int i = 0; i < N; i++) {
