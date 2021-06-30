@@ -59,8 +59,6 @@ int main() {
 
     makeFibo(cnt);
     makeVal(cnt);
-
     cout << val[0][0][1] << "\n";
-
     return 0;
 }
