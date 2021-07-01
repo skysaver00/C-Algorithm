@@ -12,7 +12,7 @@ void init() {
 }
 
 void makeFibo(int count) {
-    for(int i = 1; i <= count; i++) {
+    for(int i = 1; i < count; i++) {
         for(int j = 0; j < 2; j++) {
             for(int k = 0; k < 2; k++) {
                 for(int l = 0; l < 2; l++) {
@@ -30,17 +30,12 @@ void makeVal(int count) {
             for(int j = 0; j < 2; j++) {
                 for(int k = 0; k < 2; k++) {
                     for(int l = 0; l < 2; l++) {
-                        val[1][j][k] += val[0][j][l] * fibo[0][l][k];
+                        val[1][j][k] += val[0][j][l] * fibo[i][l][k];
                     }
                     val[1][j][k] %= 1000000007;
                 }
             }
         } else continue;
-        for(int j = 0; j < 2; j++) {
-            for (int k = 0; k < 2; k++) {
-                printf("%lld ", val[1][j][k]);
-            }printf("\n");
-        }
 
         for(int j = 0; j < 2; j++) {
             for (int k = 0; k < 2; k++) {
