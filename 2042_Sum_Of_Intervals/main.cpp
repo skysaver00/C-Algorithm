@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 long long num[1000001];
 long long tree[4000001];
 
@@ -37,12 +36,12 @@ int main() {
         scanf("%d %d %lld", &a, &b, &c);
         if(a == 1) {
             long long val = c - num[b - 1];
+            num[b - 1] = c;
             update(0, n - 1, 1, b - 1, val);
         } else if(a == 2) {
             long long val = sum(0, n - 1, 1, b - 1, c - 1);
             printf("%lld\n", val);
         }
     }
-
     return 0;
 }
