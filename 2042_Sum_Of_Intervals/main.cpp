@@ -2,18 +2,10 @@
 long long num[1000001];
 long long tree[4000001];
 
-int max(int i, int j) {
-    return i > j ? i : j;
-}
-
-long long min(int i, int j) {
-    return i < j ? i : j;
-}
-
 long long init(int start, int end, int node) {
     if(start == end) return tree[node] = num[start];
     int mid = (start + end) / 2;
-    return tree[node] = min(init(start, mid, node * 2), init(mid + 1, end, node * 2 + 1));
+    return tree[node] = init(start, mid, node * 2) + init(mid + 1, end, node * 2 + 1);
 }
 
 long long sum(int start, int end, int node, int left, int right) {
@@ -37,7 +29,6 @@ int main() {
     for(int i = 0; i < n; i++) scanf("%lld", &num[i]);
 
     init(0, n - 1, 1);
-
     int a, b;
     long long c;
     for(int i = 0; i < m + k; i++) {
@@ -51,6 +42,5 @@ int main() {
             printf("%lld\n", val);
         }
     }
-    for(int i = 0; i < 4 * n; i++) printf("%lld ", tree[i]);
     return 0;
 }
