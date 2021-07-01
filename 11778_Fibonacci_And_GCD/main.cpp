@@ -10,7 +10,21 @@ int main() {
     long long n, m; scanf("%lld %lld", &n, &m);
     //gcd(f(n), f(m)) == f(gcd(n, m))
     long long nm = gcd(n, m);
-    printf("%lld\n",  nm);
+
+    long long bin = nm;
+    int count = 0;
+    while(bin != 0) {
+        if(bin % 2 == 0) {
+            cnt[count] = 0;
+        } else {
+            cnt[count] = 1;
+        } bin /= 2;
+        count++;
+    }
+
+    for(int i = 0; i < count; i++) {
+        printf("%d ", cnt[i]);
+    }
 
     return 0;
 }
