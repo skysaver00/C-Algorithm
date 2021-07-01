@@ -16,6 +16,15 @@ long long sum(int start, int end, int node, int left, int right) {
     return sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left, right);
 }
 
+void update(int start, int end, int node, int index, int change) {
+    if(index < start || index > end) return;
+    tree[node] += change;
+    if(start == end) return;
+    int mid = (start + end) / 2;
+    update(start, mid, node * 2, index, change);
+    update(mid + 1, end, node * 2 + 1, index, change);
+}
+
 int main() {
     int n, m, k; scanf("%d %d %d", &n, &m, &k);
     for(int i = 0; i < n; i++) scanf("%lld", &num[i]);
@@ -26,9 +35,9 @@ int main() {
     for(int i = 0; i < m + k; i++) {
         scanf("%d %d %d", &a, &b, &c);
         if(a == 1) {
-
+            update(0, n - 1, 1, b - 1, c - 1);
         } else if(a == 2) {
-            long long val = sum(0, n - 1, 1, b, c);
+            long long val = sum(0, n - 1, 1, b - 1, c - 1);
             printf("%lld\n", val);
         }
     }
