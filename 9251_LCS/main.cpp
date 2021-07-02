@@ -24,11 +24,6 @@ int main() {
         }
     }
 
-    for(int i = 0; i <= len2; i++) {
-        for(int j = 0; j <= len1; j++) {
-            printf("%d\n", lcs[i][j]);
-        }
-    }
-
+    printf("%d\n", lcs[len2][len1]);
     return 0;
 }
