@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/2042_Sum_Of_Intervals/main.cpp
-stdio.h
+cstdio
+-
+iostream
 -
 

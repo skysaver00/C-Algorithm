@@ -22,6 +22,7 @@ int ans(int start, int end, int node, int left, int right) {
     if(left <= start && end <= right) return tree[node];
 
     int mid = (start + end) / 2;
+    cout << start << " " << mid << " " << end << "\n";
     return min(ans(start, mid, node * 2, left, right), ans(mid + 1, end, node * 2 + 1, left, right));
 }
 
