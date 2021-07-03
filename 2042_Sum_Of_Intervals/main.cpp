@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <cstdio>
 long long num[1000001];
 long long tree[4000001];
 
