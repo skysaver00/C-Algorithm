@@ -10,7 +10,7 @@ int min(int i, int j) {
 int init(int start, int end, int node) {
     if(start == end) return tree[node] = arr[start];
     int mid = (start + end) / 2;
-    return min(init(start, mid, node * 2), init(mid + 1, end, node * 2 + 1))
+    return tree[node] = min(init(start, mid, node * 2), init(mid + 1, end, node * 2 + 1));
 }
 
 int main() {
@@ -23,7 +23,7 @@ int main() {
 
     init(0, n - 1, 1);
     for(int i = 0; i < 4 * n; i++) {
-        cout << tree[i];
+        cout << tree[i] << " ";
     }
 
     return 0;
