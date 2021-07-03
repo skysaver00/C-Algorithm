@@ -22,6 +22,9 @@ int main() {
     for(int i = 0; i < n; i++) cin >> arr[i];
 
     init(0, n - 1, 1);
+    for(int i = 0; i < 4 * n; i++) {
+        cout << tree[i];
+    }
 
     return 0;
 }
