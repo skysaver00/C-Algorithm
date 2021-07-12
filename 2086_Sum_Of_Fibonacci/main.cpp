@@ -29,6 +29,19 @@ void makeVal(int cnt) {
                     value_1[1][j][k] %= 1000000000;
                 }
             }
+
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    printf("v%lld ", value_1[1][j][k]);
+                }printf("\n");
+            }printf("\n");
+
+            for(int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    value_1[0][j][k] = value_1[1][j][k];
+                    value_1[1][j][k] = 0;
+                }
+            }
         }
 
         if(bin_2[i] == 1) {
@@ -40,13 +53,18 @@ void makeVal(int cnt) {
                     value_2[1][j][k] %= 1000000000;
                 }
             }
-        }
 
-        for(int j = 0; j < 2; j++) {
-            for(int k = 0; k < 2; k++) {
-                value_1[0][j][k] = value_1[1][j][k];
-                value_2[0][j][k] = value_2[1][j][k];
-                value_1[1][j][k] = value_2[1][j][k] = 0;
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    printf("p%lld ", value_2[1][j][k]);
+                }printf("\n");
+            }printf("\n");
+
+            for(int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    value_2[0][j][k] = value_2[1][j][k];
+                    value_2[1][j][k] = 0;
+                }
             }
         }
     }
