@@ -30,12 +30,6 @@ void makeVal(int cnt) {
                 }
             }
 
-            for (int j = 0; j < 2; j++) {
-                for (int k = 0; k < 2; k++) {
-                    printf("v%lld ", value_1[1][j][k]);
-                }printf("\n");
-            }printf("\n");
-
             for(int j = 0; j < 2; j++) {
                 for (int k = 0; k < 2; k++) {
                     value_1[0][j][k] = value_1[1][j][k];
@@ -53,12 +47,6 @@ void makeVal(int cnt) {
                     value_2[1][j][k] %= 1000000000;
                 }
             }
-
-            for (int j = 0; j < 2; j++) {
-                for (int k = 0; k < 2; k++) {
-                    printf("p%lld ", value_2[1][j][k]);
-                }printf("\n");
-            }printf("\n");
 
             for(int j = 0; j < 2; j++) {
                 for (int k = 0; k < 2; k++) {
@@ -90,18 +78,10 @@ int main() {
     }
 
     fibo[0][0][0] = fibo[0][1][0] = fibo[0][0][1] = 1;
-    value_1[0][0][0] = value_1[1][1][0] = value_2[0][0][0] = value_2[1][1][0] = 1;
+    value_1[0][0][0] = value_1[0][1][1] = value_2[0][0][0] = value_2[0][1][1] = 1;
     makeFibo(cnt);
     makeVal(cnt);
 
-    for(int i = 1; i <= cnt; i++) {
-        for(int j = 0; j < 2; j++) {
-            for(int k = 0; k < 2; k++) {
-                printf("%lld ", fibo[i][j][k]);
-            }printf("\n");
-        }printf("\n");
-    }
-
-    printf("%lld\n", value_2[0][1][0] - value_1[0][1][0]);
+    printf("%lld\n", (value_2[0][1][0] - value_1[0][1][0] + 1000000000) % 1000000000);
     return 0;
 }
