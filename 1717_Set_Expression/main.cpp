@@ -27,7 +27,6 @@ int main() {
         } else if(zec == 1) {
             int one = getParent(a);
             int two = getParent(b);
-            printf("%d %d\n", one, two);
             if(one == two) printf("YES\n");
             else printf("NO\n");
         }
