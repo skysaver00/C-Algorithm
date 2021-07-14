@@ -1,10 +1,6 @@
 #include <stdio.h>
-#include <vector>
-using namespace std;
-
-vector<int> choice[3];
-int val[1001];
-int col[1001];
+int choice[1001][3];
+int val[1001][3];
 
 int min(int i, int j) {
     return i < j ? i : j;
@@ -12,31 +8,30 @@ int min(int i, int j) {
 
 int main() {
     int n; scanf("%d", &n);
-    for(int i = 0; i < n; i++) {
-        int a, b, c; scanf("%d %d %d", &a, &b, &c);
-        choice[0].push_back(a);
-        choice[1].push_back(b);
-        choice[2].push_back(c);
-    }
+    for(int i = 0; i < n; i++)
+        scanf("%d %d %d", &choice[i][0], &choice[i][1], &choice[i][2]);
 
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < 3; j++) {
-            val[0] = choice[0][j];
-            col[0] = j;
+    int minimum = 99999999;
+    for(int v = 0; v < 3; v++) {
+        for(int i = 0; i < 3; i++) {
+            if(v == i) val[0][i] = choice[0][i];
+            else val[i][i] = 99999999;
+        }
 
-            for(int k = 1; k < n - 1; k++) {
-                if(col[k - 1] == 0) {
-                    val[k - 1] = min(choice[k - 1][1], choice[k - 1][2]);
-                } else if(col[k - 1] == 1) {
-                    val[k - 1] = min(choice[k - 1][0], choice[k - 1][2]);
-                } else if(col[k - 1] == 2) {
-                    val[k - 1] = min(choice[k - 1][0], choice[k - 1][1]);
-                }
-            }
+        for(int i = 1; i < n; i++) {
+            val[i][0] = min(val[i][1], val[i][2]) + choice[i][0];
+            val[i][1] = min(val[i][0], val[i][2]) + choice[i][1];
+            val[i][2] = min(val[i][0], val[i][1]) + choice[i][2];
+        }
 
-            if()
+        for(int i = 0; i < 3; i++) {
+            if(i == v) continue;
+            else minimum = min(minimum, val[n - 1][i]);
+
+            printf("%d\n", minimum);
         }
     }
 
+    printf("%d\n", minimum);
     return 0;
 }
