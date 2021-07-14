@@ -20,7 +20,6 @@ int main() {
         if(time <= vec[i].second) {
             time = vec[i].first;
             ans++;
-            cout << vec[i].first << " " << vec[i].second << "\n";
         }
     }
 
