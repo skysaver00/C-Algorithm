@@ -15,7 +15,7 @@ int main() {
     for(int v = 0; v < 3; v++) {
         for(int i = 0; i < 3; i++) {
             if(v == i) val[0][i] = choice[0][i];
-            else val[i][i] = 99999999;
+            else val[0][i] = 99999999;
         }
 
         for(int i = 1; i < n; i++) {
@@ -27,8 +27,6 @@ int main() {
         for(int i = 0; i < 3; i++) {
             if(i == v) continue;
             else minimum = min(minimum, val[n - 1][i]);
-
-            printf("%d\n", minimum);
         }
     }
 
