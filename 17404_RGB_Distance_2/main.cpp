@@ -19,9 +19,9 @@ int main() {
         }
 
         for(int i = 1; i < n; i++) {
-            val[i][0] = min(val[i][1], val[i][2]) + choice[i][0];
-            val[i][1] = min(val[i][0], val[i][2]) + choice[i][1];
-            val[i][2] = min(val[i][0], val[i][1]) + choice[i][2];
+            val[i][0] = min(val[i - 1][1], val[i - 1][2]) + choice[i][0];
+            val[i][1] = min(val[i - 1][0], val[i - 1][2]) + choice[i][1];
+            val[i][2] = min(val[i - 1][0], val[i - 1][1]) + choice[i][2];
         }
 
         for(int i = 0; i < 3; i++) {
