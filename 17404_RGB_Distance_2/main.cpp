@@ -17,19 +17,16 @@ int main() {
             if(v == i) val[0][i] = choice[0][i];
             else val[0][i] = 99999999;
         }
-
         for(int i = 1; i < n; i++) {
             val[i][0] = min(val[i - 1][1], val[i - 1][2]) + choice[i][0];
             val[i][1] = min(val[i - 1][0], val[i - 1][2]) + choice[i][1];
             val[i][2] = min(val[i - 1][0], val[i - 1][1]) + choice[i][2];
         }
-
         for(int i = 0; i < 3; i++) {
             if(i == v) continue;
             else minimum = min(minimum, val[n - 1][i]);
         }
     }
-
     printf("%d\n", minimum);
     return 0;
 }
