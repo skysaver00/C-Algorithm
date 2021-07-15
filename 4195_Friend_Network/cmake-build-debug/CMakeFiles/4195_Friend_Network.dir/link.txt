@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\4195_Friend_Network.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\4195_Friend_Network.dir/objects.a @CMakeFiles\4195_Friend_Network.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\4195_Friend_Network.dir/objects.a -Wl,--no-whole-archive -o 4195_Friend_Network.exe -Wl,--out-implib,lib4195_Friend_Network.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\4195_Friend_Network.dir\linklibs.rsp
