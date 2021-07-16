@@ -7,8 +7,6 @@ int min(int i, int j) {
 }
 
 int main() {
-    for(int i = 0; i <= 10000; i++) dp[i] = 999999;
-
     int n, k; scanf("%d %d", &n, &k);
     for(int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
@@ -16,8 +14,10 @@ int main() {
     }
 
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < k; j++) {
-            
+        for(int j = 1; j < k; j++) {
+            if(j == arr[i]) dp[j] += 1;
+            else if(j - arr[i] < 0) continue;
+            else dp[j] += dp[j - arr[i]];
         }
     }
 
