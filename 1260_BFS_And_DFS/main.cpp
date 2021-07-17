@@ -9,12 +9,19 @@ queue<int> que;
 bool check[1001];
 
 void startDFS(int v) {
+    if(check[v]) return;
+    cout << v << " ";
+    check[v] = true;
 
+    int len = graph[v].size();
+    for(int i = 0; i < len; i++) {
+        startDFS(graph[v][i]);
+    }
 }
 
 void startBFS(int n, int v) {
     que.push(v);
-    check[v] = 1;
+    check[v] = true;
 
     while(!que.empty()) {
         int now = que.front();
@@ -42,16 +49,12 @@ int main() {
         graph[to].push_back(from);
     }
 
-    for(int i = 0; i <= n; i++)
+    for(int i = 1; i <= n; i++)
         sort(graph[i].begin(), graph[i].end());
 
-    /*for(int i = 1; i <= n; i++) {
-        for(int j = 0; j < graph[i].size(); j++) {
-            cout << graph[i][j] << " ";
-        }cout << "\n";
-    }*/
-
     startDFS(v);
+    for(int i = 1; i <= n; i++) check[i] = false;
+    cout << "\n";
     startBFS(n, v);
 
     return 0;
