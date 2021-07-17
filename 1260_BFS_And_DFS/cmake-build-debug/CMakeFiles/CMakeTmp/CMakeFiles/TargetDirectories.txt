@@ -1,3 +1,0 @@
-C:/Users/skysaver00/IdeaProjects/C, C++/1260_BFS_And_DFS/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/edit_cache.dir
-C:/Users/skysaver00/IdeaProjects/C, C++/1260_BFS_And_DFS/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_1634a.dir
-C:/Users/skysaver00/IdeaProjects/C, C++/1260_BFS_And_DFS/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/rebuild_cache.dir
