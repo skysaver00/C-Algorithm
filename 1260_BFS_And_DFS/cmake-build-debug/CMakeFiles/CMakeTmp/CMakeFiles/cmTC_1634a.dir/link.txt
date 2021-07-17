@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_1634a.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_1634a.dir/objects.a @CMakeFiles\cmTC_1634a.dir\objects1.rsp
+X:\MinGW\bin\g++.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_1634a.dir/objects.a -Wl,--no-whole-archive -o cmTC_1634a.exe -Wl,--out-implib,libcmTC_1634a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
