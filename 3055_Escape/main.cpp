@@ -82,35 +82,14 @@ int main() {
                 pointX = i;
                 pointY = j;
             }
-
+            
             water[i][j] = 9999;
             able[i][j] = 9999;
         }
     }
-    //cout << startX << " " << startY << "\n";
-    //cout << pointX << " " << pointY << "\n\n";
 
     startWater(n, m);
-
-
-    /*for(int i = 0; i < n; i++) {
-        cout << map[i] << " ";
-    }cout <<"\n";
-
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cout << water[i][j] << "\t";
-        }cout << "\n";
-    }
-
-    cout << "\n\n\n\n\n\n";*/
     startBFS(startX, startY, n, m);
-
-    /*for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cout << able[i][j] << "\t";
-        }cout << "\n";
-    }*/
 
     if(able[pointX][pointY] == 9999) cout << "KAKTUS\n";
     else cout << able[pointX][pointY] << "\n";
