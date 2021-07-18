@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1011_Fly_me_to_the_Alpha_Centauri/cmake-build-debug/CMakeFiles/1011_Fly_me_to_the_Alpha_Centauri.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1011_Fly_me_to_the_Alpha_Centauri/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1011_Fly_me_to_the_Alpha_Centauri/cmake-build-debug/CMakeFiles/rebuild_cache.dir
