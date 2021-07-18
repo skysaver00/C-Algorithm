@@ -33,8 +33,7 @@ void startWater(int n, int m) {
             int __y = _y + y[i];
 
             if(__x < 0 || __x >= n || __y < 0 || __y >= m) continue;
-            if(water[__x][__y] == 'S' || water[__x][__y] == 'X' || water[__x][__y] == 'D') continue;
-
+            if(map[__x][__y] == 'S' || map[__x][__y] == 'X' || map[__x][__y] == 'D') continue;
 
             if(water[__x][__y] > water[_x][_y] + 1) {
                 water[__x][__y] = water[_x][_y] + 1;
@@ -53,8 +52,8 @@ void startBFS(int i, int j) {
 int main() {
     int n, m; cin >> n >> m;
     for(int i = 0; i < n; i++) {
+        cin >> map[i];
         for(int j = 0; j < m; j++) {
-            cin >> map[i][j];
             if(map[i][j] == 'S') {
                 startX = i;
                 startY = j;
@@ -65,9 +64,14 @@ int main() {
     }
     startWater(n, m);
 
+
+    for(int i = 0; i < n; i++) {
+        cout << map[i] << " ";
+    }cout <<"\n";
+
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            cout << water[i][j] << " ";
+            cout << water[i][j] << "\t";
         }cout << "\n";
     }
     startBFS(startX, startY);
