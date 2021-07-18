@@ -82,7 +82,7 @@ int main() {
                 pointX = i;
                 pointY = j;
             }
-            
+
             water[i][j] = 9999;
             able[i][j] = 9999;
         }
@@ -93,6 +93,5 @@ int main() {
 
     if(able[pointX][pointY] == 9999) cout << "KAKTUS\n";
     else cout << able[pointX][pointY] << "\n";
-
     return 0;
 }
