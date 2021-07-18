@@ -12,7 +12,7 @@ int main() {
         int two = one + 1;
 
         if(one * one == range) printf("%d\n", one * 2 - 1);
-        else if(one * two < range) printf("%d\n", two * two - 1);
+        else if(one * two < range) printf("%d\n", two * 2 - 1);
         else printf("%d\n", one + two - 1);
 
     }
