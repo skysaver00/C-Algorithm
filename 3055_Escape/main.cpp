@@ -41,8 +41,6 @@ void startWater(int n, int m) {
             }
         }
     }
-
-
 }
 
 void startBFS(int i, int j, int n, int m) {
@@ -56,8 +54,8 @@ void startBFS(int i, int j, int n, int m) {
 
         if(able[_x][_y] < water[_x][_y]) {
             for(int k = 0; k < 4; k++) {
-                int __x = _x + x[i];
-                int __y = _y + y[i];
+                int __x = _x + x[k];
+                int __y = _y + y[k];
 
                 if(__x < 0 || __x >= n || __y < 0 || __y >= m) continue;
                 if(map[__x][__y] == '*' || map[__x][__y] == 'X') continue;
@@ -89,10 +87,13 @@ int main() {
             able[i][j] = 9999;
         }
     }
+    //cout << startX << " " << startY << "\n";
+    //cout << pointX << " " << pointY << "\n\n";
+
     startWater(n, m);
 
 
-    for(int i = 0; i < n; i++) {
+    /*for(int i = 0; i < n; i++) {
         cout << map[i] << " ";
     }cout <<"\n";
 
@@ -102,12 +103,17 @@ int main() {
         }cout << "\n";
     }
 
-    for(int i = 0; i < n; i++) {
+    cout << "\n\n\n\n\n\n";*/
+    startBFS(startX, startY, n, m);
+
+    /*for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
             cout << able[i][j] << "\t";
         }cout << "\n";
-    }
-    startBFS(startX, startY, n, m);
+    }*/
+
+    if(able[pointX][pointY] == 9999) cout << "KAKTUS\n";
+    else cout << able[pointX][pointY] << "\n";
 
     return 0;
 }
