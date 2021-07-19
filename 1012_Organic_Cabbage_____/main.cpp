@@ -41,14 +41,15 @@ int main() {
                 }
             }
         }
-        
+
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
                 map[i][j] = 0;
                 check[i][j] = 0;
             }
         }
-
         cout << num - 1 << "\n";
     }
+
+    return 0;
 }
