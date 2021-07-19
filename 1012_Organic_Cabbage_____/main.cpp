@@ -35,10 +35,22 @@ int main() {
         int num = 1;
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                if(check[i][j] == 0 && map[i][j]) {
+                if(check[i][j] == 0 && map[i][j] == 1) {
                     startDFS(n, m, num);
                     num++;
                 }
+            }
+        }
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                cout << check[i][j] << " ";
+            }cout << "\n";
+        }
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                check[i][j] = 0;
             }
         }
     }
