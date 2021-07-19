@@ -10,7 +10,7 @@ int yy[4] = {0, 1, 0, -1};
 
 void startDFS(int a, int b, int num) {
     if(check[a][b] != 0) return;
-    if(!map[a][b]) return;
+    if(map[a][b] == 0) return;
     check[a][b] = num;
 
     for(int i = 0; i < 4; i++) {
