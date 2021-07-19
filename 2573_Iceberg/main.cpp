@@ -6,38 +6,58 @@ int x[4] = {1, 0, -1, 0};
 int y[4] = {0, 1, 0, -1};
 
 int ice[301][301];
+int nextIce[301][301];
 int count[301][301];
 bool did[301][301];
 queue<pair<int, int>> que;
 
 void checkDFS(int i, int j, int num) {
+    if(count[i][j] != 0) return;
+    count[i][j] = num;
 
+    for (int a = 0; a < 4; a++) {
+        int newX = i + x[a];
+        int newY = j + y[a];
+
+        if(ice[newX][newY] != 0) checkDFS(newX, newY, num);
+    }
 }
 
 void makeBFS(int i, int j) {
     que.push({i, j});
     did[i][j] = true;
 
-    for(int i = 0; i < 4; i++) {
-        int xX = i + x[i];
-        int yY = j + y[i];
+    while(!que.empty()) {
+        int nowX = que.front().first;
+        int nowY = que.front().second;
+        que.pop();
 
-        if(ice[xX][yY] == 0) {
-            if(ice[i][j] > 0) ice[i][j] -= 1;
+        int val = ice[nowX][nowY];
+        for (int a = 0; a < 4; a++) {
+            int newX = nowX + x[a];
+            int newY = nowY + y[a];
+
+            if (ice[newX][newY] == 0) {
+                if (val > 0) val--;
+            }
+        }
+        nextIce[nowX][nowY] = val;
+
+        for (int a = 0; a < 4; a++) {
+            int newX = nowX + x[a];
+            int newY = nowY + y[a];
+
+
+            if (did[newX][newY]) continue;
+
+            if (ice[newX][newY] != 0) {
+                que.push({newX, newY});
+                did[newX][newY] = true;
+            }
         }
     }
 
-    for(int i = 0; i < 4; i++) {
-        int newX = i + x[i];
-        int newY = j + y[i];
-
-        if(did[newX][newY]) continue;
-
-        if(ice[newX][newY] != 0) {
-            que.push({newX, newY});
-            did[newX][newY] = true;
-        }
-    }
+    return;
 }
 
 int main() {
@@ -51,6 +71,22 @@ int main() {
     int year = 0;
     while(1) {
         year++;
+
+        int num = 1;
+        for(int i = 1; i < n; i++) {
+            for(int j = 1; j < m; j++) {
+                if(ice[i][j] != 0) {
+                    checkDFS(i, j, num);
+                    num++;
+                }
+            }
+        }
+
+        for(int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cout << count[i][j] << " ";
+            }cout << "\n";
+        }cout << "\n";
 
         bool flag = false;
         for(int i = 1; i < n; i++) {
@@ -66,8 +102,11 @@ int main() {
 
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                cout << ice[i][j] << " ";
+                ice[i][j] = nextIce[i][j];
+                nextIce[i][j] = 0;
                 did[i][j] = 0;
+
+                cout << ice[i][j] << " ";
             }cout << "\n";
         }cout << "\n";
     }
