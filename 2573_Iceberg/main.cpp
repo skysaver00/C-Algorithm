@@ -111,11 +111,7 @@ int main() {
                 ice[i][j] = nextIce[i][j];
                 nextIce[i][j] = 0;
                 did[i][j] = 0;
-
-                cout << ice[i][j] << " ";
-            }cout << "\n";
-        }cout << "\n";
+            }
+        }
     }
-
-    return 0;
 }
