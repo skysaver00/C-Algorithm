@@ -11,8 +11,8 @@ int count[301][301];
 bool did[301][301];
 queue<pair<int, int>> que;
 
-void checkDFS(int i, int j, int num) {
-    if(count[i][j] != 0) return;
+bool checkDFS(int i, int j, int num) {
+    if(count[i][j] != 0) return false;
     count[i][j] = num;
 
     for (int a = 0; a < 4; a++) {
@@ -21,6 +21,7 @@ void checkDFS(int i, int j, int num) {
 
         if(ice[newX][newY] != 0) checkDFS(newX, newY, num);
     }
+    return true;
 }
 
 void makeBFS(int i, int j) {
@@ -56,8 +57,6 @@ void makeBFS(int i, int j) {
             }
         }
     }
-
-    return;
 }
 
 int main() {
@@ -76,17 +75,24 @@ int main() {
         for(int i = 1; i < n; i++) {
             for(int j = 1; j < m; j++) {
                 if(ice[i][j] != 0) {
-                    checkDFS(i, j, num);
-                    num++;
+                    bool tf = checkDFS(i, j, num);
+                    if(tf) num++;
                 }
             }
+        }
+        if(num >= 3) {
+            cout << year - 1 << "\n";
+            return 0;
+        } else if(num == 1) {
+            cout << 0 << "\n";
+            return 0;
         }
 
         for(int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                cout << count[i][j] << " ";
-            }cout << "\n";
-        }cout << "\n";
+                count[i][j] = 0;
+            }
+        }
 
         bool flag = false;
         for(int i = 1; i < n; i++) {
