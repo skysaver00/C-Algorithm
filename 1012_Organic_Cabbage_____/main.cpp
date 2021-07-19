@@ -2,16 +2,31 @@
 using namespace std;
 
 bool map[51][51];
-bool check[51][51];
+int check[51][51];
+int m, n, k;
 
-bool startDFS(int n, int m, int num) {
+int xx[4] = {1, 0, -1, 0};
+int yy[4] = {0, 1, 0, -1};
 
+void startDFS(int a, int b, int num) {
+    if(check[a][b] != 0) return;
+    if(!map[a][b]) return;
+    check[a][b] = num;
+
+    for(int i = 0; i < 4; i++) {
+        int newX = b + xx[i];
+        int newY = a + yy[i];
+
+        if(newX < 0 || newX >= m || newY < 0 || newY >= n) continue;
+        startDFS(newY, newX, num);
+    }
+    return;
 }
 
 int main() {
     int t; cin >> t;
     while(t--) {
-        int m, n, k; cin >> m >> n >> k;
+        cin >> m >> n >> k;
         while(k--) {
             int x, y; cin >> x >> y;
             map[y][x] = 1;
@@ -20,8 +35,9 @@ int main() {
         int num = 1;
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                if(!check[i][j]) {
+                if(check[i][j] == 0 && map[i][j]) {
                     startDFS(n, m, num);
+                    num++;
                 }
             }
         }
