@@ -21,11 +21,15 @@ int main() {
 
         int count = 0;
         while(1) {
+            cout << "deq: " << deq.front() << " " << deq.back() << "\n";
+            cout << "deq2: " << deq2.front() << " " << deq2.back() << "\n";
             if(deq.front() == find) {
                 ans += count;
+                deq2 = deq;
                 break;
             } else if(deq2.front() == find) {
                 ans += count;
+                deq = deq2;
                 break;
             }
 
