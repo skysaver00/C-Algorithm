@@ -7,28 +7,25 @@ int arr[51];
 
 int main() {
     int n, m; cin >> n >> m;
-    for(int i = 0; i < m; i++) {
-        cin >> arr[i];
-        deq.push_back(i);
-    }
-
+    for(int i = 1; i <= n; i++) deq.push_back(i);
+    for(int i = 0; i < m; i++) cin >> arr[i];
+    
     deq2 = deq;
 
-    int start = 1, now = n;
     int ans = 0;
     for(int i = 0; i < m; i++) {
         int find = arr[i];
 
         int count = 0;
         while(1) {
-            cout << "deq: " << deq.front() << " " << deq.back() << "\n";
-            cout << "deq2: " << deq2.front() << " " << deq2.back() << "\n";
             if(deq.front() == find) {
                 ans += count;
+                deq.pop_front();
                 deq2 = deq;
                 break;
             } else if(deq2.front() == find) {
                 ans += count;
+                deq2.pop_front();
                 deq = deq2;
                 break;
             }
@@ -44,6 +41,6 @@ int main() {
             count++;
         }
     }
-
+    cout << ans << "\n";
     return 0;
 }
