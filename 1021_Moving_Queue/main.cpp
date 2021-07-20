@@ -9,13 +9,12 @@ int main() {
     int n, m; cin >> n >> m;
     for(int i = 1; i <= n; i++) deq.push_back(i);
     for(int i = 0; i < m; i++) cin >> arr[i];
-    
+
     deq2 = deq;
 
     int ans = 0;
     for(int i = 0; i < m; i++) {
         int find = arr[i];
-
         int count = 0;
         while(1) {
             if(deq.front() == find) {
