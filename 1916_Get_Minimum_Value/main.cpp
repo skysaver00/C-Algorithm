@@ -17,11 +17,12 @@ void path(int k) {
         int dist = pq.top().first;
         pq.pop();
 
+        if(val[curr] < dist) continue;
+
         int sz = vec[curr].size();
         for(int i = 0; i < sz; i++) {
             int next = vec[curr][i].first;
             int nextDist = dist + vec[curr][i].second;
-            if(val[next] < dist) continue;
 
             if(nextDist < val[next]) {
                 val[next] = nextDist;
