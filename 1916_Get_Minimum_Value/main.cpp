@@ -21,6 +21,7 @@ void path(int k) {
         for(int i = 0; i < sz; i++) {
             int next = vec[curr][i].first;
             int nextDist = dist + vec[curr][i].second;
+            if(val[next] < dist) continue;
 
             if(nextDist < val[next]) {
                 val[next] = nextDist;
