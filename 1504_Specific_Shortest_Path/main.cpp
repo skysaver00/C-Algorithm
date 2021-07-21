@@ -3,11 +3,11 @@
 #include <queue>
 #include <algorithm>
 using namespace std;
-int INF = 2147483647;
+long long INF = 2147483647;
 
 vector<pair<int, int>> vec[801];
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-int val[801];
+long long val[801];
 bool check[801];
 
 void path(int k) {
@@ -50,7 +50,7 @@ int main() {
         sort(vec[i].begin(), vec[i].end());
 
     int v1, v2; cin >> v1 >> v2;
-    int ans1, ans2;
+    long long ans1, ans2;
     ans1 = ans2 = 0;
 
     path(1);
@@ -74,9 +74,12 @@ int main() {
     path(v2);
     ans1 += val[n];
 
-    if()
+    if(ans1 >= INF && ans2 >= INF) {
+        cout << -1 << "\n";
+        return 0;
+    }
 
-
-
+    if(ans1 < ans2) cout << ans1 << "\n";
+    else cout << ans2 << "\n";
     return 0;
 }
