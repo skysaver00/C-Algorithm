@@ -3,9 +3,10 @@
 #include <queue>
 #include <algorithm>
 using namespace std;
+int INF = 2147483647;
 
 vector<pair<int, int>> vec[801];
-priority_queue<pair<int, int>, vector<pair<int, int>, greater<pair<int, int>>> pq;
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 int val[801];
 bool check[801];
 
@@ -42,11 +43,40 @@ int main() {
         vec[a].push_back({c, b});
         vec[b].push_back({c, a});
     }
+
+    for(int i = 1; i <= n; i++) val[i] = INF;
+
     for(int i = 1; i <= n; i++)
         sort(vec[i].begin(), vec[i].end());
 
-    int from, to; cin >> from >> to;
-    path(from);
+    int v1, v2; cin >> v1 >> v2;
+    int ans1, ans2;
+    ans1 = ans2 = 0;
+
+    path(1);
+    ans1 += val[v1];
+    ans2 += val[v2];
+
+    for(int i = 1; i <= n; i++) {
+        val[i] = INF;
+        check[i] = false;
+    }
+
+    path(v1);
+    ans1 += val[v2];
+    ans2 += val[v2];
+
+    ans2 += val[n];
+    for(int i = 1; i <= n; i++) {
+        val[i] = INF;
+        check[i] = false;
+    }
+    path(v2);
+    ans1 += val[n];
+
+    if()
+
+
 
     return 0;
 }
