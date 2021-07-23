@@ -1,13 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <stack>
 using namespace std;
 int INF = 2147483647;
 
 vector<pair<int, int>> vec[1001];
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 int val[1001];
-int went[1001];
+int route[1001];
 
 void path(int k) {
     val[k] = 0;
@@ -17,7 +18,6 @@ void path(int k) {
     while(!pq.empty()) {
         int curr = pq.top().second;
         int dist = pq.top().first;
-        went[l++] = curr;
         pq.pop();
 
         if(val[curr] < dist) continue;
@@ -30,6 +30,7 @@ void path(int k) {
             if(nextDist < val[next]) {
                 val[next] = nextDist;
                 pq.push({nextDist, next});
+                route[next] = curr;
             }
         }
     }
@@ -48,13 +49,12 @@ int main() {
 
     int from, to; cin >> from >> to;
     path(from);
-
     cout << val[to] << "\n";
 
-    for(int i = 0; i <= 10; i++) {
-        cout << went[i] << "\n";
-    }
+    int node[1001];
+    while(to) {
 
+    }
 
     return 0;
 }
