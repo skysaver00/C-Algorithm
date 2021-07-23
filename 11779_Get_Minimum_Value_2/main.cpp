@@ -50,9 +50,11 @@ int main() {
     path(from);
 
     cout << val[to] << "\n";
-    return 0;
 
-    for(int i = 0; i <= n; i++) {
+    for(int i = 0; i <= 10; i++) {
         cout << went[i] << "\n";
     }
+
+
+    return 0;
 }
