@@ -52,10 +52,14 @@ int main() {
         for(int j = 1; j <= N; j++) {
             val2[i][j] = val[j];
         }
-        for(int j = 1; j <= N; j++) val[j] = INF;
+        for(int j = 1; j <= N; j++) {
+            val[j] = INF;
+            check[j] = false;
+        }
     }
 
     int max = 0;
     for(int i = 1; i <= N; i++) if(max < val2[i][X] + val2[X][i]) max = val2[i][X] + val2[X][i];
+    cout << max << "\n";
     return 0;
 }
