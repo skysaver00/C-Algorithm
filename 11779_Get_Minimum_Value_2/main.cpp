@@ -52,9 +52,16 @@ int main() {
     cout << val[to] << "\n";
 
     int node[1001];
+    int t = 0;
     while(to) {
-
+        node[t] = route[to];
+        to = route[to];
+        t++;
     }
+
+    for(int i = t - 1; i >= 0; i--)
+        cout << node[i] << " "
+    cout << "\n";
 
     return 0;
 }
