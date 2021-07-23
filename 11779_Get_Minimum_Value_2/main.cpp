@@ -54,13 +54,14 @@ int main() {
     int node[1001];
     int t = 0;
     while(to) {
-        node[t] = route[to];
+        node[t] = to;
         to = route[to];
         t++;
     }
-
+    
+    cout << t << "\n";
     for(int i = t - 1; i >= 0; i--)
-        cout << node[i] << " "
+        cout << node[i] << " ";
     cout << "\n";
 
     return 0;
