@@ -58,7 +58,7 @@ int main() {
         to = route[to];
         t++;
     }
-    
+
     cout << t << "\n";
     for(int i = t - 1; i >= 0; i--)
         cout << node[i] << " ";
