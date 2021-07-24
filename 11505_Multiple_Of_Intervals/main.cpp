@@ -10,8 +10,20 @@ long long initialize(int start, int end, int node) {
     return tree[node] = (initialize(start, end, node * 2) * initialize(mid + 1, end, node * 2 + 1)) % 1000000007;
 }
 
-void update(int start, int end, int node, int index, long long change) {
+long long multiple(int start, int end, int node, int left, int right) {
+    if(left > end || right < start) return 0;
+    if(left <= start && end <= right) return tree[node];
+    int mid = (start + end) / 2;
+    return (multiple(start, mid, node * 2, left, right) * multiple(mid + 1, end, node * 2 + 1, left, right)) % 1000000007;
+}
 
+void update(int start, int end, int node, int index, double change) {
+    if(index < start || index > end) return;
+    tree[node] *= change;
+    if(start == end) return;
+    int mid = (start + end) / 2;
+    update(start, mid, node * 2, index, change);
+    update(mid + 1, end, node * 2 + 1, index, change);
 }
 
 int main() {
