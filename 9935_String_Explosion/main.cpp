@@ -10,14 +10,19 @@ char realStr[1000001];
 int arr[40];
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
     cin >> str >> bomb;
 
     int len = str.length();
-
     int now = 0;
+
     for(int i = 0; i < len; i++) {
         realStr[now++] = str[i];
         int blen = bomb.length();
+
         if(str[i] == bomb[--blen]) {
             bool check = false;
             int size = now - bomb.length();
@@ -41,5 +46,6 @@ int main() {
             cout << realStr[i];
     }
     cout << "\n";
+
     return 0;
 }
