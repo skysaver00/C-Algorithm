@@ -7,7 +7,7 @@ long long tree[4000001];
 long long initialize(int start, int end, int node) {
     if(start == end) return tree[node] = numbers[start];
     int mid = (start + end) / 2;
-    return tree[node] = (initialize(start, end, node * 2) * initialize(mid + 1, end, node * 2 + 1)) % 1000000007;
+    return tree[node] = ((initialize(start, end, node * 2) % 1000000007) * (initialize(mid + 1, end, node * 2 + 1) % 1000000007));
 }
 
 long long multiple(int start, int end, int node, int left, int right) {
@@ -33,8 +33,20 @@ int main() {
 
     int n, m, k; cin >> n >> m >> k;
     for(int i = 0; i < n; i++) cin >> numbers[i];
-
     initialize(0, n - 1, 1);
+    for(int i = 0; i < 4 * n; i++) cout << tree[i];
+
+    for(int i = 0; i < m + k; i++) {
+        int a, b; long long c; cin >> a >> b >> c;
+        if(a == 1) {
+            double val = (double) c / (double) numbers[b - 1];
+            numbers[b - 1] = c;
+            update(0, n - 1, 1, b - 1, val);
+        } else {
+            long long val = multiple(0, n - 1, 1, b - 1, c - 1);
+            cout << val << "\n";
+        }
+    }
 
 
     return 0;
