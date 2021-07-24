@@ -7,13 +7,12 @@ string str;
 string bomb;
 stack<char> st;
 char realStr[1000001];
-int arr[40];
 
 int main() {
     ios_base :: sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
+
     cin >> str >> bomb;
 
     int len = str.length();
