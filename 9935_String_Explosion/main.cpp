@@ -13,47 +13,33 @@ int main() {
     cin >> str >> bomb;
 
     int len = str.length();
-    int blen = bomb.length();
 
     int now = 0;
     for(int i = 0; i < len; i++) {
-        if(str.at(i) == bomb.at(now)) {
-            arr[now]++;
-            now++;
-            st.push(str.at(i));
-        } else if(str.at(i) == bomb.at(0)) {
-            arr[0]++;
-            now = 1;
-            st.push(str.at(i));
-        } else {
-            for(int j = 0; j < blen; j++) arr[j] = 0;
-            now = 0;
-            st.push(str.at(i));
-        }
+        realStr[now++] = str[i];
+        int blen = bomb.length();
+        if(str[i] == bomb[--blen]) {
+            bool check = false;
+            int size = now - bomb.length();
 
-        if(now == blen) {
-            for(int j = 0; j < now; j++) {
-                st.pop();
-                arr[j]--;
+            for(int j = now - 1; j >= size; j--) {
+                if(realStr[j] == bomb[blen--]) check = true;
+                else {
+                    check = false;
+                    break;
+                }
             }
-            now = 0;
-            for(int j = 0; j < blen; j++) {
-                if(arr[j] == 0) break;
-                now++;
-            }
+
+            if(check) now -= bomb.size();
         }
     }
 
-    if(st.empty()) {
-        cout << "FRULA" << "\n";
-        return 0;
+    if(now==0)
+        cout << "FRULA\n";
+    else {
+        for(int i = 0; i < now; i++)
+            cout << realStr[i];
     }
-    int sz = st.size() - 1;
-    while(!st.empty()) {
-        realStr[sz] = st.top();
-        st.pop();
-        sz--;
-    }
-    cout << realStr << "\n";
+    cout << "\n";
     return 0;
 }

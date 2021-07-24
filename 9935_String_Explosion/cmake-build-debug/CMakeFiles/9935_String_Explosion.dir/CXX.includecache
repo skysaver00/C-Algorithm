@@ -7,8 +7,10 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/9935_String_Explosion/main.cpp
-cstdio
+iostream
 -
-cstring
+string
+-
+stack
 -
 
