@@ -15,7 +15,7 @@ long long sum(int start, int end, int node, int left, int right) {
 }
 
 long long update(int start, int end, int node, int value) {
-    
+
 }
 
 int main() {
