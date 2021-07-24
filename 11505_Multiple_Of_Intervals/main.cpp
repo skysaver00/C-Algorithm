@@ -43,7 +43,5 @@ int main() {
             cout << val << "\n";
         }
     }
-
-
     return 0;
 }
