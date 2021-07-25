@@ -11,6 +11,18 @@ int INF = 2147483647;
 int x[4] = {1, 0, -1, 0};
 int y[4] = {0, 1, 0, -1};
 
+void charToInt() {
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            if(charWall[i][j] == '0') {
+                wall[i][j] = 0;
+            } else {
+                wall[i][j] = 1;
+            }
+        }
+    }
+}
+
 void path(int k, int l) {
     val[k][l] = 0;
     pq.push({0, {0, 0}});
@@ -19,11 +31,14 @@ void path(int k, int l) {
         int currX = pq.top().second.first;
         int currY = pq.top().second.second;
         int dist = pq.top().first;
+
         pq.pop();
+
         for(int i = 0; i < 4; i++) {
             int nextX = currX + x[i];
             int nextY = currY + y[i];
             if(nextX >= n || nextX < 0 || nextY >= m || nextY < 0) continue;
+
             int nextDist = dist + wall[nextX][nextY];
             if(nextDist < val[nextX][nextY]) {
                 val[nextX][nextY] = nextDist;
@@ -41,23 +56,7 @@ int main() {
     cin >> m >> n;
 
     for(int i = 0; i < n; i++) cin >> charWall[i];
-
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            if(charWall[i][j] == '0') {
-                wall[i][j] = 0;
-            } else {
-                wall[i][j] = 1;
-            }
-        }
-    }
-
-    /*for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cout << val[i][j] << " ";
-        }cout << "\n";
-    }*/
-
+    charToInt();
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
@@ -66,12 +65,7 @@ int main() {
     }
 
     path(0, 0);
-    /*for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cout << val[i][j] << " ";
-        }cout << "\n";
-    }*/
-    cout << val[n - 1][m - 1] << "\n";
 
+    cout << val[n - 1][m - 1] << "\n";
     return 0;
 }
