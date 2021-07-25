@@ -10,19 +10,20 @@ int time[501];
 void bellman(int k) {
     time[k] = 0;
 
-    int tf = true;
     for(int i = 0; i < m; i++) {
         for(int j = 1; j <= n; j++) cout << time[j] << " ";
         cout << "\n";
 
+        int tf = false;
         for(int j = 1; j <= n; j++) {
             int sz = vec[j].size();
-            for(int k = 0; k < sz; i++) {
+            cout << sz << "\n";
+            for(int k = 0; k < sz; k++) {
                 int next = vec[j][k].first;
                 int nextDist = vec[j][k].second + time[j];
 
                 if(nextDist < time[next]) {
-                    tf = false;
+                    tf = true;
                     time[next] = nextDist;
                 }
             }
