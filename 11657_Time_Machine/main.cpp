@@ -3,7 +3,7 @@
 using namespace std;
 
 int n, m;
-int INF = 2147483647;
+long long INF = 2147483647;
 vector<pair<int, int>> vec[501];
 long long time[501];
 
