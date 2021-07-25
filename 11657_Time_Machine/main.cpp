@@ -17,9 +17,9 @@ void bellman(int k) {
         int tf = false;
         for(int j = 1; j <= n; j++) {
             int sz = vec[j].size();
-            cout << sz << "\n";
             for(int k = 0; k < sz; k++) {
                 int next = vec[j][k].first;
+                if(time[j] == INF) continue;
                 int nextDist = vec[j][k].second + time[j];
 
                 if(nextDist < time[next]) {
