@@ -5,15 +5,13 @@ using namespace std;
 int n, m;
 int INF = 2147483647;
 vector<pair<int, int>> vec[501];
-int time[501];
+long long time[501];
 
 void bellman(int k) {
     time[k] = 0;
 
-    for(int i = 0; i < m; i++) {
-        for(int j = 1; j <= n; j++) cout << time[j] << " ";
-        cout << "\n";
-
+    bool cycle = false;
+    for(int i = 0; i <= m; i++) {
         int tf = false;
         for(int j = 1; j <= n; j++) {
             int sz = vec[j].size();
@@ -30,6 +28,20 @@ void bellman(int k) {
         }
 
         if(!tf) break;
+        if(i == m) cycle = true;
+    }
+
+    if(cycle) {
+        cout << -1 << "\n";
+        return;
+    } else {
+        for(int i = 2; i <= n; i++) {
+            if(time[i] == INF) {
+                cout << -1 << "\n";
+                continue;
+            }
+            cout << time[i] << "\n";
+        }
     }
 }
 
