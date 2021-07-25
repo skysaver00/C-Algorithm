@@ -52,11 +52,11 @@ int main() {
         }
     }
 
-    for(int i = 0; i < n; i++) {
+    /*for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
             cout << val[i][j] << " ";
         }cout << "\n";
-    }
+    }*/
 
 
     for(int i = 0; i < n; i++) {
@@ -66,11 +66,12 @@ int main() {
     }
 
     path(0, 0);
-    for(int i = 0; i < n; i++) {
+    /*for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
             cout << val[i][j] << " ";
         }cout << "\n";
-    }
+    }*/
+    cout << val[n - 1][m - 1] << "\n";
 
     return 0;
 }
