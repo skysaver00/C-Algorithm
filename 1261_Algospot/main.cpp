@@ -18,15 +18,12 @@ void path(int k, int l) {
         int currX = pq.top().second.first;
         int currY = pq.top().second.second;
         int dist = pq.top().first;
-
         pq.pop();
         for(int i = 0; i < 4; i++) {
             int nextX = currX + x[i];
             int nextY = currY + y[i];
             if(nextX >= n || nextX < 0 || nextY >= m || nextY < 0) continue;
-
             int nextDist = dist + wall[nextX][nextY];
-
             if(nextDist < val[nextX][nextY]) {
                 val[nextX][nextY] = nextDist;
                 pq.push({nextDist, {nextX, nextY}});
@@ -57,7 +54,7 @@ int main() {
     path(0, 0);
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            cout << val[i][j] << " "
+            cout << val[i][j] << " ";
         }cout << "\n";
     }
 
