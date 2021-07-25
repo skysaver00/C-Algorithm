@@ -8,15 +8,14 @@ vector<pair<int, int>> vec[501];
 long long time[501];
 long long time2[501];
 
-int bellman(int p) {
+void bellman() {
     for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++) {
             int sz = vec[j].size();
             for(int k = 0; k < sz; k++) {
                 int next = vec[j][k].first;
                 if(time[j] == INF) break;
-                int nextDist = vec[j][k].second + time[j];
-                if(i == 1 && j == 1) cout << "Yes" << nextDist << " " << time[j] << "\n";
+                long long nextDist = vec[j][k].second + time[j];
 
                 if(nextDist < time[next]) {
                     time[next] = nextDist;
@@ -24,7 +23,6 @@ int bellman(int p) {
             }
         }
     }
-    return 0;
 }
 
 int main() {
@@ -38,18 +36,17 @@ int main() {
         vec[a].push_back({b, c});
     }
 
-    bellman(0);
-    cout << "first\n";
-    for(int i = 2; i <= n; i++) {
-        time2[i] = time[i];
-        cout << time[i] << "\n";
-    }
+    bool cycle = false;
+    bellman();
+    for(int i = 2; i <= n; i++) time2[i] = time[i];
 
-    int cycle = bellman(1);
+    bellman();
 
-    cout << "first\n";
     for(int i = 2; i <= n; i++) {
-        cout << time[i] << "\n";
+        if(time2[i] != time[i]) {
+            cycle = true;
+            break;
+        }
     }
 
     if(cycle) {
