@@ -3,6 +3,7 @@
 using namespace std;
 
 int n, m;
+char charWall[101][101];
 int wall[101][101];
 int val[101][101];
 priority_queue <pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater<pair<int, pair<int, int>>>> pq;
@@ -39,11 +40,24 @@ int main() {
 
     cin >> m >> n;
 
+    for(int i = 0; i < n; i++) cin >> charWall[i];
+
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            cin >> wall[i][j];
+            if(charWall[i][j] == '0') {
+                wall[i][j] = 0;
+            } else {
+                wall[i][j] = 1;
+            }
         }
     }
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cout << val[i][j] << " ";
+        }cout << "\n";
+    }
+
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
