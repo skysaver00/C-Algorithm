@@ -17,7 +17,6 @@ void bellman(int k) {
 
             int sz = vec[newj].size();
             for (int t = 0; t < sz; t++) {
-                cout << vec[newj][t].second << "\n";
                 int next = vec[newj][t].first;
                 if (dist[newj] == INF) break;
                 long long nextDist = vec[newj][t].second + dist[newj];
@@ -41,36 +40,41 @@ int main() {
                 vec[e].push_back({s, t});
             } else {
                 vec[s].push_back({e, -t});
-                vec[e].push_back({s, -t});
             }
         }
 
         bool ansflag = false;
-        for (int i = 1; i <= n; i++) dist[i] = INF;
-        dist[1] = 0;
+        for (int l = 0; l < n; l++) {
+            for (int i = 1; i <= n; i++) dist[i] = INF;
+            dist[l] = 0;
 
-        bellman(1);
+            bellman(l);
 
-        for (int i = 1; i <= n; i++) dist2[i] = dist[i];
-        for (int i = 1; i <= n; i++) cout << dist2[i] << " ";
-        cout << "\n";
+            for (int i = 1; i <= n; i++) dist2[i] = dist[i];
+            for (int i = 1; i <= n; i++) cout << dist2[i] << " ";
+            cout << "\n";
 
-        bellman(1);
+            bellman(l);
 
-        for (int i = 1; i <= n; i++) cout << dist[i] << " ";
-        cout << "\n";
+            for (int i = 1; i <= n; i++) cout << dist[i] << " ";
+            cout << "\n";
 
-        for (int i = 1; i <= n; i++) {
-            if (dist[i] != dist2[i]) {
-                ansflag = true;
-                break;
+            bool flag = false;
+            for (int i = 1; i <= n; i++) {
+                if (dist[i] != dist2[i]) {
+                    ansflag = true;
+                    break;
+                }
             }
+
+            if (flag) break;
         }
 
         if (ansflag) cout << "YES\n";
         else cout << "NO\n";
 
         for (int i = 1; i <= n; i++) vec[i].clear();
+
     }
 
     return 0;
