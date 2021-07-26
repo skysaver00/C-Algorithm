@@ -9,12 +9,20 @@ long long dist2[501];
 int INF = 2147483647;
 
 void bellman(int k) {
+    cout << "new Start!\n";
     for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++) {
             int newj = j + k;
-            if(j + k > n) newj = (j + k + 1) % n;
+            if(j + k > n) newj = (j + k) % n;
 
-            cout << newj << "\n";
+            int sz = vec[newj].size();
+            for(int k = 0; k < sz; k++) {
+                int next = vec[newj][k].first;
+                if(dist[newj] == INF) break;
+                long long nextDist = vec[newj][k].second;
+
+                if(nextDist < dist[next]) dist[next] = nextDist;
+            }
         }
     }
 }
@@ -37,6 +45,24 @@ int main() {
             dist[l] = 0;
 
             bellman(l);
+
+            for(int i = 1; i <= n; i++) dist2[i] = dist[i];
+
+            bellman(l);
+
+            bool flag = false;
+            for(int i = 1; i <= n; i++) {
+                if(dist[i] != dist[2]) {
+                    flag = true;
+                    cout << "NO\n";
+                    break;
+                }
+            }
+
+            if(flag) continue;
+            cout << "Yes\n";
         }
     }
+
+    return 0;
 }
