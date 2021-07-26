@@ -11,7 +11,10 @@ int INF = 2147483647;
 void bellman(int k) {
     for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= n; j++) {
-            int newj
+            int newj = j + k;
+            if(j + k > n) newj = (j + k + 1) % n;
+
+            cout << newj << "\n";
         }
     }
 }
