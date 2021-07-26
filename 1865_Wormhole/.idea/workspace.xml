@@ -47,12 +47,12 @@
     <property name="cmake.loaded.for.project" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="1865_Wormhole" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="1865_Wormhole" TARGET_NAME="1865_Wormhole" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="1865_Wormhole" RUN_TARGET_NAME="1865_Wormhole">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="1865_Wormhole" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="1865_Wormhole" TARGET_NAME="1865_Wormhole" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="1865_Wormhole" RUN_TARGET_NAME="1865_Wormhole">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -72,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627286571545</updated>
       <workItem from="1627286574726" duration="3222000" />
+      <workItem from="1627299386946" duration="673000" />
     </task>
     <servers />
   </component>
