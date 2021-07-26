@@ -6,24 +6,36 @@ using namespace std;
 int n, m, w;
 vector<pair<int, int>> vec[501];
 long long dist[501];
-long long dist2[501];
 int INF = 2147483647;
 
-void bellman(int k) {
-    for (int i = 1; i <= n; i++) {
-        for (int j = 0; j < n; j++) {
-            int newj = j + k;
-            if (j + k > n) newj = (j + k) % n;
+bool ck() {
+    for(int i = 1; i < n; i++) {
+        for (int j = 1; j <= n; j++) {
+            for (int l = 0; l < vec[j].size(); l++) {
+                int s, e, t;
 
-            int sz = vec[newj].size();
-            for (int t = 0; t < sz; t++) {
-                int next = vec[newj][t].first;
-                if (dist[newj] == INF) break;
-                long long nextDist = vec[newj][t].second + dist[newj];
+                s = j;
+                e = vec[j][l].first;
+                t = vec[j][l].second;
+                if (dist[e] > dist[s] + t) {
+                    dist[e] = dist[s] + t;
+                }
+            }
 
-                if (nextDist < dist[next]) dist[next] = nextDist;
+        }
+        for(int j = 1; j <= n; j++) {
+            for(int l = 0; l < vec[j].size(); l++) {
+                int s, e, t;
+
+                s = j;
+                e = vec[j][l].first;
+                t = vec[j][l].second;
+                if (dist[e] > dist[s] + t) {
+                    return true;
+                }
             }
         }
+        return false;
     }
 }
 
@@ -43,38 +55,14 @@ int main() {
             }
         }
 
-        bool ansflag = false;
-        for (int l = 0; l < n; l++) {
-            for (int i = 1; i <= n; i++) dist[i] = INF;
-            dist[l] = 0;
-
-            bellman(l);
-
-            for (int i = 1; i <= n; i++) dist2[i] = dist[i];
-            for (int i = 1; i <= n; i++) cout << dist2[i] << " ";
-            cout << "\n";
-
-            bellman(l);
-
-            for (int i = 1; i <= n; i++) cout << dist[i] << " ";
-            cout << "\n";
-
-            bool flag = false;
-            for (int i = 1; i <= n; i++) {
-                if (dist[i] != dist2[i]) {
-                    ansflag = true;
-                    break;
-                }
-            }
-
-            if (flag) break;
+        for(int i = 1; i <= n; i++) {
+            dist[i] = INF;
         }
 
-        if (ansflag) cout << "YES\n";
+        dist[1] = 0;
+        bool cycle = ck();
+        if(cycle) cout << "YES\n";
         else cout << "NO\n";
-
-        for (int i = 1; i <= n; i++) vec[i].clear();
-
     }
 
     return 0;
