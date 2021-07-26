@@ -9,17 +9,16 @@ long long dist2[501];
 int INF = 2147483647;
 
 void bellman(int k) {
-    cout << "new Start!\n";
     for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) {
+        for(int j = 0; j < n; j++) {
             int newj = j + k;
             if(j + k > n) newj = (j + k) % n;
 
             int sz = vec[newj].size();
-            for(int k = 0; k < sz; k++) {
-                int next = vec[newj][k].first;
+            for(int t = 0; t < sz; t++) {
+                int next = vec[newj][t].first;
                 if(dist[newj] == INF) break;
-                long long nextDist = vec[newj][k].second;
+                long long nextDist = vec[newj][t].second + dist[newj];
 
                 if(nextDist < dist[next]) dist[next] = nextDist;
             }
@@ -40,28 +39,37 @@ int main() {
             }
         }
 
-        for(int l = 0; l < n; l++) {
-            for(int i = 1; i <= n; i++) dist[i] = INF;
+        bool ansflag = false;
+        for(int l = 1; l <= n; l++) {
+            for (int i = 1; i <= n; i++) dist[i] = INF;
             dist[l] = 0;
 
             bellman(l);
 
-            for(int i = 1; i <= n; i++) dist2[i] = dist[i];
+            for (int i = 1; i <= n; i++) dist2[i] = dist[i];
+            for (int i = 1; i <= n; i++) cout << dist2[i] << " ";
+            cout << "\n";
 
             bellman(l);
 
+            for (int i = 1; i <= n; i++) cout << dist[i] << " ";
+            cout << "\n";
+
             bool flag = false;
-            for(int i = 1; i <= n; i++) {
-                if(dist[i] != dist[2]) {
+            for (int i = 1; i <= n; i++) {
+                if (dist[i] != dist2[i]) {
                     flag = true;
-                    cout << "NO\n";
+                    ansflag = true;
                     break;
                 }
             }
 
-            if(flag) continue;
-            cout << "Yes\n";
+            if (flag) break;
         }
+        if(ansflag) cout << "YES\n";
+        else cout << "NO\n";
+
+        for(int i = 1; i <= n; i++) vec[i].clear();
     }
 
     return 0;
