@@ -12,6 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ed730ec-6958-4f70-baa4-3d60112e283a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/16395_Pascal_Triangle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/16395_Pascal_Triangle.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/16395_Pascal_Triangle.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/16395_Pascal_Triangle.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/16395_Pascal_Triangle.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/16395_Pascal_Triangle.dir/objects.a" afterDir="false" />
@@ -70,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1627478386726</updated>
-      <workItem from="1627478391818" duration="690000" />
+      <workItem from="1627478391818" duration="1010000" />
     </task>
     <servers />
   </component>
