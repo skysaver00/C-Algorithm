@@ -1,5 +1,4 @@
 #include <cstdio>
-
 int res[10];
 int visit[10];
 
@@ -20,7 +19,8 @@ void combination(int idx, int cnt, int max, int size) {
 }
 
 int main() {
-    int n, m; scanf("%d %d", &n, &m);
+    int n, m;
+    scanf("%d %d", &n, &m);
     for(int i = 0; i < n; i++) res[i] = i + 1;
 
     combination(0, 0, n, m);
