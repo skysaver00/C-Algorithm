@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/17413_Word_Reverse_2_____/cmake-build-debug/CMakeFiles/17413_Word_Reverse_2_____.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/17413_Word_Reverse_2_____/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/17413_Word_Reverse_2_____/cmake-build-debug/CMakeFiles/rebuild_cache.dir
