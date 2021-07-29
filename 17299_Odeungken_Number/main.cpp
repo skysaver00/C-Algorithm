@@ -8,6 +8,10 @@ int ans[1000001];
 stack<int> st;
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
     int n; cin >> n;
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
@@ -15,16 +19,17 @@ int main() {
     }
 
     st.push(1e9);
-    cout << st.top() << "\n";
 
     for(int i = n - 1; i >= 0; i--) {
-        while(cnt[st.top()] < cnt[arr[i]] && st.top() <= 1000000) st.pop();
+
+        while(st.top() <= 1000000 && cnt[st.top()] <= cnt[arr[i]]) st.pop();
 
         if(st.top() == 1e9) ans[i] = -1;
-        else ans[i] = cnt[st.top()];
+        else {
+            ans[i] = st.top();
+        }
 
         st.push(arr[i]);
-        cout << st.top() << "\n";
     }
 
     for(int i = 0; i < n; i++) cout << ans[i] << " ";
