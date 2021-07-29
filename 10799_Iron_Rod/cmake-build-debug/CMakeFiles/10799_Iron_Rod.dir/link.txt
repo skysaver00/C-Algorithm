@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\10799_Iron_Rod.dir/objects.a
+X:\MinGW\bin\ar.exe cr CMakeFiles\10799_Iron_Rod.dir/objects.a @CMakeFiles\10799_Iron_Rod.dir\objects1.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\10799_Iron_Rod.dir/objects.a -Wl,--no-whole-archive -o 10799_Iron_Rod.exe -Wl,--out-implib,lib10799_Iron_Rod.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\10799_Iron_Rod.dir\linklibs.rsp
