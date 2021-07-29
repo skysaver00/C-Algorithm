@@ -26,6 +26,7 @@ int main() {
             if(str.at(i - 1) == ')') {
                 ans += 1;
                 value -= 1;
+                stk.pop();
                 continue;
             }
             if(stk.top() == '(') {
@@ -36,6 +37,7 @@ int main() {
 
         cout << i << str.at(i) << " " << stk.size() << " " << value << " " << ans << "\n";
     }
+    cout << ans << "\n";
 
     return 0;
 }
