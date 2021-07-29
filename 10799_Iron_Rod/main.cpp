@@ -19,12 +19,14 @@ int main() {
         if(str.at(i) == '(') {
             if(stk.empty()) stk.push(str.at(i));
             else if(stk.top() == '(') {
+                stk.push(str.at(i));
                 value += 1;
             }
         } else if(str.at(i) == ')') {
             if(str.at(i - 1) == ')') {
                 ans += 1;
-                value -=1;
+                value -= 1;
+                continue;
             }
             if(stk.top() == '(') {
                 ans += value;
@@ -32,7 +34,7 @@ int main() {
             }
         }
 
-        cout << str.at(i) << " " << value << " " << ans << "\n";
+        cout << i << str.at(i) << " " << stk.size() << " " << value << " " << ans << "\n";
     }
 
     return 0;
