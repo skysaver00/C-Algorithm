@@ -14,13 +14,17 @@ int main() {
         cnt[arr[i]]++;
     }
 
-    for(int i = n - 1; i >= 0; i--) {
-        while(cnt[st.top()] < cnt[arr[i]]) st.pop();
+    st.push(1e9);
+    cout << st.top() << "\n";
 
-        if(st.empty()) ans[i] = -1;
+    for(int i = n - 1; i >= 0; i--) {
+        while(cnt[st.top()] < cnt[arr[i]] && st.top() <= 1000000) st.pop();
+
+        if(st.top() == 1e9) ans[i] = -1;
         else ans[i] = cnt[st.top()];
 
         st.push(arr[i]);
+        cout << st.top() << "\n";
     }
 
     for(int i = 0; i < n; i++) cout << ans[i] << " ";
