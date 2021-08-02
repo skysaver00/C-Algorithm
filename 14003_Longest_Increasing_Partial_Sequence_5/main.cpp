@@ -54,20 +54,14 @@ int main(void)
         cout << idx[i] << " ";
     }cout << "\n";*/
 
-    for (int i = 1; i <= n; i++)
-    {
-        //cout << "len" << V.size() << "\n";
-        if (V.size() == 0 || V[V.size() - 1] < arr[i])
-        {
+    for (int i = 1; i <= n; i++) {
+        if (V.size() == 0 || V[V.size() - 1] < arr[i]) {
             V.push_back(arr[i]);
             idx2[i] = V.size() - 1;
-        }
-        else
-        {
+        } else {
             int left = 0;
             int right = V.size() - 1;
-            while (left < right)
-            {
+            while (left < right) {
                 int mid = (left + right) / 2;
 
                 if (V[mid] >= arr[i]) right = mid;
@@ -88,10 +82,8 @@ int main(void)
     }cout << "\n";*/
 
     int Find_Index = V.size() - 1;
-    for (int i = n; i > 0; i--)
-    {
-        if (idx2[i] == Find_Index)
-        {
+    for (int i = n; i > 0; i--) {
+        if (idx2[i] == Find_Index) {
             Find_Index--;
             Answer.push_back(arr[i]);
         }
