@@ -42,6 +42,13 @@ int main(void)
         }
     }
     cout << len << "\n";
+    for(int i = 0; i <= len; i++) {
+        cout << val[i] << " ";
+    }cout << "\n";
+
+    for(int i = 0; i < len; i++) {
+        cout << idx[i] << " ";
+    }cout << "\n";
 
     for (int i = 1; i <= n; i++)
     {
@@ -66,6 +73,13 @@ int main(void)
         }
     }
     cout << V.size() << "\n";
+    for(int i = 0; i <= len; i++) {
+        cout << V[i] << " ";
+    }cout << "\n";
+
+    for(int i = 0; i < len; i++) {
+        cout << idx[i] << " ";
+    }cout << "\n";
 
     int Find_Index = V.size() - 1;
     for (int i = n; i > 0; i--)
