@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int arr[1000001];
-int check[1000001];
-int ans[1000001];
-int v[1000001];
+int arr[1001];
+int check[1001];
+int ans[1001];
+int v[1001];
 
 int main() {
     int n; cin >> n;
@@ -12,6 +12,8 @@ int main() {
         cin >> arr[i];
         check[i] = 1;
     }
+
+
 
     for(int i = 2; i <= n; i++) {
         for(int j = 1; j < i; j++) {
