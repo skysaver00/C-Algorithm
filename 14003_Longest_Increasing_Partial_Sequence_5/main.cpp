@@ -7,6 +7,7 @@ using namespace std;
 int n;
 int arr[1000001];
 int idx[1000001];
+int idx2[1000001];
 int val[1000001];
 vector<int> V;
 vector<int> Answer;
@@ -20,11 +21,13 @@ int main(void)
     cin >> n;
     for(int i = 1; i <= n; i++) cin >> arr[i];
 
-    int len = 0;
+    /*int len = 0;
     for(int i = 1; i <= n; i++) {
+        cout << "len" << len << "\n";
         if(len == 0 || val[len - 1] < arr[i]) {
             val[len] = arr[i];
-            idx[i] = len - 1;
+            if(len == 0) idx[i] = 0;
+            else idx[i] = len - 1;
             len++;
         } else {
             int left = 0;
@@ -40,22 +43,24 @@ int main(void)
             val[left] = arr[i];
             idx[i] = left;
         }
+        cout << idx[i] << "\n";
     }
     cout << len << "\n";
     for(int i = 0; i <= len; i++) {
         cout << val[i] << " ";
     }cout << "\n";
 
-    for(int i = 0; i < len; i++) {
+    for(int i = 0; i <= len; i++) {
         cout << idx[i] << " ";
-    }cout << "\n";
+    }cout << "\n";*/
 
     for (int i = 1; i <= n; i++)
     {
+        //cout << "len" << V.size() << "\n";
         if (V.size() == 0 || V[V.size() - 1] < arr[i])
         {
             V.push_back(arr[i]);
-            idx[i] = V.size() - 1;
+            idx2[i] = V.size() - 1;
         }
         else
         {
@@ -69,22 +74,23 @@ int main(void)
                 else left = mid + 1;
             }
             V[left] = arr[i];
-            idx[i] = left;
+            idx2[i] = left;
         }
+        //cout << idx2[i] << "\n";
     }
     cout << V.size() << "\n";
-    for(int i = 0; i <= len; i++) {
+    /*for(int i = 0; i <= len; i++) {
         cout << V[i] << " ";
     }cout << "\n";
 
-    for(int i = 0; i < len; i++) {
-        cout << idx[i] << " ";
-    }cout << "\n";
+    for(int i = 0; i <= len; i++) {
+        cout << idx2[i] << " ";
+    }cout << "\n";*/
 
     int Find_Index = V.size() - 1;
     for (int i = n; i > 0; i--)
     {
-        if (idx[i] == Find_Index)
+        if (idx2[i] == Find_Index)
         {
             Find_Index--;
             Answer.push_back(arr[i]);
