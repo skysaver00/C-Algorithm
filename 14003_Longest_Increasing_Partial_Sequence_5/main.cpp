@@ -4,9 +4,10 @@
 
 using namespace std;
 
-int N;
+int n;
 int arr[1000001];
 int idx[1000001];
+int val[1000001];
 vector<int> V;
 vector<int> Answer;
 
@@ -16,13 +17,33 @@ int main(void)
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cin >> N;
-    for (int i = 1; i <= N; i++)
-    {
-        cin >> arr[i];
-    }
+    cin >> n;
+    for(int i = 1; i <= n; i++) cin >> arr[i];
 
-    for (int i = 1; i <= N; i++)
+    int len = 0;
+    for(int i = 1; i <= n; i++) {
+        if(len == 0 || val[len - 1] < arr[i]) {
+            val[len] = arr[i];
+            idx[i] = len - 1;
+            len++;
+        } else {
+            int left = 0;
+            int right = len - 1;
+
+            while(left < right) {
+                int mid = (left + right) / 2;
+
+                if(val[mid] >= arr[i]) right = mid;
+                else left = mid + 1;
+            }
+
+            val[left] = arr[i];
+            idx[i] = left;
+        }
+    }
+    cout << len << "\n";
+
+    for (int i = 1; i <= n; i++)
     {
         if (V.size() == 0 || V[V.size() - 1] < arr[i])
         {
@@ -47,7 +68,7 @@ int main(void)
     cout << V.size() << "\n";
 
     int Find_Index = V.size() - 1;
-    for (int i = N; i > 0; i--)
+    for (int i = n; i > 0; i--)
     {
         if (idx[i] == Find_Index)
         {
