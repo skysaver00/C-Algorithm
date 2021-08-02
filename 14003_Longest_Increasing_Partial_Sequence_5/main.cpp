@@ -1,75 +1,62 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
+
 using namespace std;
 
-int arr[1000001];
-int check[1000001];
-int check2[1000001];
-int ans[1000001];
-int v[1000001];
-int len = 0;
-int n;
+int N;
+int Arr[1000001];
+int Index_Arr[1000001];
+vector<int> V;
+vector<int> Answer;
 
-int solve(int i) {
-    int left = 0; int right = len - 1;
-    int mid;
+int main(void)
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-    int flag = 0;
-    while(left <= right) {
-        mid = (left + right) / 2;
-        if(check[mid] < arr[i]) left = mid + 1;
-        else if(check[mid] > arr[i]) right = mid - 1;
-        else if(check[mid] == arr[i]) {
+    cin >> N;
+    for (int i = 1; i <= N; i++)
+    {
+        cin >> Arr[i];
+    }
+
+    for (int i = 1; i <= N; i++)
+    {
+        if (V.size() == 0 || V[V.size() - 1] < Arr[i])
+        {
+            V.push_back(Arr[i]);
+            Index_Arr[i] = V.size() - 1;
+        }
+        else
+        {
+            int Left = 0;
+            int Right = V.size() - 1;
+            while (Left < Right)
+            {
+                int Mid = (Left + Right) / 2;
+
+                if (V[Mid] >= Arr[i]) Right = Mid;
+                else Left = Mid + 1;
+            }
+            V[Left] = Arr[i];
+            Index_Arr[i] = Left;
         }
     }
-
-    cout << left << " " << mid << " " << right << " " << len << "\n";
-
-    if(left == len) {
-        check2[len] = check2[len - 1] + 1;
-        v[i] = mid;
-        check[len] = arr[i];
-        len++;
+    cout << V.size() << "\n";
+    
+    int Find_Index = V.size() - 1;
+    for (int i = N; i > 0; i--)
+    {
+        if (Index_Arr[i] == Find_Index)
+        {
+            Find_Index--;
+            Answer.push_back(Arr[i]);
+        }
     }
-    else if(check[left] > arr[i]) {
-        check2[i] = check[left - 1] + 1;
-        v[i] = mid;
-        check[left] = arr[i];
-    }
-
-    for(int k = 0; k <= n; k++) {
-        cout << check[k] << " || ";
-    }cout << "\n";
-
-    for(int k = 0; k <= n; k++) {
-        cout << check2[k] << " || ";
-    }cout << "\n";
-
-    for(int k = 0; k <= n; k++) {
-        cout << v[k] << " || ";
-    }cout << "\n";
-
-    return 0;
-}
-
-int main() {
-    cin >> n;
-    for(int i = 1; i <= n; i++) {
-        cin >> arr[i];
-        check2[i] = 1;
-    }
-
-    check[0] = -2000000000;
-    check[1] = arr[1];
-    len = 2;
-    for(int i = 2; i <= n; i++) {
-        solve(i);
-    }
-
-    for(int k = 0; k <= len; k++) {
-        cout << check[k] << " || ";
-    }cout << "\n";
-
-    cout << len - 1 << endl;
+    for (int i = Answer.size() - 1; i >= 0; i--) cout << Answer[i] << " ";
+    cout << "\n";
 
     return 0;
 }
