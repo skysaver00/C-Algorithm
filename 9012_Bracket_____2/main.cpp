@@ -11,11 +11,12 @@ int main() {
     while (n--) {
         cin >> str;
 
+        bool flag = false;
         int len = str.length();
         for(int i = 0; i < len; i++) {
             if(str.at(i) == ')' && stk.empty()) {
-                cout << "NO\n";
-                continue;
+                flag = true;
+                break;
             } else if(str.at(i) == ')') {
                 stk.pop();
             } else if(str.at(i) == '(') {
@@ -23,12 +24,11 @@ int main() {
             }
         }
 
-        if(stk.empty()) cout << "YES\n";
+        if(stk.empty() && !flag) cout << "YES\n";
         else {
             cout << "NO\n";
             while(!stk.empty()) stk.pop();
         }
     }
-
      return 0;
 }
