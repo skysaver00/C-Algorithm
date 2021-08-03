@@ -32,7 +32,6 @@ int main() {
     }
 
     floyd(v);
-
     int ans = INF;
     for(int i = 1; i <= v; i++) if(vil[i][i] < ans) ans = vil[i][i];
     if(ans == INF) cout << "-1\n";
