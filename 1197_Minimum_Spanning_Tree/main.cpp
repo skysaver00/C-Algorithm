@@ -37,7 +37,7 @@ int main() {
     }
     sort(vec.begin(), vec.end());
 
-    int ans;
+    int ans = 0;
     for(int i = 1; i <= v; i++) parent[i] = i;
     for(int i = 0; i < e; i++) {
         if(SameParent(vec[i].second.first, vec[i].second.second) == false) {
