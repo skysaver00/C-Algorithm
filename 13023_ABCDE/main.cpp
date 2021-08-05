@@ -3,9 +3,9 @@
 #include <algorithm>
 using namespace std;
 
-vector<int> buddy[2001];
-bool check[2001];
-int depth[2001];
+vector<int> buddy[3001];
+bool check[3001];
+int depth[3001];
 
 void dfs(int now) {
     if(check[now]) {
@@ -18,8 +18,8 @@ void dfs(int now) {
         if(check[buddy[now][i]]) continue;
         depth[buddy[now][i]] = depth[now] + 1;
 
-        /*for(int j = 0; j < 10; j++) cout << depth[j] << " ";
-        cout << "\n";*/
+        for(int j = 0; j < 10; j++) cout << depth[j] << " ";
+        cout << "\n";
         dfs(buddy[now][i]);
     }
 }
@@ -32,18 +32,18 @@ int main() {
         buddy[b].push_back(a);
     }
 
-    for(int i = 0; i < n; i++) sort(buddy[i].begin(), buddy[i].end());
+    //for(int i = 0; i < n; i++) sort(buddy[i].begin(), buddy[i].end());
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i <= n; i++) {
         dfs(i);
-        for(int j = 0; j < n; j++) {
+        for(int j = 0; j <= n; j++) {
             if(depth[j] == 4) {
                 cout << "1\n";
                 return 0;
             }
         }
 
-        for(int j = 0; j < n; j++) {
+        for(int j = 0; j <= n; j++) {
             check[j] = false;
             depth[j] = 0;
         }
