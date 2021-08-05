@@ -1,12 +1,25 @@
 #include <iostream>
+#include <queue>
 #include <vector>
 using namespace std;
 
 vector<int> vec[300001];
-int arr[300001];
+queue<int> que;
+int dist[300001];
+bool check[300001];
 
-void bfs(int x) {
+void bfs(int k, int x) {
+    que.push(x);
 
+    while(!que.empty()) {
+        int from = que.front();
+        que.pop();
+
+        int size = vec[from].size();
+        for(int i = 0; i < size; i++) {
+
+        }
+    }
 }
 
 
@@ -18,7 +31,7 @@ int main() {
         vec[a].push_back(b);
     }
 
-
+    bfs(k, x);
 
     return 0;
 }
