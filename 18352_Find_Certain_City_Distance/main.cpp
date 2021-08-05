@@ -17,7 +17,11 @@ void bfs(int k, int x) {
 
         int size = vec[from].size();
         for(int i = 0; i < size; i++) {
-
+            if(check[vec[from][i]]) {
+                dist[vec[from][i]] = dist[from] + 1;
+                que.push(vec[from][i]);
+                check[vec[from][i]] = true;
+            }
         }
     }
 }
@@ -32,6 +36,10 @@ int main() {
     }
 
     bfs(k, x);
+
+    for(int i = 1; i <= n; i++) {
+        cout << dist[i] << " ";
+    }cout << "\n";
 
     return 0;
 }
