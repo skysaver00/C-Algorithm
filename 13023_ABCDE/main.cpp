@@ -1,20 +1,26 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
-int depth;
 vector<int> buddy[2001];
 bool check[2001];
+int depth[2001];
 
 void dfs(int now) {
     if(check[now]) {
-        depth--;
         return;
     }
+    check[now] = true;
 
     int sz = buddy[now].size();
     for(int i = 0; i < sz; i++) {
-        
+        if(check[buddy[now][i]]) continue;
+        depth[buddy[now][i]] = depth[now] + 1;
+
+        /*for(int j = 0; j < 10; j++) cout << depth[j] << " ";
+        cout << "\n";*/
+        dfs(buddy[now][i]);
     }
 }
 
@@ -26,10 +32,23 @@ int main() {
         buddy[b].push_back(a);
     }
 
-    for(int i = 1; i <= n; i++) {
+    for(int i = 0; i < n; i++) sort(buddy[i].begin(), buddy[i].end());
+
+    for(int i = 0; i < n; i++) {
         dfs(i);
-        for(int j = 1; j <= n; j++) check[j] = false;
+        for(int j = 0; j < n; j++) {
+            if(depth[j] == 4) {
+                cout << "1\n";
+                return 0;
+            }
+        }
+
+        for(int j = 0; j < n; j++) {
+            check[j] = false;
+            depth[j] = 0;
+        }
     }
 
+    cout << "0\n";
     return 0;
 }
