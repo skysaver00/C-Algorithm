@@ -18,7 +18,7 @@ int main() {
         vec[a].push_back(b);
     }
 
-    
+
 
     return 0;
 }
