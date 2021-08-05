@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-stack<char> stk[101];
+stack<char> stk;
 string str;
 string postStr;
 
@@ -13,31 +13,41 @@ int main() {
     int now = 0;
 
     for(int i = 0; i < len; i++) {
-        if(str.at(i) == '(') {
-            now++;
-        } else if(str.at(i) == ')') {
-            while(!stk[now].empty()) {
-                postStr += stk[now].top();
-                stk[now].pop();
-            }
-            now--;
-        }
-
         if(str.at(i) >= 'A' && str.at(i) <= 'Z') postStr += str.at(i);
-
-        if(str.at(i) == '+' || str.at(i) == '-' || str.at(i) == '*' || str.at(i) == '/') {
-            if(now == 0 && stk[now].size() != 0) {
-                while(!stk[now].empty()) {
-                    postStr += stk[now].top();
-                    stk[now].pop();
+        else {
+            if(str.at(i) == '(') {
+                stk.push(str.at(i));
+            } else if(str.at(i) == '*' || str.at(i) == '/') {
+                if(!stk.empty()) {
+                    while(stk.top() == '*' || stk.top() == '/') {
+                        postStr += stk.top();
+                        stk.pop();
+                    }
+                }
+                stk.push(str.at(i));
+            } else if(str.at(i) == '+' || str.at(i) == '-') {
+                if(!stk.empty()) {
+                    while(stk.top() != '(') {
+                        postStr += stk.top();
+                        stk.pop();
+                    }
+                }
+                stk.push(str.at(i));
+            } else if(str.at(i) == ')') {
+                if(!stk.empty()) {
+                    while(stk.top() == '(') {
+                        postStr += stk.top();
+                        stk.pop();
+                    }
+                    now--;
                 }
             }
-            stk[now].push(str.at(i));
         }
+        cout << postStr << "\n";
     }
-    while(!stk[now].empty()) {
-        postStr += stk[now].top();
-        stk[now].pop();
+    while(!stk.empty()) {
+        postStr += stk.top();
+        stk.pop();
     }
     cout << postStr << "\n";
     return 0;
