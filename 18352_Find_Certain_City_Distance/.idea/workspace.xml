@@ -11,7 +11,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a4eb591-e144-4d08-be2f-876befd1c94e" name="Changes" comment="" />
+    <list default="true" id="9a4eb591-e144-4d08-be2f-876befd1c94e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/1918_Suffix.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/1918_Suffix.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/1918_Suffix.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/1918_Suffix.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/1918_Suffix.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/1918_Suffix.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../1918_Suffix/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +76,7 @@
       <updated>1628083963688</updated>
       <workItem from="1628083967582" duration="586000" />
       <workItem from="1628129022550" duration="1370000" />
+      <workItem from="1628130590845" duration="32000" />
     </task>
     <servers />
   </component>
