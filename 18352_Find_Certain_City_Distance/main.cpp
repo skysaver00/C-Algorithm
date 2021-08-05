@@ -8,7 +8,7 @@ queue<int> que;
 int dist[300001];
 bool check[300001];
 
-void bfs(int k, int x) {
+void bfs(int x) {
     que.push(x);
 
     while(!que.empty()) {
@@ -24,6 +24,8 @@ void bfs(int k, int x) {
             }
         }
     }
+
+    return;
 }
 
 
@@ -35,7 +37,7 @@ int main() {
         vec[a].push_back(b);
     }
 
-    bfs(k, x);
+    bfs(x);
 
     for(int i = 1; i <= n; i++) {
         cout << dist[i] << " ";
