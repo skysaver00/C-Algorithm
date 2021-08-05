@@ -41,7 +41,6 @@ int main() {
     }
 
     bfs(x);
-
     bool val = false;
     for(int i = 1; i <= n; i++) {
         if(dist[i] == k) {
