@@ -28,8 +28,9 @@ int main() {
         }
     }
 
-    for(int i = 0; i < n; i++) cout << des[i] << "\n";
-
+    int ans = 0;
+    for(int i = 0; i < n; i++) if(ans < inc[i] + des[i]) ans = inc[i] + des[i];
+    cout << ans << "\n";
 
     return 0;
 }
