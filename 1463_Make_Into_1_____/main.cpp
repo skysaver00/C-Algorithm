@@ -16,6 +16,6 @@ int main() {
         if(i <= (n / 3)) arr[i] = arr[i * 3] + 1;
     }
 
-    
+    cout << arr[1] << "\n";
     return 0;
 }
