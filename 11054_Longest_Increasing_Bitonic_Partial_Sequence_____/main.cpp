@@ -18,9 +18,18 @@ int main() {
         }
     }
 
-    for(int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }cout << "\n";
+    for(int i = 0; i < n; i++) inc[i]++;
+
+    for(int i = n - 1; i >= 0; i--) {
+        for(int j = n - 1; j >= i; j--) {
+            if(arr[i] > arr[j]) {
+                if(des[i] < des[j] + 1) des[i] = des[j] + 1;
+            }
+        }
+    }
+
+    for(int i = 0; i < n; i++) cout << des[i] << "\n";
+
 
     return 0;
 }
