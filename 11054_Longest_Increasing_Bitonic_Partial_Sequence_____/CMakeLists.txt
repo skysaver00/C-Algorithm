@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.20)
 project(11054_Longest_Increasing_Bitonic_Partial_Sequence_____)
 
