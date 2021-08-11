@@ -2,8 +2,14 @@
 using namespace std;
 int num[100001];
 int ans[100001];
+int minVal = -9999;
 
 int main() {
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+
     int n; cin >> n;
 
     int node = 0;
@@ -24,29 +30,21 @@ int main() {
             ck = false;
             num[node] += val;
         }
+        if(minVal < val && val <= 0) minVal = val;
     }
-
-    for(int i = 0; i < n; i++) {
-        cout << num[i] << " ";
-    }cout << "\n";
+    node++;
 
     ans[0] = num[0];
-    for(int i = 1; i < n; i++) {
+    for(int i = 1; i < node; i++) {
         if(ans[i - 1] + num[i] > num[i]) ans[i] = ans[i - 1] + num[i];
         else ans[i] = num[i];
     }
 
-    for(int i = 0; i < n; i++) cout << ans[i] << " ";
+    int realAns = 0;
+    for(int i = 0; i < node; i++) if(realAns <= ans[i]) realAns = ans[i];
 
-    int realAns = -1001;
-    for(int i = 0; i < n; i++) {
-        cout << ans[i] << "\n";
-        if(realAns < ans[i]) {
-            realAns = ans[i];
-            cout << 'flag!\n"';
-        }
-    }
-    cout << realAns << "\n";
+    if(realAns > 0) cout << realAns << "\n";
+    else cout << minVal << "\n";
 
     return 0;
 }
