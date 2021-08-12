@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int arr[101][10];
+long long arr[101][10];
 
 int main() {
     int n; cin >> n;
@@ -15,8 +15,11 @@ int main() {
         }
     }
 
-    int ans = 0;
-    for(int i = 0; i <= 9; i++) ans += (arr[n][i] % 1000000000);
+    long long ans = 0;
+    for(int i = 0; i <= 9; i++) {
+        ans += (arr[n][i] % 1000000000);
+        ans %= 1000000000;
+    }
     cout << ans << "\n";
 
     return 0;
