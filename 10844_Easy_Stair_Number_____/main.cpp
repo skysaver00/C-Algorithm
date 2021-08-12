@@ -11,13 +11,13 @@ int main() {
         for(int j = 0; j <= 9; j++) {
             if(j == 0) arr[i][j] = arr[i - 1][j + 1];
             else if(j == 9) arr[i][j] = arr[i - 1][j - 1];
-            else arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j + 1];
+            else arr[i][j] = (arr[i - 1][j - 1] + arr[i - 1][j + 1]) % 1000000000;
         }
     }
 
-    for(int i = 0; i <= 9; i++) {
-        
-    }
+    int ans = 0;
+    for(int i = 0; i <= 9; i++) ans += (arr[n][i] % 1000000000);
+    cout << ans << "\n";
 
     return 0;
 }
