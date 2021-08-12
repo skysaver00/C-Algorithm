@@ -1,51 +1,25 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
-int hello[21][100];
-
-int health[21];
-int happy[21];
-
-int max(int i , int j) {
-    return i > j ? i : j;
-}
+int N;
+int dp[22][103]; //i번째 사람의 j 체력일때의 행복 최댓값
+int happy[22];
+int health[22];
 
 int main() {
-    int n;
-    cin >> n;
-
-    for(int i = 1; i <= n; i++) {
-        cin >> health[i];
-    }
-
-    for(int i = 1; i <= n; i++) {
-        cin >> happy[i];
-    }
-
-    if(health[1] < 100) hello[1][health[1]] = happy[1];
-
-    for(int i = 2; i <= n; i++) {
-        if(health[i] < 100) hello[i][health[i]] = happy[i];
-        for(int j = 0; j < 100; j++) {
-            if(hello[i - 1][j] != 0) {
-                hello[i][j] = hello[i - 1][j];
-
-                if(j + health[i] < 100) {
-                    hello[i][j + health[i]] = hello[i - 1][j] + happy[i];
-                }
-            }
+    ios::sync_with_stdio(NULL);
+    cin.tie(NULL);
+    cin >> N;
+    for (int i = 1; i <= N; i++) cin >> health[i];
+    for (int i = 1; i <= N; i++) cin >> happy[i];
+    int maxnum = -1e8;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 100; j >= 0; j--) {
+            if (j - health[i] >= 1) dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - health[i]] + happy[i]);
+            else dp[i][j] = dp[i - 1][j];
+            maxnum = max(maxnum, dp[i][j]);
         }
     }
-
-    int biggest = 0;
-    for(int i = 0; i <= 20; i++) {
-        for(int j = 0; j <= 100; j++) {
-            if (hello[i][j] != 0) {
-                if (biggest < hello[i][j]) biggest = hello[i][j];
-            }
-        }
-    }
-
-    printf("%d\n", biggest);
-
-    return 0;
+    cout << maxnum << "\n";
 }
+[출처] [백준] 1535번 안녕 c++|작성자 류리
