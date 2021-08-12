@@ -1,3 +1,3 @@
 "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\10844_Easy_Stair_Number.dir/objects.a
 X:\MinGW\bin\ar.exe cr CMakeFiles\10844_Easy_Stair_Number.dir/objects.a @CMakeFiles\10844_Easy_Stair_Number.dir\objects1.rsp
-X:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\10844_Easy_Stair_Number.dir/objects.a -Wl,--no-whole-archive  -o 10844_Easy_Stair_Number.exe -Wl,--out-implib,lib10844_Easy_Stair_Number.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\10844_Easy_Stair_Number.dir\linklibs.rsp
+X:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\10844_Easy_Stair_Number.dir/objects.a -Wl,--no-whole-archive -o 10844_Easy_Stair_Number.exe -Wl,--out-implib,lib10844_Easy_Stair_Number.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\10844_Easy_Stair_Number.dir\linklibs.rsp
