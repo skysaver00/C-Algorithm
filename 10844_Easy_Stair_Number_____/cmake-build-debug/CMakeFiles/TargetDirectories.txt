@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/10844_Easy_Stair_Number_____/cmake-build-debug/CMakeFiles/10844_Easy_Stair_Number_____.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10844_Easy_Stair_Number_____/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/10844_Easy_Stair_Number_____/cmake-build-debug/CMakeFiles/rebuild_cache.dir
