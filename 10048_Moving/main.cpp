@@ -33,7 +33,7 @@ int main() {
             if(i == 0 && j == 0) sum[i][j] = candy[i][j];
             else if(i == 0) sum[i][j] = sum[i][j - 1] + candy[i][j];
             else if(j == 0) sum[i][j] = sum[i - 1][j] + candy[i][j];
-            else sum[i][j] = max(sum[i - 1][j - 1], max(sum[i][j - 1], sum[i - 1][j])) + candy[i][j];
+            else sum[i][j] = max(sum[i][j - 1], sum[i - 1][j]) + candy[i][j];
         }
     }
 
