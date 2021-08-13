@@ -15,7 +15,19 @@ int main() {
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j <= i; j++) {
-            sum[i - j][j] =
+            if((i - j) == 0 && j == 0) sum[i - j][j] = candy[i - j][j];
+
+            if((i - j) == 0) sum[i - j][j] = sum[i - j][j - 1] + candy[i - j][j];
+            else if(j == 0) sum[i - j][j] = sum[i - j - 1][j] + candy[i - j][j];
+            else {
+                sum[i - j][j] = max(sum[i - j][j - 1], max(sum[i - j - 1][j], sum[i - j - 1][j - 1])) + candy[i - j][j];
+            }
         }
     }
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) cout << sum[i][j] << " ";
+    }cout << "\n";
+
+    return 0;
 }
