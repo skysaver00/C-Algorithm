@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
-
 vector<long long> height;
 
 long long solve(int left, int right) {
