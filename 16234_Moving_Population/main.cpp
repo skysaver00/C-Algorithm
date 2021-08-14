@@ -11,7 +11,7 @@ queue<pair<int, int>> que;
 int x[4] = {1, 0, -1, 0};
 int y[4] = {0, 1, 0, -1};
 
-void openTerr(int n, int low, int high) {
+int openTerr(int n, int low, int high) {
     int k = 1;
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
@@ -55,7 +55,7 @@ void openTerr(int n, int low, int high) {
         for(int j = 0; j < n; j++) cout << open[i][j] << " ";
         cout << "\n";
     }
-
+    
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             pop[open[i][j]][0] += terr[i][j];
@@ -66,7 +66,23 @@ void openTerr(int n, int low, int high) {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             newTerr[i][j] = pop[open[i][j]][0] / pop[open[i][j]][1];
+            cout << "op    ";
+            cout << newTerr[i][j] << " ";
+        }cout << "\n";
+    }
+
+    return k;
+}
+
+void clear(int n, int top) {
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            terr[i][j] = newTerr[i][j];
         }
+    }
+
+    for(int i = 1; i <= top; i++) {
+        pop[i][0] = pop[i][1] = 0;
     }
 }
 
@@ -79,11 +95,23 @@ int main() {
 
     int t = 0;
     while(1) {
-        openTerr(n, l, r);
+        int top = openTerr(n, l, r);
 
         bool flag = false;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(terr[i][j] != newTerr[i][j]) flag = true;
+                if(flag) break;
+            }
+            if(flag) break;
+        }
 
+        if(flag) clear(n, top);
+
+        if(!flag) break;
+        t++;
     }
 
+    cout << t << "\n";
     return 0;
 }
