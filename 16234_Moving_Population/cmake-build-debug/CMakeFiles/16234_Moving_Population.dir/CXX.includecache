@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 C:/Users/skysaver00/IdeaProjects/C, C++/16234_Moving_Population/main.cpp
-bits/stdc++.h
+iostream
+-
+queue
 -
 
