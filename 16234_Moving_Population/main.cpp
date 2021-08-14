@@ -25,15 +25,15 @@ int openTerr(int n, int low, int high) {
                 int _y = que.front().second;
                 que.pop();
 
-                cout << "val: " << terr[_x][_y] << "\n";
+                //cout << "val: " << terr[_x][_y] << "\n";
 
                 for(int l = 0; l < 4; l++) {
                     int newx = _x + x[l];
                     int newy = _y + y[l];
                     if(newx < 0 || newx >= n || newy < 0 || newy >= n) continue;
 
-                    cout << terr[_x][_y] << " " << terr[newx][newy] << "\n";
-                    cout << abs(terr[_x][_y] - terr[newx][newy]) << "\n";
+                    //cout << terr[_x][_y] << " " << terr[newx][newy] << "\n";
+                    //cout << abs(terr[_x][_y] - terr[newx][newy]) << "\n";
                     if(abs(terr[_x][_y] - terr[newx][newy]) >= low && abs(terr[_x][_y] - terr[newx][newy]) <= high) {
                         ck = true;
                         if(open[newx][newy] == 0) que.push({newx, newy});
@@ -41,21 +41,21 @@ int openTerr(int n, int low, int high) {
                     }
                 }
 
-                for(int i = 0; i < n; i++) {
+                /*for(int i = 0; i < n; i++) {
                     for(int j = 0; j < n; j++) cout << open[i][j] << " ";
                     cout << "\n";
-                }
+                }*/
             }
 
             if(ck) k++;
         }
     }
 
-    for(int i = 0; i < n; i++) {
+    /*for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) cout << open[i][j] << " ";
         cout << "\n";
-    }
-    
+    }*/
+
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             pop[open[i][j]][0] += terr[i][j];
@@ -65,10 +65,14 @@ int openTerr(int n, int low, int high) {
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
+            if(open[i][j] == 0) {
+                newTerr[i][j] = terr[i][j];
+                continue;
+            }
             newTerr[i][j] = pop[open[i][j]][0] / pop[open[i][j]][1];
-            cout << "op    ";
-            cout << newTerr[i][j] << " ";
-        }cout << "\n";
+            //cout << "op    ";
+            //cout << newTerr[i][j] << " ";
+        }//cout << "\n";
     }
 
     return k;
@@ -78,10 +82,11 @@ void clear(int n, int top) {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             terr[i][j] = newTerr[i][j];
+            open[i][j] = 0;
         }
     }
 
-    for(int i = 1; i <= top; i++) {
+    for(int i = 0; i <= top; i++) {
         pop[i][0] = pop[i][1] = 0;
     }
 }
@@ -110,6 +115,14 @@ int main() {
 
         if(!flag) break;
         t++;
+
+        /*for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                cout << newTerr[i][j] << " ";
+            }cout << "\n";
+        }
+
+        cout << "BANG!!\n";*/
     }
 
     cout << t << "\n";
