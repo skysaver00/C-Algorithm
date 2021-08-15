@@ -19,6 +19,18 @@ int left(int size) {
     }
 }
 
+int right(int size) {
+
+}
+
+int down(int size) {
+
+}
+
+int up(int size) {
+    
+}
+
 int main() {
     int n;
     scanf("%d", &n);
