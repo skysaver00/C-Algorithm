@@ -8,7 +8,7 @@ int max(int i, int j) {
     return i > j ? i : j;
 }
 
-int left(int size) {
+void left(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
             bool ck = false;
@@ -39,14 +39,11 @@ int left(int size) {
                 }
                 map[i][size - 1] = 0;
             }
-
-            for(int k = 0; k < size; k++) printf("%d ", map[i][k]);
-            printf("---------------------------------\n");
         }
     }
 }
 
-int right(int size) {
+void right(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = size - 1; j > 0; j--) {
             bool ck = false;
@@ -77,14 +74,11 @@ int right(int size) {
                 }
                 map[i][0] = 0;
             }
-
-            for(int k = 0; k < size; k++) printf("%d ", map[i][k]);
-            printf("---------------------------------\n");
         }
     }
 }
 
-int up(int size) {
+void up(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
             bool ck = false;
@@ -107,12 +101,6 @@ int up(int size) {
     }
 
     for(int i = 0; i < size; i++) {
-        for(int j = 0; j < size; j++) {
-            printf("%d ", map[i][j]);
-        }printf("\n");
-    }
-
-    for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
             if(map[j][i] == map[j + 1][i]) {
                 map[j][i] *= 2;
@@ -125,7 +113,7 @@ int up(int size) {
     }
 }
 
-int down(int size) {
+void down(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = size - 1; j > 0; j--) {
             bool ck = false;
@@ -197,7 +185,6 @@ void make_move(int cnt, int size) {
 int main() {
     int n;
     scanf("%d", &n);
-
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             scanf("%d", &real[i][j]);
@@ -206,20 +193,5 @@ int main() {
 
     make_move(0, n);
     printf("%d\n", ans);
-
-    /*for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            printf("%d ", map[i][j]);
-        }printf("\n");
-    }
-
-    down(n);
-
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            printf("%d ", map[i][j]);
-        }printf("\n");
-    }*/
-
     return 0;
 }
