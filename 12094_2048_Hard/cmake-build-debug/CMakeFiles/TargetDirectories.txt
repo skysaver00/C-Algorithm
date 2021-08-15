@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/12094_2048_Hard/cmake-build-debug/CMakeFiles/12094_2048_Hard.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/12094_2048_Hard/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/12094_2048_Hard/cmake-build-debug/CMakeFiles/rebuild_cache.dir
