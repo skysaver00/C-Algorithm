@@ -1,15 +1,16 @@
 #include <stdio.h>
 int real[21][21];
-int sim[21][21][1025];
+int map[21][21];
+int move[5];
 
 int left(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
             bool ck = false;
-            if(real[i][j] == 0) {
+            if(map[i][j] == 0) {
                 int k = j + 1;
                 while(k <= size - 1) {
-                    if(real[i][k] != 0) {
+                    if(map[i][k] != 0) {
                         ck = true;
                         break;
                     }
@@ -17,8 +18,8 @@ int left(int size) {
                 }
 
                 if(ck) {
-                    real[i][j] = real[i][k];
-                    real[i][k] = 0;
+                    map[i][j] = map[i][k];
+                    map[i][k] = 0;
                 }
             }
         }
@@ -26,15 +27,15 @@ int left(int size) {
 
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
-            if(real[i][j] == real[i][j + 1]) {
-                real[i][j] *= 2;
+            if(map[i][j] == map[i][j + 1]) {
+                map[i][j] *= 2;
                 for(int k = j + 2; k <= size - 1; k++) {
-                    real[i][k - 1] = real[i][k];
+                    map[i][k - 1] = map[i][k];
                 }
-                real[i][size - 1] = 0;
+                map[i][size - 1] = 0;
             }
 
-            for(int k = 0; k < size; k++) printf("%d ", real[i][k]);
+            for(int k = 0; k < size; k++) printf("%d ", map[i][k]);
             printf("---------------------------------\n");
         }
     }
@@ -44,10 +45,10 @@ int right(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = size - 1; j > 0; j--) {
             bool ck = false;
-            if(real[i][j] == 0) {
+            if(map[i][j] == 0) {
                 int k = j - 1;
                 while(k >= 0) {
-                    if(real[i][k] != 0) {
+                    if(map[i][k] != 0) {
                         ck = true;
                         break;
                     }
@@ -55,8 +56,8 @@ int right(int size) {
                 }
 
                 if(ck) {
-                    real[i][j] = real[i][k];
-                    real[i][k] = 0;
+                    map[i][j] = map[i][k];
+                    map[i][k] = 0;
                 }
             }
         }
@@ -64,15 +65,15 @@ int right(int size) {
 
     for(int i = 0; i < size; i++) {
         for(int j = size - 1; j > 0; j--) {
-            if(real[i][j] == real[i][j - 1]) {
-                real[i][j] *= 2;
+            if(map[i][j] == map[i][j - 1]) {
+                map[i][j] *= 2;
                 for(int k = j - 2; k >= 0; k--) {
-                    real[i][k + 1] = real[i][k];
+                    map[i][k + 1] = map[i][k];
                 }
-                real[i][0] = 0;
+                map[i][0] = 0;
             }
 
-            for(int k = 0; k < size; k++) printf("%d ", real[i][k]);
+            for(int k = 0; k < size; k++) printf("%d ", map[i][k]);
             printf("---------------------------------\n");
         }
     }
@@ -82,10 +83,10 @@ int up(int size) {
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
             bool ck = false;
-            if(real[j][i] == 0) {
+            if(map[j][i] == 0) {
                 int k = j + 1;
                 while(k <= size - 1) {
-                    if(real[k][i] != 0) {
+                    if(map[k][i] != 0) {
                         ck = true;
                         break;
                     }
@@ -93,8 +94,8 @@ int up(int size) {
                 }
 
                 if(ck) {
-                    real[j][i] = real[k][i];
-                    real[k][i] = 0;
+                    map[j][i] = map[k][i];
+                    map[k][i] = 0;
                 }
             }
         }
@@ -102,26 +103,63 @@ int up(int size) {
 
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size; j++) {
-            printf("%d ", real[i][j]);
+            printf("%d ", map[i][j]);
         }printf("\n");
     }
 
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size - 1; j++) {
-            if(real[j][i] == real[j + 1][i]) {
-                real[j][i] *= 2;
+            if(map[j][i] == map[j + 1][i]) {
+                map[j][i] *= 2;
                 for(int k = j + 2; k <= size - 1; k++) {
-                    real[k - 1][i] = real[k][i];
+                    map[k - 1][i] = map[k][i];
                 }
-                real[size - 1][i] = 0;
+                map[size - 1][i] = 0;
             }
         }
     }
 }
 
 int down(int size) {
-    
+    for(int i = 0; i < size; i++) {
+        for(int j = size - 1; j > 0; j--) {
+            bool ck = false;
+            if(map[j][i] == 0) {
+                int k = j - 1;
+                while(k >= 0) {
+                    if(map[k][i] != 0) {
+                        ck = true;
+                        break;
+                    }
+                    k--;
+                }
+
+                if(ck) {
+                    map[j][i] = map[k][i];
+                    map[k][i] = 0;
+                }
+            }
+        }
+    }
+
+    for(int i = 0; i < size; i++) {
+        for(int j = size - 1; j > 0; j--) {
+            if(map[j][i] == map[j - 1][i]) {
+                map[j][i] *= 2;
+                for(int k = j - 2; k >= 0; k--) {
+                    map[k + 1][i] = map[k][i];
+                }
+                map[0][i] = 0;
+            }
+        }
+    }
 }
+
+void start() {
+
+}
+
+void make_move(int)
 
 
 int main() {
@@ -134,19 +172,21 @@ int main() {
         }
     }
 
-    for(int i = 0; i < n; i++) {
+
+
+    /*for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            printf("%d ", real[i][j]);
+            printf("%d ", map[i][j]);
         }printf("\n");
     }
 
-    up(n);
+    down(n);
 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            printf("%d ", real[i][j]);
+            printf("%d ", map[i][j]);
         }printf("\n");
-    }
+    }*/
 
     return 0;
 }
