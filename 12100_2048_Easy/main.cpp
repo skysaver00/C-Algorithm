@@ -2,6 +2,11 @@
 int real[21][21];
 int map[21][21];
 int move[5];
+int ans;
+
+int max(int i, int j) {
+    return i > j ? i : j;
+}
 
 int left(int size) {
     for(int i = 0; i < size; i++) {
@@ -155,11 +160,38 @@ int down(int size) {
     }
 }
 
-void start() {
+void start(int size) {
+    for(int i = 0; i < 5; i++) {
+        if(move[i] == 0) left(size);
+        if(move[i] == 1) right(size);
+        if(move[i] == 2) up(size);
+        if(move[i] == 3) down(size);
+    }
 
+    for(int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            ans = max(ans, map[i][j]);
+        }
+    }
 }
 
-void make_move(int)
+void make_move(int cnt, int size) {
+    if(cnt == 5) {
+        for(int i = 0; i < size; i++) {
+            for(int j = 0; j < size; j++) {
+                map[i][j] = real[i][j];
+            }
+        }
+
+        start(size);
+        return;
+    }
+
+    for(int i = 0; i < 4; i++) {
+        move[cnt] = i;
+        make_move(cnt + 1, size);
+    }
+}
 
 
 int main() {
@@ -172,7 +204,8 @@ int main() {
         }
     }
 
-
+    make_move(0, n);
+    printf("%d\n", ans);
 
     /*for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
