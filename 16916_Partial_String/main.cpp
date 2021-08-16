@@ -5,17 +5,17 @@ using namespace std;
 string str;
 string cmpStr;
 
-vector<int> makeTable(string pattern) {
-    int patSize = pattern.size();
-    vector<int> table(patSize, 0);
+vector<int> makeTable(string cmpStr) {
+    int cmpSize = cmpStr.length();
+    vector<int> table(cmpSize, 0);
 
     int j = 0;
-    for(int i = 1; i < patSize; i++) {
-        while(j > 0 && pattern[i] != pattern[j]) {
+    for(int i = 1; i < cmpSize; i++) {
+        while(j > 0 && cmpStr[i] != cmpStr[j]) {
             j = table[j - 1];
         }
 
-        if(pattern[i] == pattern[j]) table[i] = ++j;
+        if(cmpStr[i] == cmpStr[j]) table[i] = ++j;
     }
 
     return table;
@@ -23,8 +23,8 @@ vector<int> makeTable(string pattern) {
 
 bool KMP(string str, string cmpStr) {
     vector<int> table = makeTable(cmpStr);
-    int strSize = str.size();
-    int cmpSize = cmpStr.size();
+    int strSize = str.length();
+    int cmpSize = cmpStr.length();
 
     int j = 0;
     for(int i = 0; i < strSize; i++) {
@@ -33,6 +33,7 @@ bool KMP(string str, string cmpStr) {
         }
 
         if(str[i] == cmpStr[j]) {
+            cout << j << "\n";
             if(j == cmpSize - 1) return true;
         } else j++;
     }
