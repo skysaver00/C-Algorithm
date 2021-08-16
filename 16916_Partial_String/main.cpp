@@ -15,15 +15,10 @@ vector<int> makeTable(string cmpStr) {
 
         if(cmpStr[i] == cmpStr[j]) table[i] = ++j;
     }
-
-    for(int i = 0; i < cmpSize; i++) cout << table[i] << " ";
-    cout << "\n";
-
     return table;
 }
 
 bool KMP(string str, string cmpStr) {
-    bool ck = false;
     vector<int> table = makeTable(cmpStr);
     int strSize = (int)str.length();
     int cmpSize = (int)cmpStr.length();
@@ -35,11 +30,10 @@ bool KMP(string str, string cmpStr) {
         }
 
         if(str[i] == cmpStr[j]) {
-            cout << j << "\n";
             if(j == cmpSize - 1) return true;
-        } else j++;
+            else j++;
+        }
     }
-
     return false;
 }
 
