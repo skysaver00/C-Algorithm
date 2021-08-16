@@ -1,12 +1,10 @@
 #include <iostream>
+#include <string>
 #include <vector>
 using namespace std;
 
-string str;
-string cmpStr;
-
 vector<int> makeTable(string cmpStr) {
-    int cmpSize = cmpStr.length();
+    int cmpSize = (int)cmpStr.length();
     vector<int> table(cmpSize, 0);
 
     int j = 0;
@@ -27,8 +25,8 @@ vector<int> makeTable(string cmpStr) {
 bool KMP(string str, string cmpStr) {
     bool ck = false;
     vector<int> table = makeTable(cmpStr);
-    int strSize = str.length();
-    int cmpSize = cmpStr.length();
+    int strSize = (int)str.length();
+    int cmpSize = (int)cmpStr.length();
 
     int j = 0;
     for(int i = 0; i < strSize; i++) {
@@ -38,21 +36,18 @@ bool KMP(string str, string cmpStr) {
 
         if(str[i] == cmpStr[j]) {
             cout << j << "\n";
-            if(j == cmpSize - 1) {
-                ck = true;
-                j = table[j];
-            }
+            if(j == cmpSize - 1) return true;
         } else j++;
     }
 
-    return ck;
+    return false;
 }
 
 int main() {
+    string str;
+    string cmpStr;
     cin >> str; cin >> cmpStr;
-    bool ck = KMP(str, cmpStr);
 
-    if(ck) cout << "1\n";
-    else cout << "0\n";
+    cout << KMP(str, cmpStr);
     return 0;
 }
