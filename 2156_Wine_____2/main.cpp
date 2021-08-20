@@ -24,6 +24,7 @@ int main() {
                        drink[i - 1]));
     }
 
+    cout << drink[n] << "\n";
     return 0;
 }
 
