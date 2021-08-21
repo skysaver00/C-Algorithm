@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1708_Convex_Hull/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_3c807.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1708_Convex_Hull/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1708_Convex_Hull/cmake-build-debug/CMakeFiles/CMakeTmp/CMakeFiles/rebuild_cache.dir
