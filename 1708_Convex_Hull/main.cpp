@@ -15,10 +15,11 @@ vector<Point> point;
 vector<Point> hull;
 
 long long ccw(Point pt1, Point pt2, Point pt3) {
-    long long ret = pt1.x*pt2.y + pt2.x*pt3.y + pt3.x*pt1.y;
-    ret -= (pt2.x*pt1.y + pt3.x*pt2.y + pt1.x*pt3.y);
+    long long ret = pt1.x * pt2.y + pt2.x * pt3.y + pt3.x * pt1.y;
+    ret -= (pt2.x * pt1.y + pt3.x * pt2.y + pt1.x * pt3.y);
     return ret;
 }
+
 long long dist(Point pt1, Point pt2) {
     long long dx = pt2.x - pt1.x;
     long long dy = pt2.y - pt1.y;
@@ -48,4 +49,5 @@ int main(){
         hull.push_back(i);
     }
     cout << hull.size() << endl;
+    return 0;
 }
