@@ -1,0 +1,3 @@
+C:/Users/skysaver00/IdeaProjects/C, C++/1947_City_Divide_Project/cmake-build-debug/CMakeFiles/1947_City_Divide_Project.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1947_City_Divide_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/skysaver00/IdeaProjects/C, C++/1947_City_Divide_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
