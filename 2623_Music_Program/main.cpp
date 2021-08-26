@@ -2,7 +2,8 @@
 #include <queue>
 #include <vector>
 using namespace std;
-vector<int> order[1001];
+//vector<int> order[1001];
+bool order[1001][1001];
 int parent[1001];
 bool visit[1001];
 queue<int> topoQueue;
@@ -20,23 +21,18 @@ int main() {
                 continue;
             }
 
-            order[from].push_back(to);
-            parent[to]++;
+            if(!order[from][to]) parent[to]++;
+            order[from][to] = true;
             from = to;
         }
     }
 
-    /*for(int i = 1; i <= n; i++) {
-        if(visit[i]) continue;
+    for(int i = 1; i <= n; i++) {
         if(parent[i] == 0) {
             topoQueue.push(i);
             visit[i] = true;
-        }
-    }*/
-    for(int i = 1; i <= n; i++) {
-        if(parent[i] == 0) topoQueue.push(i);
-        cout << parent[i] << " ";
-    }cout << "\n";
+        } cout << parent[i] << " ";
+    } cout <<"\n";
 
     while(!topoQueue.empty()) {
         int val = topoQueue.front();
@@ -44,19 +40,21 @@ int main() {
 
         ans.push(val);
 
-        int sz = order[val].size();
-        for(int i = 0; i < sz; i++) {
-            parent[order[val][i]]--;
+        for(int i = 1; i <= n; i++) {
+            if(order[val][i]) {
+                parent[order[val][i]]--;
+                order[val][i] = false;
+            }
         }
 
         for(int i = 1; i <= n; i++) {
+            cout << parent[i] << " ";
             if(visit[i]) continue;
             if(parent[i] == 0) {
                 topoQueue.push(i);
                 visit[i] = true;
             }
-            cout << parent[i] << " ";
-        }cout << "\n";
+        } cout <<"\n";
     }
 
     while(!ans.empty()) {
