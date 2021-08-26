@@ -9,14 +9,15 @@ int main() {
     for(int i = 0; i < m; i++) {
         int artist; cin >> artist;
         for(int j = 0; j < artist; j++) {
-            int val; cin >> val;
+            int to; cin >> to;
             int from;
             if(j == 0) {
-                from = val;
+                from = to;
                 continue;
             }
 
-            order[from].push_back(val);
+            order[from].push_back(to);
+            from = to;
         }
     }
 
