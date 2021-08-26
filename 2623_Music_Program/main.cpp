@@ -25,16 +25,29 @@ int main() {
         }
     }
 
-    for(int i = 1; i <= n; i++) if(parent[i] == 0) topoQueue.push(i);
+    //for(int i = 1; i <= n; i++) if(parent[i] == 0) topoQueue.push(i);
+    for(int i = 1; i <= n; i++) {
+        if(parent[i] == 0) topoQueue.push(i);
+        cout << parent[i] << " ";
+    }cout << "\n";
 
     while(!topoQueue.empty()) {
         int val = topoQueue.front();
         topoQueue.pop();
 
         ans.push(val);
-        for(int i = 0; i < order[val].size(); i++) {
-            
+
+        int sz = order[val].size();
+        for(int i = 0; i < sz; i++) {
+            parent[order[val][i]]--;
         }
+
+        for(int i = 1; i <= n; i++) {
+            if(parent[i] == 0) topoQueue.push(i);
+            cout << parent[i] << " ";
+        }cout << "\n";
+
+        //for(int i = 1; i <= n; i++) if(parent[i] == 0) topoQueue.push(i);
     }
 
 
