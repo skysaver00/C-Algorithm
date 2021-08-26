@@ -28,6 +28,12 @@ int main() {
     }
 
     for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n; j++) {
+            cout << order[i][j] << " ";
+        }cout << "\n";
+    }
+
+    for(int i = 1; i <= n; i++) {
         if(parent[i] == 0) {
             topoQueue.push(i);
             visit[i] = true;
