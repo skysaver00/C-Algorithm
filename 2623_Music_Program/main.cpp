@@ -28,17 +28,11 @@ int main() {
     }
 
     for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) {
-            cout << order[i][j] << " ";
-        }cout << "\n";
-    }
-
-    for(int i = 1; i <= n; i++) {
         if(parent[i] == 0) {
             topoQueue.push(i);
             visit[i] = true;
-        } cout << parent[i] << " ";
-    } cout <<"\n";
+        }
+    }
 
     while(!topoQueue.empty()) {
         int val = topoQueue.front();
@@ -48,25 +42,28 @@ int main() {
 
         for(int i = 1; i <= n; i++) {
             if(order[val][i]) {
-                parent[order[val][i]]--;
+                parent[i]--;
                 order[val][i] = false;
             }
         }
 
         for(int i = 1; i <= n; i++) {
-            cout << parent[i] << " ";
             if(visit[i]) continue;
             if(parent[i] == 0) {
                 topoQueue.push(i);
                 visit[i] = true;
             }
-        } cout <<"\n";
+        }
+    }
+
+    if(ans.size() != n) {
+        cout << "0\n";
+        return 0;
     }
 
     while(!ans.empty()) {
         cout << ans.front() << "\n";
         ans.pop();
     }
-
     return 0;
 }
