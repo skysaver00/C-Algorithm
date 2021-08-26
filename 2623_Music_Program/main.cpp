@@ -4,6 +4,7 @@
 using namespace std;
 vector<int> order[1001];
 int parent[1001];
+bool visit[1001];
 queue<int> topoQueue;
 queue<int> ans;
 
@@ -25,7 +26,13 @@ int main() {
         }
     }
 
-    //for(int i = 1; i <= n; i++) if(parent[i] == 0) topoQueue.push(i);
+    /*for(int i = 1; i <= n; i++) {
+        if(visit[i]) continue;
+        if(parent[i] == 0) {
+            topoQueue.push(i);
+            visit[i] = true;
+        }
+    }*/
     for(int i = 1; i <= n; i++) {
         if(parent[i] == 0) topoQueue.push(i);
         cout << parent[i] << " ";
@@ -43,13 +50,19 @@ int main() {
         }
 
         for(int i = 1; i <= n; i++) {
-            if(parent[i] == 0) topoQueue.push(i);
+            if(visit[i]) continue;
+            if(parent[i] == 0) {
+                topoQueue.push(i);
+                visit[i] = true;
+            }
             cout << parent[i] << " ";
         }cout << "\n";
-
-        //for(int i = 1; i <= n; i++) if(parent[i] == 0) topoQueue.push(i);
     }
 
+    while(!ans.empty()) {
+        cout << ans.front() << "\n";
+        ans.pop();
+    }
 
     return 0;
 }
