@@ -11,6 +11,11 @@ int _x[4] = {1, 0, -1, 0};
 int _y[4] = {0, 1, 0, -1};
 
 bool check(int n, int m) {
+    bool flag = false;
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < m; j++)
+            if(axis[i][j] != 0) flag = true;
+
     zeroque.push({0, 0});
     zero[0][0] = 2;
     while(!zeroque.empty()) {
@@ -20,18 +25,12 @@ bool check(int n, int m) {
         for(int i = 0; i < 4; i++) {
             if(X + _x[i] < 0 || X + _x[i] >= n || Y + _y[i] < 0 || Y + _y[i] >= m)
                 continue;
-            if(axis[X + _x[i]][Y + _y[i]] == 0) {
+            if(axis[X + _x[i]][Y + _y[i]] == 0 && zero[X + _x[i]][Y + _y[i]] == 0) {
                 zero[X + _x[i]][Y + _y[i]] = 2;
                 zeroque.push({X + _x[i], Y + _y[i]});
             }
         }
         zeroque.pop();
-    }
-
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++) {
-            cout << zero[i][j] << " ";
-        }cout << "\n";
     }
 
     for(int i = 0; i < n; i++) {
@@ -42,11 +41,24 @@ bool check(int n, int m) {
                     if((i + _x[k]) < 0 || (i + _x[k]) >= n || (j + _y[k] < 0) || (j + _y[k] >= m))
                         continue;
 
-                    ax
+                    if(zero[i + _x[k]][j + _y[k]] == 2) cnt++;
+                    if(cnt == 2) {
+                        zero[i][j] = 1;
+                        break;
+                    }
                 }
             }
         }
     }
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            if(zero[i][j] == 1) axis[i][j] = 0;
+            zero[i][j] = 0;
+        }
+    }
+
+    return flag;
 }
 
 int main() {
@@ -58,10 +70,13 @@ int main() {
         }
     }
 
+    int ans = 0;
     while(1) {
         bool flag = check(n, m);
         if(!flag) break;
+        else ans++;
     }
 
+    cout << ans << "\n";
     return 0;
 }
