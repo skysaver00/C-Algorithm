@@ -9,4 +9,8 @@
 C:/Users/skysaver00/IdeaProjects/C, C++/Pointer/main.c
 stdio.h
 -
+stdlib.h
+-
+string.h
+-
 
